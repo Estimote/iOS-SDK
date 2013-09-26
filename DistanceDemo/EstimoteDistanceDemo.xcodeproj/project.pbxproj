@@ -293,11 +293,7 @@
 				INFOPLIST_FILE = "EstimoteDistanceDemo/EstimoteDistanceDemo-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\\\"$(SRCROOT)/EstimoteDistanceDemo\\\"",
-					"\\\"$(SRCROOT)/../../../../../../Library/Developer/Xcode/DerivedData/EstimoteBLE-fciknfmtjexyisdvrlnpfgdjgsck/Build/Products/Debug-iphoneos\\\"",
-					"\\\"$(SRCROOT)/../../publicEstimoteSDK/iOS-SDK/SDK\\\"",
-					"\\\"$(SRCROOT)/../SDK\\\"",
-					"/Users/Gacek/Documents/Programowanie/iOS/Estimote/publicEstimoteSDK/iOS-SDK/SDK",
+					"\"$(SRCROOT)/../SDK\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -312,11 +308,7 @@
 				INFOPLIST_FILE = "EstimoteDistanceDemo/EstimoteDistanceDemo-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\\\"$(SRCROOT)/EstimoteDistanceDemo\\\"",
-					"\\\"$(SRCROOT)/../../../../../../Library/Developer/Xcode/DerivedData/EstimoteBLE-fciknfmtjexyisdvrlnpfgdjgsck/Build/Products/Debug-iphoneos\\\"",
-					"\\\"$(SRCROOT)/../../publicEstimoteSDK/iOS-SDK/SDK\\\"",
-					"\\\"$(SRCROOT)/../SDK\\\"",
-					"/Users/Gacek/Documents/Programowanie/iOS/Estimote/publicEstimoteSDK/iOS-SDK/SDK",
+					"\"$(SRCROOT)/../SDK\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
