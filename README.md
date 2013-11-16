@@ -28,7 +28,7 @@ Follow steps described below to install EstimoteSDK library:
   * CoreLocation.framework
   * SystemConfiguration.framework
 
-  After you add them your project settings should look like on the screenshot below.
+  After you add them your project settings should look like the screenshot below.
 
   ![ScreenShot LinkWithBinaryLibraries](http://estimote.com/api/BuildPhasesScreenshot.png)
 
