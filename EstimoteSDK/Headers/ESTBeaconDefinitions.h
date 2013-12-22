@@ -1,22 +1,18 @@
 //
 //  ESTBeaconDefinitions.h
-//  EstimoteSDK7
+//  EstimoteSDK
 //
-//  Version : 1.0.0
+//  Version : 1.2.0
 //  Created by Marcin Klimek on 9/26/13.
 //  Copyright (c) 2013 Estimote. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import "ESTBeaconUpdateInfo.h"
 
 ////////////////////////////////////////////////////////////////////
 // Type and class definitions
 
-
-typedef void(^ESTCompletionBlock)(NSError* error);
-typedef void(^ESTUnsignedCompletionBlock)(unsigned value, NSError* error);
-typedef void(^ESTBoolCompletionBlock)(BOOL value, NSError* error);
-typedef void(^ESTStringCompletionBlock)(NSString* value, NSError* error);
 
 typedef enum : char
 {
@@ -35,6 +31,22 @@ typedef enum : int
     ESTBeaconFirmwareStateBoot,
     ESTBeaconFirmwareStateApp
 } ESTBeaconFirmwareState;
+
+typedef enum : int
+{
+    ESTBeaconFirmwareUpdateNone,
+    ESTBeaconFirmwareUpdateAvailable,
+    ESTBeaconFirmwareUpdateNotAvailable
+} ESTBeaconFirmwareUpdate;
+
+typedef void(^ESTCompletionBlock)(NSError* error);
+typedef void(^ESTFirmwareUpdateCompletionBlock)(BOOL updateAvailable, ESTBeaconUpdateInfo* updateInfo, NSError* error);
+typedef void(^ESTUnsignedShortCompletionBlock)(unsigned short value, NSError* error);
+typedef void(^ESTPowerCompletionBlock)(ESTBeaconPower value, NSError* error);
+typedef void(^ESTBoolCompletionBlock)(BOOL value, NSError* error);
+typedef void(^ESTStringCompletionBlock)(NSString* value, NSError* error);
+
+
 
 
 ////////////////////////////////////////////////////////////////////

@@ -1,6 +1,6 @@
 //
-//  DinstanceDemoTests.m
-//  DinstanceDemoTests
+//  DistanceDemoTests.m
+//  DistanceDemoTests
 //
 //  Created by Marcin Klimek on 9/26/13.
 //  Copyright (c) 2013 Estimote. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface DinstanceDemoTests : XCTestCase
+@interface DistanceDemoTests : XCTestCase
 
 @end
 
-@implementation DinstanceDemoTests
+@implementation DistanceDemoTests
 
 - (void)setUp
 {

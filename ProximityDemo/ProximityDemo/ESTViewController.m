@@ -56,8 +56,8 @@
             for (ESTBeacon* cBeacon in beacons)
             {
                 // update beacon it same as selected initially
-                if([self.selectedBeacon.ibeacon.major unsignedShortValue] == [cBeacon.ibeacon.major unsignedShortValue] &&
-                   [self.selectedBeacon.ibeacon.minor unsignedShortValue] == [cBeacon.ibeacon.minor unsignedShortValue])
+                if([self.selectedBeacon.major unsignedShortValue] == [cBeacon.major unsignedShortValue] &&
+                   [self.selectedBeacon.minor unsignedShortValue] == [cBeacon.minor unsignedShortValue])
                 {
                     self.selectedBeacon = cBeacon;
                 }
@@ -71,11 +71,11 @@
         
         NSString* labelText = [NSString stringWithFormat:
                                @"Major: %i, Minor: %i\nRegion: ",
-                               [self.selectedBeacon.ibeacon.major unsignedShortValue],
-                               [self.selectedBeacon.ibeacon.minor unsignedShortValue]];
+                               [self.selectedBeacon.major unsignedShortValue],
+                               [self.selectedBeacon.minor unsignedShortValue]];
         
         // calculate and set new y position
-        switch (self.selectedBeacon.ibeacon.proximity)
+        switch (self.selectedBeacon.proximity)
         {
             case CLProximityUnknown:
                 labelText = [labelText stringByAppendingString: @"Unknown"];

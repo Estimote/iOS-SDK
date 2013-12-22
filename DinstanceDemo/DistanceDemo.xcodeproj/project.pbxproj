@@ -7,24 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F0CE79E184CB039000E8805 /* libEstimoteSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F0CE79D184CB039000E8805 /* libEstimoteSDK.a */; };
+		2FB0EBC21855FAEE003B963B /* DistanceDemoTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2FB0EBBE1855FAEE003B963B /* DistanceDemoTests-Info.plist */; };
+		2FB0EBC41855FAEE003B963B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2FB0EBC01855FAEE003B963B /* InfoPlist.strings */; };
+		2FB0EBC61855FC1C003B963B /* DistanceDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB0EBBF1855FAEE003B963B /* DistanceDemoTests.m */; };
+		2FB0EBD41855FC5F003B963B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FB0EBC81855FC5F003B963B /* Main.storyboard */; };
+		2FB0EBD51855FC5F003B963B /* DistanceDemo-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2FB0EBCA1855FC5F003B963B /* DistanceDemo-Info.plist */; };
+		2FB0EBD61855FC5F003B963B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2FB0EBCC1855FC5F003B963B /* InfoPlist.strings */; };
+		2FB0EBD71855FC5F003B963B /* ESTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB0EBCF1855FC5F003B963B /* ESTAppDelegate.m */; };
+		2FB0EBD81855FC5F003B963B /* ESTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB0EBD11855FC5F003B963B /* ESTViewController.m */; };
+		2FB0EBD91855FC5F003B963B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FB0EBD21855FC5F003B963B /* Images.xcassets */; };
+		2FB0EBDA1855FC5F003B963B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB0EBD31855FC5F003B963B /* main.m */; };
 		2FC6D47117F42242007D8573 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FC6D47017F42242007D8573 /* Foundation.framework */; };
 		2FC6D47317F42242007D8573 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FC6D47217F42242007D8573 /* CoreGraphics.framework */; };
 		2FC6D47517F42242007D8573 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FC6D47417F42242007D8573 /* UIKit.framework */; };
-		2FC6D47B17F42242007D8573 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2FC6D47917F42242007D8573 /* InfoPlist.strings */; };
-		2FC6D47D17F42242007D8573 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FC6D47C17F42242007D8573 /* main.m */; };
-		2FC6D48117F42242007D8573 /* ESTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FC6D48017F42242007D8573 /* ESTAppDelegate.m */; };
-		2FC6D48417F42242007D8573 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FC6D48217F42242007D8573 /* Main.storyboard */; };
-		2FC6D48717F42242007D8573 /* ESTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FC6D48617F42242007D8573 /* ESTViewController.m */; };
-		2FC6D48917F42243007D8573 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FC6D48817F42243007D8573 /* Images.xcassets */; };
 		2FC6D49017F42243007D8573 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FC6D48F17F42243007D8573 /* XCTest.framework */; };
 		2FC6D49117F42243007D8573 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FC6D47017F42242007D8573 /* Foundation.framework */; };
 		2FC6D49217F42243007D8573 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FC6D47417F42242007D8573 /* UIKit.framework */; };
-		2FC6D49A17F42243007D8573 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2FC6D49817F42243007D8573 /* InfoPlist.strings */; };
-		2FC6D49C17F42243007D8573 /* DinstanceDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FC6D49B17F42243007D8573 /* DinstanceDemoTests.m */; };
 		2FC6D4A817F424EC007D8573 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FC6D4A717F424EC007D8573 /* SystemConfiguration.framework */; };
 		2FC6D4AA17F42502007D8573 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FC6D4A917F42502007D8573 /* CoreBluetooth.framework */; };
 		2FC6D4AC17F42509007D8573 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FC6D4AB17F42509007D8573 /* CoreLocation.framework */; };
-		2FC6D4BC17F43139007D8573 /* libEstimoteSDK7.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FC6D4BB17F43139007D8573 /* libEstimoteSDK7.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,29 +40,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2FC6D46D17F42242007D8573 /* DinstanceDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DinstanceDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F0CE79D184CB039000E8805 /* libEstimoteSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libEstimoteSDK.a; path = ../EstimoteSDK/libEstimoteSDK.a; sourceTree = "<group>"; };
+		2FB0EBBE1855FAEE003B963B /* DistanceDemoTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "DistanceDemoTests-Info.plist"; sourceTree = "<group>"; };
+		2FB0EBBF1855FAEE003B963B /* DistanceDemoTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistanceDemoTests.m; sourceTree = "<group>"; };
+		2FB0EBC11855FAEE003B963B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2FB0EBC91855FC5F003B963B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2FB0EBCA1855FC5F003B963B /* DistanceDemo-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "DistanceDemo-Info.plist"; sourceTree = "<group>"; };
+		2FB0EBCB1855FC5F003B963B /* DistanceDemo-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DistanceDemo-Prefix.pch"; sourceTree = "<group>"; };
+		2FB0EBCD1855FC5F003B963B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2FB0EBCE1855FC5F003B963B /* ESTAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTAppDelegate.h; sourceTree = "<group>"; };
+		2FB0EBCF1855FC5F003B963B /* ESTAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESTAppDelegate.m; sourceTree = "<group>"; };
+		2FB0EBD01855FC5F003B963B /* ESTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTViewController.h; sourceTree = "<group>"; };
+		2FB0EBD11855FC5F003B963B /* ESTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESTViewController.m; sourceTree = "<group>"; };
+		2FB0EBD21855FC5F003B963B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2FB0EBD31855FC5F003B963B /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2FC6D46D17F42242007D8573 /* DistanceDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DistanceDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FC6D47017F42242007D8573 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2FC6D47217F42242007D8573 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2FC6D47417F42242007D8573 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		2FC6D47817F42242007D8573 /* DinstanceDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DinstanceDemo-Info.plist"; sourceTree = "<group>"; };
-		2FC6D47A17F42242007D8573 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		2FC6D47C17F42242007D8573 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2FC6D47E17F42242007D8573 /* DinstanceDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DinstanceDemo-Prefix.pch"; sourceTree = "<group>"; };
-		2FC6D47F17F42242007D8573 /* ESTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESTAppDelegate.h; sourceTree = "<group>"; };
-		2FC6D48017F42242007D8573 /* ESTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ESTAppDelegate.m; sourceTree = "<group>"; };
-		2FC6D48317F42242007D8573 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2FC6D48517F42242007D8573 /* ESTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESTViewController.h; sourceTree = "<group>"; };
-		2FC6D48617F42242007D8573 /* ESTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ESTViewController.m; sourceTree = "<group>"; };
-		2FC6D48817F42243007D8573 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		2FC6D48E17F42243007D8573 /* DinstanceDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DinstanceDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FC6D48E17F42243007D8573 /* DistanceDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DistanceDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FC6D48F17F42243007D8573 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		2FC6D49717F42243007D8573 /* DinstanceDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DinstanceDemoTests-Info.plist"; sourceTree = "<group>"; };
-		2FC6D49917F42243007D8573 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		2FC6D49B17F42243007D8573 /* DinstanceDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DinstanceDemoTests.m; sourceTree = "<group>"; };
 		2FC6D4A717F424EC007D8573 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		2FC6D4A917F42502007D8573 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		2FC6D4AB17F42509007D8573 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		2FC6D4BB17F43139007D8573 /* libEstimoteSDK7.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libEstimoteSDK7.a; path = ../EstimoteSDK/libEstimoteSDK7.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,10 +70,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F0CE79E184CB039000E8805 /* libEstimoteSDK.a in Frameworks */,
 				2FC6D4AC17F42509007D8573 /* CoreLocation.framework in Frameworks */,
 				2FC6D4AA17F42502007D8573 /* CoreBluetooth.framework in Frameworks */,
 				2FC6D4A817F424EC007D8573 /* SystemConfiguration.framework in Frameworks */,
-				2FC6D4BC17F43139007D8573 /* libEstimoteSDK7.a in Frameworks */,
 				2FC6D47317F42242007D8573 /* CoreGraphics.framework in Frameworks */,
 				2FC6D47517F42242007D8573 /* UIKit.framework in Frameworks */,
 				2FC6D47117F42242007D8573 /* Foundation.framework in Frameworks */,
@@ -91,11 +93,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2FB0EBBD1855FAEE003B963B /* DistanceDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				2FB0EBC51855FAF9003B963B /* Supporting Files */,
+				2FB0EBBF1855FAEE003B963B /* DistanceDemoTests.m */,
+			);
+			path = DistanceDemoTests;
+			sourceTree = "<group>";
+		};
+		2FB0EBC51855FAF9003B963B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2FB0EBBE1855FAEE003B963B /* DistanceDemoTests-Info.plist */,
+				2FB0EBC01855FAEE003B963B /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2FB0EBC71855FC5F003B963B /* DistanceDemo */ = {
+			isa = PBXGroup;
+			children = (
+				2FB0EBCE1855FC5F003B963B /* ESTAppDelegate.h */,
+				2FB0EBCF1855FC5F003B963B /* ESTAppDelegate.m */,
+				2FB0EBC81855FC5F003B963B /* Main.storyboard */,
+				2FB0EBD01855FC5F003B963B /* ESTViewController.h */,
+				2FB0EBD11855FC5F003B963B /* ESTViewController.m */,
+				2FB0EBD21855FC5F003B963B /* Images.xcassets */,
+				2FB0EBDB1855FC6A003B963B /* Supporting Files */,
+			);
+			path = DistanceDemo;
+			sourceTree = "<group>";
+		};
+		2FB0EBDB1855FC6A003B963B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2FB0EBCA1855FC5F003B963B /* DistanceDemo-Info.plist */,
+				2FB0EBCB1855FC5F003B963B /* DistanceDemo-Prefix.pch */,
+				2FB0EBCC1855FC5F003B963B /* InfoPlist.strings */,
+				2FB0EBD31855FC5F003B963B /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		2FC6D46417F42242007D8573 = {
 			isa = PBXGroup;
 			children = (
-				2FC6D47617F42242007D8573 /* DinstanceDemo */,
-				2FC6D49517F42243007D8573 /* DinstanceDemoTests */,
+				2FB0EBC71855FC5F003B963B /* DistanceDemo */,
+				2FB0EBBD1855FAEE003B963B /* DistanceDemoTests */,
 				2FC6D46F17F42242007D8573 /* Frameworks */,
 				2FC6D46E17F42242007D8573 /* Products */,
 			);
@@ -104,8 +149,8 @@
 		2FC6D46E17F42242007D8573 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2FC6D46D17F42242007D8573 /* DinstanceDemo.app */,
-				2FC6D48E17F42243007D8573 /* DinstanceDemoTests.xctest */,
+				2FC6D46D17F42242007D8573 /* DistanceDemo.app */,
+				2FC6D48E17F42243007D8573 /* DistanceDemoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -113,7 +158,7 @@
 		2FC6D46F17F42242007D8573 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2FC6D4BB17F43139007D8573 /* libEstimoteSDK7.a */,
+				2F0CE79D184CB039000E8805 /* libEstimoteSDK.a */,
 				2FC6D4AB17F42509007D8573 /* CoreLocation.framework */,
 				2FC6D4A917F42502007D8573 /* CoreBluetooth.framework */,
 				2FC6D4A717F424EC007D8573 /* SystemConfiguration.framework */,
@@ -125,55 +170,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		2FC6D47617F42242007D8573 /* DinstanceDemo */ = {
-			isa = PBXGroup;
-			children = (
-				2FC6D47F17F42242007D8573 /* ESTAppDelegate.h */,
-				2FC6D48017F42242007D8573 /* ESTAppDelegate.m */,
-				2FC6D48217F42242007D8573 /* Main.storyboard */,
-				2FC6D48517F42242007D8573 /* ESTViewController.h */,
-				2FC6D48617F42242007D8573 /* ESTViewController.m */,
-				2FC6D48817F42243007D8573 /* Images.xcassets */,
-				2FC6D47717F42242007D8573 /* Supporting Files */,
-			);
-			path = DinstanceDemo;
-			sourceTree = "<group>";
-		};
-		2FC6D47717F42242007D8573 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				2FC6D47817F42242007D8573 /* DinstanceDemo-Info.plist */,
-				2FC6D47917F42242007D8573 /* InfoPlist.strings */,
-				2FC6D47C17F42242007D8573 /* main.m */,
-				2FC6D47E17F42242007D8573 /* DinstanceDemo-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		2FC6D49517F42243007D8573 /* DinstanceDemoTests */ = {
-			isa = PBXGroup;
-			children = (
-				2FC6D49B17F42243007D8573 /* DinstanceDemoTests.m */,
-				2FC6D49617F42243007D8573 /* Supporting Files */,
-			);
-			path = DinstanceDemoTests;
-			sourceTree = "<group>";
-		};
-		2FC6D49617F42243007D8573 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				2FC6D49717F42243007D8573 /* DinstanceDemoTests-Info.plist */,
-				2FC6D49817F42243007D8573 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2FC6D46C17F42242007D8573 /* DinstanceDemo */ = {
+		2FC6D46C17F42242007D8573 /* DistanceDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2FC6D49F17F42243007D8573 /* Build configuration list for PBXNativeTarget "DinstanceDemo" */;
+			buildConfigurationList = 2FC6D49F17F42243007D8573 /* Build configuration list for PBXNativeTarget "DistanceDemo" */;
 			buildPhases = (
 				2FC6D46917F42242007D8573 /* Sources */,
 				2FC6D46A17F42242007D8573 /* Frameworks */,
@@ -183,14 +185,14 @@
 			);
 			dependencies = (
 			);
-			name = DinstanceDemo;
+			name = DistanceDemo;
 			productName = DinstanceDemo;
-			productReference = 2FC6D46D17F42242007D8573 /* DinstanceDemo.app */;
+			productReference = 2FC6D46D17F42242007D8573 /* DistanceDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2FC6D48D17F42243007D8573 /* DinstanceDemoTests */ = {
+		2FC6D48D17F42243007D8573 /* DistanceDemoTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2FC6D4A217F42243007D8573 /* Build configuration list for PBXNativeTarget "DinstanceDemoTests" */;
+			buildConfigurationList = 2FC6D4A217F42243007D8573 /* Build configuration list for PBXNativeTarget "DistanceDemoTests" */;
 			buildPhases = (
 				2FC6D48A17F42243007D8573 /* Sources */,
 				2FC6D48B17F42243007D8573 /* Frameworks */,
@@ -201,9 +203,9 @@
 			dependencies = (
 				2FC6D49417F42243007D8573 /* PBXTargetDependency */,
 			);
-			name = DinstanceDemoTests;
+			name = DistanceDemoTests;
 			productName = DinstanceDemoTests;
-			productReference = 2FC6D48E17F42243007D8573 /* DinstanceDemoTests.xctest */;
+			productReference = 2FC6D48E17F42243007D8573 /* DistanceDemoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -221,7 +223,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2FC6D46817F42242007D8573 /* Build configuration list for PBXProject "DinstanceDemo" */;
+			buildConfigurationList = 2FC6D46817F42242007D8573 /* Build configuration list for PBXProject "DistanceDemo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -234,8 +236,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2FC6D46C17F42242007D8573 /* DinstanceDemo */,
-				2FC6D48D17F42243007D8573 /* DinstanceDemoTests */,
+				2FC6D46C17F42242007D8573 /* DistanceDemo */,
+				2FC6D48D17F42243007D8573 /* DistanceDemoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -245,9 +247,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FC6D48917F42243007D8573 /* Images.xcassets in Resources */,
-				2FC6D47B17F42242007D8573 /* InfoPlist.strings in Resources */,
-				2FC6D48417F42242007D8573 /* Main.storyboard in Resources */,
+				2FB0EBD41855FC5F003B963B /* Main.storyboard in Resources */,
+				2FB0EBC21855FAEE003B963B /* DistanceDemoTests-Info.plist in Resources */,
+				2FB0EBD51855FC5F003B963B /* DistanceDemo-Info.plist in Resources */,
+				2FB0EBD91855FC5F003B963B /* Images.xcassets in Resources */,
+				2FB0EBC41855FAEE003B963B /* InfoPlist.strings in Resources */,
+				2FB0EBD61855FC5F003B963B /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,7 +260,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FC6D49A17F42243007D8573 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,9 +270,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FC6D47D17F42242007D8573 /* main.m in Sources */,
-				2FC6D48717F42242007D8573 /* ESTViewController.m in Sources */,
-				2FC6D48117F42242007D8573 /* ESTAppDelegate.m in Sources */,
+				2FB0EBD71855FC5F003B963B /* ESTAppDelegate.m in Sources */,
+				2FB0EBDA1855FC5F003B963B /* main.m in Sources */,
+				2FB0EBD81855FC5F003B963B /* ESTViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,7 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FC6D49C17F42243007D8573 /* DinstanceDemoTests.m in Sources */,
+				2FB0EBC61855FC1C003B963B /* DistanceDemoTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,32 +289,32 @@
 /* Begin PBXTargetDependency section */
 		2FC6D49417F42243007D8573 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2FC6D46C17F42242007D8573 /* DinstanceDemo */;
+			target = 2FC6D46C17F42242007D8573 /* DistanceDemo */;
 			targetProxy = 2FC6D49317F42243007D8573 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2FC6D47917F42242007D8573 /* InfoPlist.strings */ = {
+		2FB0EBC01855FAEE003B963B /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				2FC6D47A17F42242007D8573 /* en */,
+				2FB0EBC11855FAEE003B963B /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		2FC6D48217F42242007D8573 /* Main.storyboard */ = {
+		2FB0EBC81855FC5F003B963B /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				2FC6D48317F42242007D8573 /* Base */,
+				2FB0EBC91855FC5F003B963B /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		2FC6D49817F42243007D8573 /* InfoPlist.strings */ = {
+		2FB0EBCC1855FC5F003B963B /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				2FC6D49917F42243007D8573 /* en */,
+				2FB0EBCD1855FC5F003B963B /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -396,19 +400,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DinstanceDemo/DinstanceDemo-Prefix.pch";
+				GCC_PREFIX_HEADER = "DistanceDemo/DistanceDemo-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../EstimoteSDK/Headers",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
-				INFOPLIST_FILE = "DinstanceDemo/DinstanceDemo-Info.plist";
+				INFOPLIST_FILE = "DistanceDemo/DistanceDemo-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../EstimoteSDK/**",
 				);
 				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = DistanceDemo;
 				VALID_ARCHS = "arm64 armv7 armv7s x86_64";
 				WRAPPER_EXTENSION = app;
 			};
@@ -420,19 +424,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DinstanceDemo/DinstanceDemo-Prefix.pch";
+				GCC_PREFIX_HEADER = "DistanceDemo/DistanceDemo-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../EstimoteSDK/Headers",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
-				INFOPLIST_FILE = "DinstanceDemo/DinstanceDemo-Info.plist";
+				INFOPLIST_FILE = "DistanceDemo/DistanceDemo-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../EstimoteSDK/**",
 				);
 				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = DistanceDemo;
 				VALID_ARCHS = "arm64 armv7 armv7s x86_64";
 				WRAPPER_EXTENSION = app;
 			};
@@ -454,8 +458,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "DinstanceDemoTests/DinstanceDemoTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "DinstanceDemoTests/DistanceDemoTests-Info.plist";
+				PRODUCT_NAME = DistanceDemoTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -473,8 +477,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DinstanceDemo/DinstanceDemo-Prefix.pch";
-				INFOPLIST_FILE = "DinstanceDemoTests/DinstanceDemoTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "DinstanceDemoTests/DistanceDemoTests-Info.plist";
+				PRODUCT_NAME = DistanceDemoTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -483,7 +487,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2FC6D46817F42242007D8573 /* Build configuration list for PBXProject "DinstanceDemo" */ = {
+		2FC6D46817F42242007D8573 /* Build configuration list for PBXProject "DistanceDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2FC6D49D17F42243007D8573 /* Debug */,
@@ -492,7 +496,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2FC6D49F17F42243007D8573 /* Build configuration list for PBXNativeTarget "DinstanceDemo" */ = {
+		2FC6D49F17F42243007D8573 /* Build configuration list for PBXNativeTarget "DistanceDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2FC6D4A017F42243007D8573 /* Debug */,
@@ -501,7 +505,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2FC6D4A217F42243007D8573 /* Build configuration list for PBXNativeTarget "DinstanceDemoTests" */ = {
+		2FC6D4A217F42243007D8573 /* Build configuration list for PBXNativeTarget "DistanceDemoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2FC6D4A317F42243007D8573 /* Debug */,

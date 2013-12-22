@@ -1,6 +1,6 @@
 //
 //  ESTViewController.m
-//  DinstanceDemo
+//  DistanceDemo
 //
 //  Created by Marcin Klimek on 9/26/13.
 //  Copyright (c) 2013 Estimote. All rights reserved.
@@ -96,8 +96,8 @@
             for (ESTBeacon* cBeacon in beacons)
             {
                 // update beacon it same as selected initially
-                if([self.selectedBeacon.ibeacon.major unsignedShortValue] == [cBeacon.ibeacon.major unsignedShortValue] &&
-                   [self.selectedBeacon.ibeacon.minor unsignedShortValue] == [cBeacon.ibeacon.minor unsignedShortValue])
+                if([self.selectedBeacon.major unsignedShortValue] == [cBeacon.major unsignedShortValue] &&
+                   [self.selectedBeacon.minor unsignedShortValue] == [cBeacon.minor unsignedShortValue])
                 {
                     self.selectedBeacon = cBeacon;
                 }
@@ -106,7 +106,7 @@
         
         // based on observation rssi is not getting bigger then -30
         // so it changes from -30 to -100 so we normalize
-        float distFactor = ((float)self.selectedBeacon.ibeacon.rssi + 30) / -70;
+        float distFactor = ((float)self.selectedBeacon.rssi + 30) / -70;
         
         
         // calculate and set new y position

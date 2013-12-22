@@ -1,8 +1,8 @@
 //
 //  ESTBeaconManager.h
-//  EstimoteSDK7
+//  EstimoteSDK
 //
-//  Version : 1.0.0
+//  Version : 1.2.0
 //  Created by Marcin Klimek on 9/18/13.
 //  Copyright (c) 2013 Estimote. All rights reserved.
 //
@@ -170,6 +170,9 @@ monitoringDidFailForRegion:(ESTBeaconRegion *)region
 
 @property (nonatomic, strong) ESTBeaconRegion*         virtualBeaconRegion;
 
+
+/// @name CoreLocation based iBeacon monitoring and ranging methods
+
 /**
  * Range all Estimote beacons that are visible in range.
  * Delegate method beaconManager:didRangeBeacons:inRegion: 
@@ -223,6 +226,8 @@ monitoringDidFailForRegion:(ESTBeaconRegion *)region
  */
 -(void)requestStateForRegion:(ESTBeaconRegion *)region;
 
+/// @name Turning device into iBeacon
+
 /**
  * Allows to turn device into virtual estimote beacon.
  *
@@ -243,6 +248,10 @@ monitoringDidFailForRegion:(ESTBeaconRegion *)region
  * @return void
  */
 -(void)stopAdvertising;
+
+
+/// @name CoreBluetooth based utility methods
+
 
 /**
  * Start beacon discovery process based on CoreBluetooth 

@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:DinstanceDemo/DinstanceDemo.xcodeproj">
+      location = "group:DinstanceDemo/DistanceDemo.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:ProximityDemo/ProximityDemo.xcodeproj">

@@ -1,6 +1,11 @@
 EstimoteSDK for iOS 7
 =======
 
+Introduction
+-------
+
+Estimote SDK allows to play with Apple iBeacon technology, using Estimote hardware beacons as well as [Estimote Virtual Beacon iOS Application](https://itunes.apple.com/us/app/estimote-virtual-beacon/id686915066). To find out more about it read [API section on our website](http://estimote.com/api/index.html#), please. You can also check our [Community Portal](http://community.estimote.com) to get answers for most common questions related to our Hardware and Software.
+
 Overview
 -------
 
@@ -19,9 +24,9 @@ Installation
 
 Follow steps described below to install EstimoteSDK library:
 
-1. Copy EstimoteSDK directory (containing libEstimoteSDK7.a and Headers) into your project directory.
+1. Copy EstimoteSDK directory (containing libEstimoteSDK.a and Headers) into your project directory.
 
-2. Open your project settings target and go to Build Phases tab. In the Link library with binaries section click +. In the popup window click add another at the bottom and select libEstimoteSDK7.a library file. 
+2. Open your project settings and go to Build Phase tab. In the Link library with binaries section click +. In the popup window click add another at the bottom and select libEstimoteSDK.a library file. 
 
   In addition EstimoteSDK requires the following native iOS frameworks:
   * CoreBluetooth.framework
@@ -36,3 +41,7 @@ Follow steps described below to install EstimoteSDK library:
 
 4. Congratulations! You are done.
  
+Changelog
+-------
+
+To see what has changed in recent versions of Estimote SDK, see the [CHANGELOG](https://github.com/Estimote/iOS-SDK/blob/master/CHANGELOG.md).
