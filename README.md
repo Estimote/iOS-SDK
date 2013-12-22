@@ -40,7 +40,7 @@ Follow steps described below to install EstimoteSDK library:
 3. In project settings go to Build Settings tab. Search for Header Search Paths and add a line containing: `$(SRCROOT)/../EstimoteSDK/Headers`
 
 4. Congratulations! You are done.
- 
+
 Changelog
 -------
 
