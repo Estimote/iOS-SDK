@@ -11,31 +11,15 @@
 		2FC6D35B17F42167007D8573 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FC6D35A17F42167007D8573 /* Foundation.framework */; };
 		2FC6D35D17F42167007D8573 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FC6D35C17F42167007D8573 /* CoreGraphics.framework */; };
 		2FC6D35F17F42167007D8573 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FC6D35E17F42167007D8573 /* UIKit.framework */; };
-		2FC6D36517F42167007D8573 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2FC6D36317F42167007D8573 /* InfoPlist.strings */; };
-		2FC6D36717F42167007D8573 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FC6D36617F42167007D8573 /* main.m */; };
-		2FC6D36B17F42167007D8573 /* ESTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FC6D36A17F42167007D8573 /* ESTAppDelegate.m */; };
-		2FC6D36E17F42167007D8573 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FC6D36C17F42167007D8573 /* Main.storyboard */; };
-		2FC6D37117F42167007D8573 /* ESTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FC6D37017F42167007D8573 /* ESTViewController.m */; };
-		2FC6D37317F42167007D8573 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FC6D37217F42167007D8573 /* Images.xcassets */; };
-		2FC6D37A17F42167007D8573 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FC6D37917F42167007D8573 /* XCTest.framework */; };
-		2FC6D37B17F42167007D8573 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FC6D35A17F42167007D8573 /* Foundation.framework */; };
-		2FC6D37C17F42167007D8573 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FC6D35E17F42167007D8573 /* UIKit.framework */; };
-		2FC6D38417F42167007D8573 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2FC6D38217F42167007D8573 /* InfoPlist.strings */; };
-		2FC6D38617F42167007D8573 /* NotificationDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FC6D38517F42167007D8573 /* NotificationDemoTests.m */; };
 		2FC6D4B217F42E37007D8573 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FC6D4B117F42E37007D8573 /* SystemConfiguration.framework */; };
 		2FC6D4B417F42E3C007D8573 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FC6D4B317F42E3C007D8573 /* CoreBluetooth.framework */; };
 		2FC6D4B617F42E43007D8573 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FC6D4B517F42E43007D8573 /* CoreLocation.framework */; };
+		C7F9EB45187747BE001E1DA5 /* ESTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F9EB38187747BE001E1DA5 /* ESTAppDelegate.m */; };
+		C7F9EB46187747BE001E1DA5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7F9EB3B187747BE001E1DA5 /* Images.xcassets */; };
+		C7F9EB47187747BE001E1DA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7F9EB3D187747BE001E1DA5 /* Main.storyboard */; };
+		C7F9EB48187747BE001E1DA5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F9EB3F187747BE001E1DA5 /* main.m */; };
+		C7F9EB4A187747BE001E1DA5 /* ESTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F9EB44187747BE001E1DA5 /* ESTViewController.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		2FC6D37D17F42167007D8573 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2FC6D34F17F42167007D8573 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2FC6D35617F42167007D8573;
-			remoteInfo = NotificationDemo;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2F0CE7A1184CB0E5000E8805 /* libEstimoteSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libEstimoteSDK.a; path = ../EstimoteSDK/libEstimoteSDK.a; sourceTree = "<group>"; };
@@ -43,24 +27,19 @@
 		2FC6D35A17F42167007D8573 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2FC6D35C17F42167007D8573 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2FC6D35E17F42167007D8573 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		2FC6D36217F42167007D8573 /* NotificationDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NotificationDemo-Info.plist"; sourceTree = "<group>"; };
-		2FC6D36417F42167007D8573 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		2FC6D36617F42167007D8573 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2FC6D36817F42167007D8573 /* NotificationDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NotificationDemo-Prefix.pch"; sourceTree = "<group>"; };
-		2FC6D36917F42167007D8573 /* ESTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESTAppDelegate.h; sourceTree = "<group>"; };
-		2FC6D36A17F42167007D8573 /* ESTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ESTAppDelegate.m; sourceTree = "<group>"; };
-		2FC6D36D17F42167007D8573 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2FC6D36F17F42167007D8573 /* ESTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESTViewController.h; sourceTree = "<group>"; };
-		2FC6D37017F42167007D8573 /* ESTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ESTViewController.m; sourceTree = "<group>"; };
-		2FC6D37217F42167007D8573 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		2FC6D37817F42167007D8573 /* NotificationDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotificationDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FC6D37917F42167007D8573 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		2FC6D38117F42167007D8573 /* NotificationDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NotificationDemoTests-Info.plist"; sourceTree = "<group>"; };
-		2FC6D38317F42167007D8573 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		2FC6D38517F42167007D8573 /* NotificationDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationDemoTests.m; sourceTree = "<group>"; };
 		2FC6D4B117F42E37007D8573 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		2FC6D4B317F42E3C007D8573 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		2FC6D4B517F42E43007D8573 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		C7F9EB37187747BE001E1DA5 /* ESTAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTAppDelegate.h; sourceTree = "<group>"; };
+		C7F9EB38187747BE001E1DA5 /* ESTAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESTAppDelegate.m; sourceTree = "<group>"; };
+		C7F9EB3B187747BE001E1DA5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C7F9EB3D187747BE001E1DA5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		C7F9EB3F187747BE001E1DA5 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C7F9EB40187747BE001E1DA5 /* NotificationDemo-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "NotificationDemo-Info.plist"; sourceTree = "<group>"; };
+		C7F9EB41187747BE001E1DA5 /* NotificationDemo-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NotificationDemo-Prefix.pch"; sourceTree = "<group>"; };
+		C7F9EB43187747BE001E1DA5 /* ESTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTViewController.h; sourceTree = "<group>"; };
+		C7F9EB44187747BE001E1DA5 /* ESTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESTViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,16 +57,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2FC6D37517F42167007D8573 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2FC6D37A17F42167007D8573 /* XCTest.framework in Frameworks */,
-				2FC6D37C17F42167007D8573 /* UIKit.framework in Frameworks */,
-				2FC6D37B17F42167007D8573 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -95,7 +64,6 @@
 			isa = PBXGroup;
 			children = (
 				2FC6D36017F42167007D8573 /* NotificationDemo */,
-				2FC6D37F17F42167007D8573 /* NotificationDemoTests */,
 				2FC6D35917F42167007D8573 /* Frameworks */,
 				2FC6D35817F42167007D8573 /* Products */,
 			);
@@ -105,7 +73,6 @@
 			isa = PBXGroup;
 			children = (
 				2FC6D35717F42167007D8573 /* NotificationDemo.app */,
-				2FC6D37817F42167007D8573 /* NotificationDemoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -128,44 +95,65 @@
 		2FC6D36017F42167007D8573 /* NotificationDemo */ = {
 			isa = PBXGroup;
 			children = (
-				2FC6D36917F42167007D8573 /* ESTAppDelegate.h */,
-				2FC6D36A17F42167007D8573 /* ESTAppDelegate.m */,
-				2FC6D36C17F42167007D8573 /* Main.storyboard */,
-				2FC6D36F17F42167007D8573 /* ESTViewController.h */,
-				2FC6D37017F42167007D8573 /* ESTViewController.m */,
-				2FC6D37217F42167007D8573 /* Images.xcassets */,
-				2FC6D36117F42167007D8573 /* Supporting Files */,
+				C7F9EB36187747BE001E1DA5 /* AppDelegate */,
+				C7F9EB39187747BE001E1DA5 /* Resources */,
+				C7F9EB3E187747BE001E1DA5 /* Supporting Files */,
+				C7F9EB42187747BE001E1DA5 /* ViewController */,
 			);
 			path = NotificationDemo;
 			sourceTree = "<group>";
 		};
-		2FC6D36117F42167007D8573 /* Supporting Files */ = {
+		C7F9EB36187747BE001E1DA5 /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
-				2FC6D36217F42167007D8573 /* NotificationDemo-Info.plist */,
-				2FC6D36317F42167007D8573 /* InfoPlist.strings */,
-				2FC6D36617F42167007D8573 /* main.m */,
-				2FC6D36817F42167007D8573 /* NotificationDemo-Prefix.pch */,
+				C7F9EB37187747BE001E1DA5 /* ESTAppDelegate.h */,
+				C7F9EB38187747BE001E1DA5 /* ESTAppDelegate.m */,
 			);
-			name = "Supporting Files";
+			path = AppDelegate;
 			sourceTree = "<group>";
 		};
-		2FC6D37F17F42167007D8573 /* NotificationDemoTests */ = {
+		C7F9EB39187747BE001E1DA5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				2FC6D38517F42167007D8573 /* NotificationDemoTests.m */,
-				2FC6D38017F42167007D8573 /* Supporting Files */,
+				C7F9EB3A187747BE001E1DA5 /* Assets */,
+				C7F9EB3C187747BE001E1DA5 /* Storyboards */,
 			);
-			path = NotificationDemoTests;
+			path = Resources;
 			sourceTree = "<group>";
 		};
-		2FC6D38017F42167007D8573 /* Supporting Files */ = {
+		C7F9EB3A187747BE001E1DA5 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				2FC6D38117F42167007D8573 /* NotificationDemoTests-Info.plist */,
-				2FC6D38217F42167007D8573 /* InfoPlist.strings */,
+				C7F9EB3B187747BE001E1DA5 /* Images.xcassets */,
 			);
-			name = "Supporting Files";
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		C7F9EB3C187747BE001E1DA5 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C7F9EB3D187747BE001E1DA5 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		C7F9EB3E187747BE001E1DA5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C7F9EB3F187747BE001E1DA5 /* main.m */,
+				C7F9EB40187747BE001E1DA5 /* NotificationDemo-Info.plist */,
+				C7F9EB41187747BE001E1DA5 /* NotificationDemo-Prefix.pch */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C7F9EB42187747BE001E1DA5 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C7F9EB43187747BE001E1DA5 /* ESTViewController.h */,
+				C7F9EB44187747BE001E1DA5 /* ESTViewController.m */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,24 +176,6 @@
 			productReference = 2FC6D35717F42167007D8573 /* NotificationDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2FC6D37717F42167007D8573 /* NotificationDemoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2FC6D38C17F42167007D8573 /* Build configuration list for PBXNativeTarget "NotificationDemoTests" */;
-			buildPhases = (
-				2FC6D37417F42167007D8573 /* Sources */,
-				2FC6D37517F42167007D8573 /* Frameworks */,
-				2FC6D37617F42167007D8573 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2FC6D37E17F42167007D8573 /* PBXTargetDependency */,
-			);
-			name = NotificationDemoTests;
-			productName = NotificationDemoTests;
-			productReference = 2FC6D37817F42167007D8573 /* NotificationDemoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -226,9 +196,6 @@
 							};
 						};
 					};
-					2FC6D37717F42167007D8573 = {
-						TestTargetID = 2FC6D35617F42167007D8573;
-					};
 				};
 			};
 			buildConfigurationList = 2FC6D35217F42167007D8573 /* Build configuration list for PBXProject "NotificationDemo" */;
@@ -245,7 +212,6 @@
 			projectRoot = "";
 			targets = (
 				2FC6D35617F42167007D8573 /* NotificationDemo */,
-				2FC6D37717F42167007D8573 /* NotificationDemoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -255,17 +221,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FC6D37317F42167007D8573 /* Images.xcassets in Resources */,
-				2FC6D36517F42167007D8573 /* InfoPlist.strings in Resources */,
-				2FC6D36E17F42167007D8573 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2FC6D37617F42167007D8573 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2FC6D38417F42167007D8573 /* InfoPlist.strings in Resources */,
+				C7F9EB46187747BE001E1DA5 /* Images.xcassets in Resources */,
+				C7F9EB47187747BE001E1DA5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,56 +233,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FC6D36717F42167007D8573 /* main.m in Sources */,
-				2FC6D37117F42167007D8573 /* ESTViewController.m in Sources */,
-				2FC6D36B17F42167007D8573 /* ESTAppDelegate.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2FC6D37417F42167007D8573 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2FC6D38617F42167007D8573 /* NotificationDemoTests.m in Sources */,
+				C7F9EB48187747BE001E1DA5 /* main.m in Sources */,
+				C7F9EB4A187747BE001E1DA5 /* ESTViewController.m in Sources */,
+				C7F9EB45187747BE001E1DA5 /* ESTAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		2FC6D37E17F42167007D8573 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2FC6D35617F42167007D8573 /* NotificationDemo */;
-			targetProxy = 2FC6D37D17F42167007D8573 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		2FC6D36317F42167007D8573 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2FC6D36417F42167007D8573 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		2FC6D36C17F42167007D8573 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2FC6D36D17F42167007D8573 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		2FC6D38217F42167007D8573 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2FC6D38317F42167007D8573 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		2FC6D38717F42167007D8573 /* Debug */ = {
@@ -406,13 +320,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "NotificationDemo/NotificationDemo-Prefix.pch";
+				GCC_PREFIX_HEADER = "NotificationDemo/Supporting Files/NotificationDemo-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../EstimoteSDK/Headers",
 				);
-				INFOPLIST_FILE = "NotificationDemo/NotificationDemo-Info.plist";
+				INFOPLIST_FILE = "NotificationDemo/Supporting Files/NotificationDemo-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../EstimoteSDK",
@@ -429,61 +343,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "NotificationDemo/NotificationDemo-Prefix.pch";
+				GCC_PREFIX_HEADER = "NotificationDemo/Supporting Files/NotificationDemo-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../EstimoteSDK/Headers",
 				);
-				INFOPLIST_FILE = "NotificationDemo/NotificationDemo-Info.plist";
+				INFOPLIST_FILE = "NotificationDemo/Supporting Files/NotificationDemo-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../EstimoteSDK",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		2FC6D38D17F42167007D8573 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NotificationDemo.app/NotificationDemo";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "NotificationDemo/NotificationDemo-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "NotificationDemoTests/NotificationDemoTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		2FC6D38E17F42167007D8573 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NotificationDemo.app/NotificationDemo";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "NotificationDemo/NotificationDemo-Prefix.pch";
-				INFOPLIST_FILE = "NotificationDemoTests/NotificationDemoTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
@@ -504,15 +376,6 @@
 			buildConfigurations = (
 				2FC6D38A17F42167007D8573 /* Debug */,
 				2FC6D38B17F42167007D8573 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2FC6D38C17F42167007D8573 /* Build configuration list for PBXNativeTarget "NotificationDemoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2FC6D38D17F42167007D8573 /* Debug */,
-				2FC6D38E17F42167007D8573 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
