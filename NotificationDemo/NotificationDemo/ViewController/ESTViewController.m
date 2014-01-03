@@ -9,6 +9,8 @@
 #import "ESTViewController.h"
 #import <ESTBeaconManager.h>
 
+static const CGFloat ESTScreenHeight = 480.0f;
+
 @interface ESTViewController () <ESTBeaconManagerDelegate>
 
 @property (nonatomic, strong) ESTBeaconManager* beaconManager;
@@ -20,13 +22,19 @@
 
 @implementation ESTViewController
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
+#pragma mark - View Setup
 
-    /////////////////////////////////////////////////////////////
-    // setup Estimote beacon manager
-    
+- (void)setupBackgroundImage
+{
+    self.productImage = [[UIImageView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [self setProductImage];
+    [self.view addSubview:self.productImage];
+}
+
+#pragma mark - Manager setup
+
+- (void)setupBeaconManager
+{
     // craete manager instance
     self.beaconManager = [[ESTBeaconManager alloc] init];
     self.beaconManager.delegate = self;
@@ -35,7 +43,7 @@
     // create sample region with major value defined
     ESTBeaconRegion* region = [[ESTBeaconRegion alloc] initRegionWithMajor:1 minor:1 identifier: @"EstimoteSampleRegion"];
     
-    NSLog(@"TODO: Update the ESTBeaconRegion with your major / minor number and enable background app refresh in the Settings on your device for the NotificationDemo to work correctly.");
+#pragma message("Update the ESTBeaconRegion with your major / minor number and enable background app refresh in the Settings on your device for the NotificationDemo to work correctly.")
     
     // start looking for estimote beacons in region
     // when beacon ranged beaconManager:didEnterRegion:
@@ -43,20 +51,21 @@
     [self.beaconManager startMonitoringForRegion:region];
     
     [self.beaconManager requestStateForRegion:region];
-    
-    /////////////////////////////////////////////////////////////
-    // setup view
-    
-    // background
-    
-    self.productImage = [[UIImageView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    [self setProductImage];
-    [self.view addSubview:self.productImage];
 }
 
--(void)beaconManager:(ESTBeaconManager *)manager
-   didDetermineState:(CLRegionState)state
-           forRegion:(ESTBeaconRegion *)region
+#pragma mark - View Life Cycle
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    [self setupBeaconManager];
+    [self setupBackgroundImage];
+}
+
+#pragma mark - ESTBeaconManagerDelegate Implementation
+
+- (void)beaconManager:(ESTBeaconManager *)manager didDetermineState:(CLRegionState)state forRegion:(ESTBeaconRegion *)region
 {
     if(state == CLRegionStateInside)
     {
@@ -68,8 +77,7 @@
     }
 }
 
--(void)beaconManager:(ESTBeaconManager *)manager
-      didEnterRegion:(ESTBeaconRegion *)region
+- (void)beaconManager:(ESTBeaconManager *)manager didEnterRegion:(ESTBeaconRegion *)region
 {
     // iPhone/iPad entered beacon zone
     [self setProductImage];
@@ -82,8 +90,7 @@
     [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
 }
 
--(void)beaconManager:(ESTBeaconManager *)manager
-       didExitRegion:(ESTBeaconRegion *)region
+- (void)beaconManager:(ESTBeaconManager *)manager didExitRegion:(ESTBeaconRegion *)region
 {
     // iPhone/iPad left beacon zone
     [self setDiscountImage];
@@ -96,14 +103,14 @@
     [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
 }
 
--(void)setProductImage
+#pragma mark - UI Update
+
+- (void)setProductImage
 {
-    // product image when user outside beacon zone
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenHeight = screenRect.size.height;
     
-    CGRect          screenRect          = [[UIScreen mainScreen] bounds];
-    CGFloat         screenHeight        = screenRect.size.height;
-    
-    if (screenHeight > 480)
+    if (screenHeight > ESTScreenHeight)
     {
         [self.productImage setImage:[UIImage imageNamed:@"beforeNotificationBig"]];
     }
@@ -113,15 +120,13 @@
     }
 }
 
-
--(void)setDiscountImage
+- (void)setDiscountImage
 {
     // product image when user inside beacon zone
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenHeight = screenRect.size.height;
     
-    CGRect          screenRect          = [[UIScreen mainScreen] bounds];
-    CGFloat         screenHeight        = screenRect.size.height;
-    
-    if (screenHeight > 480)
+    if (screenHeight > ESTScreenHeight)
     {
         [self.productImage setImage:[UIImage imageNamed:@"afterNotificationBig"]];
     }
@@ -131,10 +136,5 @@
     }
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end
