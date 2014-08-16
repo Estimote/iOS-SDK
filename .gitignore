@@ -14,3 +14,6 @@ profile
 *.moved-aside
 DerivedData
 .idea/
+
+#local workspace
+Examples/Examples.xcodeproj/project.xcworkspace/xcshareddata/
