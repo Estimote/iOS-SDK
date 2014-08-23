@@ -39,9 +39,9 @@
     [ESTBeaconManager setupAppID:self.appIdField.text andAppToken:self.appTokenField.text];
 }
 
-- (void)dismiss
+- (IBAction)dismiss
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 #pragma mark - TextField delegate
