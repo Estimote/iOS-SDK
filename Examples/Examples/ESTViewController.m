@@ -36,6 +36,10 @@
 
 @end
 
+@interface ESTViewController()
+@property (nonatomic, retain) CLLocationManager *locationManager;
+@end
+
 @implementation ESTViewController
 
 - (void)viewDidLoad
@@ -58,6 +62,9 @@
     self.beaconDemoList = @[ @[@"Distance Demo", @"Proximity Demo",@"Notification Demo"],
                              @[@"Temperature Demo", @"Accelerometer Demo"],
                              @[@"Update Firmware Demo", @"My beacons in Cloud Demo"]];
+    
+    self.locationManager = [[CLLocationManager alloc] init];
+    [self.locationManager requestAlwaysAuthorization];
 }
 
 -(void)authorizeBtnTapped:(UIButton *)button
