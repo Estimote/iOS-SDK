@@ -200,7 +200,7 @@
     else
     {
         cell.textLabel.text = [NSString stringWithFormat:@"MacAddress: %@", beacon.macAddress];
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"RSSI: %d", beacon.rssi];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"RSSI: %ld", (long)beacon.rssi];
         
         if([beacon.major unsignedShortValue] == 24216 && beacon.macAddress == nil)
         {
