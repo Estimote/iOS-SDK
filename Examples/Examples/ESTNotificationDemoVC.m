@@ -9,7 +9,7 @@
 #import "ESTNotificationDemoVC.h"
 #import "ESTBeaconManager.h"
 
-@interface ESTNotificationDemoVC () <ESTBeaconManagerDelegate>
+@interface ESTNotificationDemoVC () <ESTBeaconManagerDelegate, CLLocationManagerDelegate>
 
 
 @property (nonatomic, strong) ESTBeacon         *beacon;
@@ -19,6 +19,7 @@
 @property (nonatomic, strong) IBOutlet UIView            *mainView;
 @property (nonatomic, strong) IBOutlet UISwitch          *enterRegionSwitch;
 @property (nonatomic, strong) IBOutlet UISwitch          *exitRegionSwitch;
+@property (strong, nonatomic) CLLocationManager *locationManager;
 
 @end
 
@@ -67,6 +68,36 @@
     self.beaconRegion.notifyOnExit = self.exitRegionSwitch.isOn;
     
     [self.beaconManager startMonitoringForRegion:self.beaconRegion];
+    
+    // Initialize location manager and set ourselves as the delegate
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    
+    
+    // Tell location manager to start monitoring for the beacon region
+    [self.locationManager startMonitoringForRegion:self.beaconRegion];
+}
+
+#pragma mark - CCLocationManager delegate
+
+- (void)locationManager:(CLLocationManager*)manager didEnterRegion:(CLRegion*)region
+{
+    [self.locationManager startRangingBeaconsInRegion:self.beaconRegion];
+}
+
+-(void)locationManager:(CLLocationManager*)manager didExitRegion:(CLRegion*)region
+{
+    [self.locationManager stopRangingBeaconsInRegion:self.beaconRegion];
+}
+
+-(void)locationManager:(CLLocationManager*)manager
+       didRangeBeacons:(NSArray*)beacons
+              inRegion:(CLBeaconRegion*)region
+{
+    UILocalNotification *notification = [UILocalNotification new];
+    notification.alertBody = @"Ranging notification";
+    
+    [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
 }
 
 #pragma mark - ESTBeaconManager delegate

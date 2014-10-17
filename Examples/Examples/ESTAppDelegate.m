@@ -10,6 +10,14 @@
 #import "ESTViewController.h"
 #import <ESTBeaconManager.h>
 
+@interface ESTAppDelegate() <ESTBeaconManagerDelegate, CLLocationManagerDelegate>
+
+@property (strong, nonatomic) CLLocationManager *locationManager;
+@property (strong, nonatomic) ESTBeaconRegion *beaconRegion;
+
+
+@end
+
 @implementation ESTAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -27,6 +35,24 @@
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor],
                                                            NSFontAttributeName: [UIFont systemFontOfSize:18]}];
+
+    // Launching notifications in iOS when the app is killed
+    if([launchOptions objectForKey:@"UIApplicationLaunchOptionsLocationKey"])
+    {
+        ESTBeaconManager *beaconManager = [ESTBeaconManager new];
+        self.beaconRegion = [[ESTBeaconRegion alloc]
+                             initWithProximityUUID:ESTIMOTE_PROXIMITY_UUID
+                             identifier:@"AppRegion"];
+        beaconManager.delegate = self;
+        [beaconManager startMonitoringForRegion:self.beaconRegion];
+        
+        self.locationManager = [[CLLocationManager alloc] init];
+        self.locationManager.delegate = self;
+        
+        
+        // Tell location manager to start monitoring for the beacon region
+        [self.locationManager startMonitoringForRegion:self.beaconRegion];
+    }
     
     return YES;
 }
@@ -56,6 +82,46 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+-(void)beaconManager:(ESTBeaconManager *)manager didEnterRegion:(ESTBeaconRegion *)region
+{
+    UILocalNotification *notification = [[UILocalNotification alloc] init];
+    notification.alertBody = @"Enter region";
+    notification.soundName = UILocalNotificationDefaultSoundName;
+    
+    [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
+}
+
+-(void)beaconManager:(ESTBeaconManager *)manager didExitRegion:(ESTBeaconRegion *)region
+{
+    UILocalNotification *notification = [[UILocalNotification alloc] init];
+    notification.alertBody = @"Exit region";
+    notification.soundName = UILocalNotificationDefaultSoundName;
+    
+    [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
+}
+
+#pragma mark - CCLocationManager delegate
+
+- (void)locationManager:(CLLocationManager*)manager didEnterRegion:(CLRegion*)region
+{
+    [self.locationManager startRangingBeaconsInRegion:self.beaconRegion];
+}
+
+-(void)locationManager:(CLLocationManager*)manager didExitRegion:(CLRegion*)region
+{
+    [self.locationManager stopRangingBeaconsInRegion:self.beaconRegion];
+}
+
+-(void)locationManager:(CLLocationManager*)manager
+       didRangeBeacons:(NSArray*)beacons
+              inRegion:(CLBeaconRegion*)region
+{
+    UILocalNotification *notification = [UILocalNotification new];
+    notification.alertBody = @"Region notification";
+    
+    [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
 }
 
 @end
