@@ -67,7 +67,7 @@ class ViewController: UIViewController,
         let cell = tableView.dequeueReusableCellWithIdentifier("CellIdentifier", forIndexPath: indexPath) as ESTTableViewCell
         
         let nearable = nearables[indexPath.row] as ESTNearable
-        var details:NSString = NSString(format:"Type: %@ RSSI: %zd", nearable.nameForType(nearable.type), nearable.rssi);
+        var details:NSString = NSString(format:"Type: %@ RSSI: %zd", ESTNearableDefinitions.nameForType(nearable.type), nearable.rssi);
         cell.textLabel?.text = NSString(format:"Identifier: %@", nearable.identifier);
         cell.detailTextLabel?.text = details;
         
