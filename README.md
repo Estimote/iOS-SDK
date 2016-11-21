@@ -81,7 +81,7 @@ let deviceManager = ESTDeviceManager()
 let temperatureNotification = ESTTelemetryNotificationTemperature { (temperature) in
     print("Current temperature: \(temperature.temperatureInCelsius) C")
 }
-deviceManager.registerForTelemetryNotification(temperatureNotification)
+deviceManager.register(forTelemetryNotification: temperatureNotification)
 ```
 
 Make sure to check out the other `ESTTelemetryNotification` classes in the [SDK reference](http://estimote.github.io/iOS-SDK/) (e.g., [`ESTTelemetryNotificationMotion`](http://estimote.github.io/iOS-SDK/Classes/ESTTelemetryNotificationMotion.html))
