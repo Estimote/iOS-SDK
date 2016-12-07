@@ -1,5 +1,5 @@
 //
-//  GenericiBeacon.swift
+//  Packet.swift
 //  EmojiAdvertiser
 //
 //  Created by @ferologics on 11/24/16.
