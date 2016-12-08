@@ -20,6 +20,8 @@
 		AF4EC3D51DF5C43100C55830 /* EstimoteInternalSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF4EC3D41DF5C43100C55830 /* EstimoteInternalSDK.framework */; };
 		B5220F991DF96F10002BE998 /* ESTButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B5220F961DF96F10002BE998 /* ESTButton.m */; };
 		B5220F9A1DF96F10002BE998 /* ESTStyleSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = B5220F981DF96F10002BE998 /* ESTStyleSheet.m */; };
+		B5220FA41DF9895A002BE998 /* ESTStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = B5220FA31DF9895A002BE998 /* ESTStyle.m */; };
+		B52233E71DF82C9F007BD203 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52233E61DF82C9F007BD203 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,9 @@
 		B5220F971DF96F10002BE998 /* ESTStyleSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTStyleSheet.h; sourceTree = "<group>"; };
 		B5220F981DF96F10002BE998 /* ESTStyleSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESTStyleSheet.m; sourceTree = "<group>"; };
 		B5220F9B1DF96F4D002BE998 /* ESTUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESTUIKit.h; sourceTree = "<group>"; };
+		B5220FA21DF9895A002BE998 /* ESTStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTStyle.h; sourceTree = "<group>"; };
+		B5220FA31DF9895A002BE998 /* ESTStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESTStyle.m; sourceTree = "<group>"; };
+		B52233E61DF82C9F007BD203 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +121,7 @@
 			children = (
 				AF4EC39F1DF5C3B200C55830 /* AppDelegate.swift */,
 				AF4EC3A11DF5C3B200C55830 /* NearestEmojiVC.swift */,
+				B52233E61DF82C9F007BD203 /* Constants.swift */,
 				AF4EC3CD1DF5C3C600C55830 /* Operator.swift */,
 				AF4EC3CE1DF5C3C600C55830 /* Packet.swift */,
 				AF4EC3CF1DF5C3C600C55830 /* Scanner.swift */,
@@ -179,6 +185,8 @@
 		B5220F9C1DF96F6C002BE998 /* Style */ = {
 			isa = PBXGroup;
 			children = (
+				B5220FA21DF9895A002BE998 /* ESTStyle.h */,
+				B5220FA31DF9895A002BE998 /* ESTStyle.m */,
 				B5220F971DF96F10002BE998 /* ESTStyleSheet.h */,
 				B5220F981DF96F10002BE998 /* ESTStyleSheet.m */,
 			);
@@ -335,6 +343,8 @@
 				AF4EC3A21DF5C3B200C55830 /* NearestEmojiVC.swift in Sources */,
 				AF4EC3D01DF5C3C600C55830 /* Operator.swift in Sources */,
 				AF4EC3A01DF5C3B200C55830 /* AppDelegate.swift in Sources */,
+				B5220FA41DF9895A002BE998 /* ESTStyle.m in Sources */,
+				B52233E71DF82C9F007BD203 /* Constants.swift in Sources */,
 				AF4EC3D21DF5C3C600C55830 /* Scanner.swift in Sources */,
 				B5220F991DF96F10002BE998 /* ESTButton.m in Sources */,
 				AF4EC3D11DF5C3C600C55830 /* Packet.swift in Sources */,
@@ -496,6 +506,7 @@
 					"$(PROJECT_DIR)/EmojiAdvertiser",
 				);
 				INFOPLIST_FILE = EmojiAdvertiser/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.estimote.EmojiAdvertiser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -516,6 +527,7 @@
 					"$(PROJECT_DIR)/EmojiAdvertiser",
 				);
 				INFOPLIST_FILE = EmojiAdvertiser/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.estimote.EmojiAdvertiser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -601,6 +613,7 @@
 				AF4EC3C61DF5C3B200C55830 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AF4EC3C71DF5C3B200C55830 /* Build configuration list for PBXNativeTarget "EmojiAdvertiserTests" */ = {
 			isa = XCConfigurationList;
@@ -609,6 +622,7 @@
 				AF4EC3C91DF5C3B200C55830 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AF4EC3CA1DF5C3B200C55830 /* Build configuration list for PBXNativeTarget "EmojiAdvertiserUITests" */ = {
 			isa = XCConfigurationList;
@@ -617,6 +631,7 @@
 				AF4EC3CC1DF5C3B200C55830 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

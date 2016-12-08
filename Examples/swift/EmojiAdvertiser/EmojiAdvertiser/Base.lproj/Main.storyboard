@@ -4,12 +4,12 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Nearest EmojiVC-->
+        <!--Emoji Exploler-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="NearestEmojiVC" customModule="EmojiAdvertiser" customModuleProvider="target" sceneMemberID="viewController">
@@ -21,30 +21,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dA4-xW-eOi">
-                                <rect key="frame" x="30" y="607" width="315" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dA4-xW-eOi" customClass="ESTButton">
+                                <rect key="frame" x="30" y="597" width="315" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="MoV-ec-Cb4"/>
+                                </constraints>
                                 <state key="normal" title="Change Emoji"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="filled" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="changeEmojiTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="afE-OS-Gxi"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nearest Emoji" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45T-9U-yZU">
-                                <rect key="frame" x="132" y="104" width="112" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Emoji status description]" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45T-9U-yZU">
+                                <rect key="frame" x="84.5" y="104" width="206" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K5f-wZ-HAQ" userLabel="Spacer #1">
-                                <rect key="frame" x="0.0" y="125" width="375" height="162"/>
+                                <rect key="frame" x="0.0" y="126" width="375" height="104"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PW8-GA-I9a" userLabel="Spacer #1">
-                                <rect key="frame" x="0.0" y="445" width="375" height="162"/>
+                                <rect key="frame" x="0.0" y="493" width="375" height="104"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🤔" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJY-w4-1L2">
-                                <rect key="frame" x="128" y="287" width="120" height="158"/>
-                                <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="120"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🤔" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="1" translatesAutoresizingMaskIntoConstraints="NO" id="cJY-w4-1L2">
+                                <rect key="frame" x="113.5" y="230" width="150" height="263"/>
+                                <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="200"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -63,12 +69,13 @@
                             <constraint firstItem="45T-9U-yZU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="n3b-XY-vVG"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dA4-xW-eOi" secondAttribute="bottom" constant="30" id="qBI-xr-sC0"/>
                             <constraint firstItem="cJY-w4-1L2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qxW-p0-jr0"/>
+                            <constraint firstItem="cJY-w4-1L2" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.4" id="rlt-ny-gn2"/>
                             <constraint firstAttribute="trailing" secondItem="dA4-xW-eOi" secondAttribute="trailing" constant="30" id="s5l-xs-iBi"/>
                             <constraint firstItem="dA4-xW-eOi" firstAttribute="top" secondItem="PW8-GA-I9a" secondAttribute="bottom" id="sLA-yO-0ND"/>
                             <constraint firstItem="45T-9U-yZU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="tzo-8t-tql"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="bLu-Bn-J2W"/>
+                    <navigationItem key="navigationItem" title="Emoji Exploler" id="bLu-Bn-J2W"/>
                     <connections>
                         <outlet property="descriptionLabel" destination="45T-9U-yZU" id="ooD-jm-fGT"/>
                         <outlet property="emojiLabel" destination="cJY-w4-1L2" id="usw-Hz-c60"/>

@@ -37,11 +37,16 @@ class NearestEmojiVC: UIViewController {
         
         self.updateUIForCurrentState()
 
-//        let data   = "😎".data(using: .utf8)
-//        let packet = Packet.init(data: data!)
-//
-//        scanner = Scanner.init(packet: packet)
-//        scanner.operator.packet.📦 = "🤗".data(using: .utf8)!
+        let data   = "👊".data(using: .utf8)
+        let packet = Packet.init(data: data!)
+
+        scanner = Scanner.init(packet: packet)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.view.backgroundColor = ESTStyleSheet.mintCocktailBackgroundColor()
     }
     
     // MARK: - Screen states

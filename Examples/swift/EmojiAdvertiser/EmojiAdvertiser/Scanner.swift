@@ -8,9 +8,8 @@
 
 fileprivate let _CBUUID: CBUUID = CBUUID.init(string: "0xFADE")
 fileprivate let identifiers = [ // TODO @ferologics: replace these with your beacon identifiers
-  "211884e42e45a6e37397d33076d1483e",
-  "6107fb450dd170f0aa0a9ec3660d6138",
-  "522d312ba80081ac0d058934e6448d05"
+  "584daef4c210261eb66c8ccfe4e9d505",
+  "9d6568ac02799236af43f4f2329b4333"
 ]
 
 class Scanner: NSObject {
@@ -29,7 +28,7 @@ class Scanner: NSObject {
   }
   
   var filter: ESTDeviceFilterLocationBeacon {
-    return ESTDeviceFilterLocationBeacon.init(identifiers: (self.toConfigure))
+    return ESTDeviceFilterLocationBeacon.init(identifiers: (identifiers))
   }
   
   init(packet: Packet) {
@@ -42,8 +41,6 @@ class Scanner: NSObject {
     
     self.beaconManager.delegate = self
     self.deviceManager.delegate = self
-    
-    self.scanForConnection(filter: filter)
   }
   
   func scanForConnection(filter: ESTDeviceFilterLocationBeacon) {
@@ -66,13 +63,17 @@ extension Scanner: ESTDeviceManagerDelegate {
     guard let device = devices.first as? ESTDeviceLocationBeacon else { return }
     self.deviceManager.stopDeviceDiscovery()
     
+    print("Discovered 👁 \(device.identifier)")
+
     self.📡 = device
     self.📡.delegate = self
     self.📡.connect()
+    
+    print("Connecting ☝️ to \(device.identifier)")
   }
   
   func estDeviceConnectionDidSucceed(_ device: ESTDeviceConnectable) {
-    print("Connected 📶")
+    print("Connected 🤘")
     
     // configure packet
     self.operator.configurePacketFor(self.📡) { beacon in
