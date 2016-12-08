@@ -3,3 +3,5 @@
 //
 
 #import <EstimoteInternalSDK/EstimoteInternalSDK.h>
+
+#import "ESTUIKit.h"
