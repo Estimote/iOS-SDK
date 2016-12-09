@@ -19,9 +19,10 @@ class ChangeEmojiVC: UIViewController {
     }
     var selectedEmoji: String? {
         didSet {
-            // TODO: Selecting an Emoji
         }
     }
+    
+    var initialEmoji: String?
     
     // MARK: - Outlets
     
@@ -33,12 +34,31 @@ class ChangeEmojiVC: UIViewController {
     // MARK: - Actions
 
     @IBAction func saveEmojiTapped(_ sender: Any) {
+        self.currentState = .savingInProgress
+        _ = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.updateEmoji), userInfo: nil, repeats: true);
+    }
+    
+    // MARK: - Update
+    
+    func updateEmoji() {
+        // do the magic!
+        finishUpdate()
+    }
+    
+    func finishUpdate() {
+        navigationController?.popViewController(animated: true)
     }
     
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.initialEmoji = self.selectedEmoji
+        self.refreshLabelStates()
+        for emojiLabel in self.selectableEmojiLabels {
+            emojiLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(emojiTapped)))
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -87,6 +107,29 @@ class ChangeEmojiVC: UIViewController {
             // Save Emoji button
             self.saveEmojiButton.isEnabled = false
             self.saveEmojiButton.isHidden = false
+        }
+    }
+    
+    func refreshLabelStates()
+    {
+        for emojiLabel in self.selectableEmojiLabels {
+            if emojiLabel.text == self.selectedEmoji {
+                emojiLabel.alpha = 1
+            } else {
+                emojiLabel.alpha = 0.25
+            }
+        }
+    }
+    
+    func emojiTapped(sender: UITapGestureRecognizer){
+        let emoji = sender.view as! UILabel
+        self.selectedEmoji = emoji.text
+        self.refreshLabelStates()
+        
+        if self.selectedEmoji == self.initialEmoji {
+            self.currentState = .noEmojiSelected
+        } else {
+            self.currentState = .saveEmoji
         }
     }
 }
