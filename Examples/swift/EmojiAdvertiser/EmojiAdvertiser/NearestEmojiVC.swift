@@ -72,7 +72,7 @@ class NearestEmojiVC: UIViewController {
         
         if segue.identifier == Segue.nearestEmoji👉🏻changeEmoji {
             let changeEmojiVC = segue.destination as! ChangeEmojiVC
-            changeEmojiVC.selectedEmoji = self.emojiLabel.text
+            changeEmojiVC.initialEmoji = self.emojiLabel.text
         }
     }
     
