@@ -50,7 +50,7 @@
                                 <rect key="frame" x="0.0" y="436.5" width="375" height="160.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🤔" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="1" translatesAutoresizingMaskIntoConstraints="NO" id="cJY-w4-1L2">
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🤔" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="1" translatesAutoresizingMaskIntoConstraints="NO" id="cJY-w4-1L2">
                                 <rect key="frame" x="112.5" y="286.5" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="cJY-w4-1L2" secondAttribute="height" multiplier="1:1" id="2v5-mN-Eow"/>
