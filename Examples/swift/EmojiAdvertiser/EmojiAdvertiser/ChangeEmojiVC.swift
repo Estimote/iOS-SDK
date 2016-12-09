@@ -17,11 +17,12 @@ class ChangeEmojiVC: UIViewController {
             self.updateUIForCurrentState()
         }
     }
+   
     var selectedEmoji: String? {
         didSet {
+             self.updateEmojiSelection()
         }
     }
-    
     var initialEmoji: String?
     
     // MARK: - Outlets
@@ -41,23 +42,24 @@ class ChangeEmojiVC: UIViewController {
     // MARK: - Update
     
     func updateEmoji() {
-        // do the magic!
-        finishUpdate()
+        // TODO: Implement updating emoji
+        self.finishUpdate()
     }
     
     func finishUpdate() {
-        navigationController?.popViewController(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.initialEmoji = self.selectedEmoji
-        self.refreshLabelStates()
+    
         for emojiLabel in self.selectableEmojiLabels {
             emojiLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(emojiTapped)))
+            if self.initialEmoji == emojiLabel.text {
+                self.selectedEmoji = self.initialEmoji
+            }
         }
     }
     
@@ -110,7 +112,9 @@ class ChangeEmojiVC: UIViewController {
         }
     }
     
-    func refreshLabelStates()
+    // Mark - Emoji selection
+    
+    func updateEmojiSelection()
     {
         for emojiLabel in self.selectableEmojiLabels {
             if emojiLabel.text == self.selectedEmoji {
@@ -124,7 +128,6 @@ class ChangeEmojiVC: UIViewController {
     func emojiTapped(sender: UITapGestureRecognizer){
         let emoji = sender.view as! UILabel
         self.selectedEmoji = emoji.text
-        self.refreshLabelStates()
         
         if self.selectedEmoji == self.initialEmoji {
             self.currentState = .noEmojiSelected
