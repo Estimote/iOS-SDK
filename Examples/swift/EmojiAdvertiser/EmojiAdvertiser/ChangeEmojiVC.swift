@@ -112,7 +112,7 @@ class ChangeEmojiVC: UIViewController {
         }
     }
     
-    // Mark - Emoji selection
+    // MARK: - Emoji selection
     
     func updateEmojiSelection()
     {
