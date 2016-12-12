@@ -12,7 +12,7 @@ class NearestEmojiVC: UIViewController {
 
     // MARK: - Properties
     
-    var scanner: Scanner!
+    var scanner: EmojiScanner!
     var currentState: NearestEmojiVC.ScreenState = .noBeaconsFound {
         didSet {
             self.updateUIForCurrentState()
@@ -35,10 +35,7 @@ class NearestEmojiVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let data   = "👊".data(using: .utf8)
-        let packet = Packet.init(data: data!)
-
-        self.scanner = Scanner.init(packet: packet)
+        self.scanner = EmojiScanner()
         self.scanner.delegate = self
     }
     
@@ -47,6 +44,16 @@ class NearestEmojiVC: UIViewController {
         
         self.updateUIForCurrentState()
         self.view.backgroundColor = ESTStyleSheet.mintCocktailBackgroundColor()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.scanner.start()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.scanner.stop()
     }
     
     // MARK: - Screen states
@@ -86,27 +93,22 @@ extension NearestEmojiVC {
     
 }
 
-extension NearestEmojiVC: ScannerDelegate {
+extension NearestEmojiVC: EmojiScannerDelegate {
     
-    func scanner(_ scanner: Scanner, didUpdateNearestEmoji emoji: String?) {
-        if emoji == nil {
-            self.currentState = .noEmoji
-        }
-        else {
+    func emojiScanner(_ scanner: EmojiScanner, didUpdateNearestEmoji emoji: String?) {
+        if emoji != nil {
             self.currentState = .nearestEmoji
         }
     }
     
-    func scannerDidPowerOn(_ scanner: Scanner) {
-        self.scanner.scanForBeacons(services: [CBUUID(string: "0xFADE")])
-    }
-    
-    func scanner(_ scanner: Scanner, didFailToPowerOnWithError: NSError?) {
-        
-    }
-    
-    func scannerDidPowerOff(_ scanner: Scanner) {
-        
+    func emojiScanner(_ scanner: EmojiScanner, didFailWithError error: Error?) {
+        self.scanner.stop()
+        let alertController = UIAlertController(title: "Emoji Scanning Failed", message: "Turn on bluetooth", preferredStyle: .alert) // TODO: Use error description instead
+        alertController.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action) in
+                self.scanner.start()
+        }))
+        self.present(alertController, animated: true, completion: nil)
+        return
     }
     
 }

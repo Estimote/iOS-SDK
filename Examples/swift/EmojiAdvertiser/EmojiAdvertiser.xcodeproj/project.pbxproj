@@ -16,7 +16,7 @@
 		AF4EC3C01DF5C3B200C55830 /* EmojiAdvertiserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4EC3BF1DF5C3B200C55830 /* EmojiAdvertiserUITests.swift */; };
 		AF4EC3D01DF5C3C600C55830 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4EC3CD1DF5C3C600C55830 /* Operator.swift */; };
 		AF4EC3D11DF5C3C600C55830 /* Packet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4EC3CE1DF5C3C600C55830 /* Packet.swift */; };
-		AF4EC3D21DF5C3C600C55830 /* Scanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4EC3CF1DF5C3C600C55830 /* Scanner.swift */; };
+		AF4EC3D21DF5C3C600C55830 /* EmojiScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4EC3CF1DF5C3C600C55830 /* EmojiScanner.swift */; };
 		AF4EC3D51DF5C43100C55830 /* EstimoteInternalSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF4EC3D41DF5C43100C55830 /* EstimoteInternalSDK.framework */; };
 		B5220F991DF96F10002BE998 /* ESTButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B5220F961DF96F10002BE998 /* ESTButton.m */; };
 		B5220F9A1DF96F10002BE998 /* ESTStyleSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = B5220F981DF96F10002BE998 /* ESTStyleSheet.m */; };
@@ -58,7 +58,7 @@
 		AF4EC3C11DF5C3B200C55830 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF4EC3CD1DF5C3C600C55830 /* Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
 		AF4EC3CE1DF5C3C600C55830 /* Packet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Packet.swift; sourceTree = "<group>"; };
-		AF4EC3CF1DF5C3C600C55830 /* Scanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scanner.swift; sourceTree = "<group>"; };
+		AF4EC3CF1DF5C3C600C55830 /* EmojiScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiScanner.swift; sourceTree = "<group>"; };
 		AF4EC3D41DF5C43100C55830 /* EstimoteInternalSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EstimoteInternalSDK.framework; sourceTree = "<group>"; };
 		AF4EC3D61DF5C49900C55830 /* EmojiAdvertiser-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EmojiAdvertiser-Bridging-Header.h"; sourceTree = "<group>"; };
 		B5220F951DF96F10002BE998 /* ESTButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTButton.h; sourceTree = "<group>"; };
@@ -127,7 +127,7 @@
 				B52233E61DF82C9F007BD203 /* Constants.swift */,
 				AF4EC3CD1DF5C3C600C55830 /* Operator.swift */,
 				AF4EC3CE1DF5C3C600C55830 /* Packet.swift */,
-				AF4EC3CF1DF5C3C600C55830 /* Scanner.swift */,
+				AF4EC3CF1DF5C3C600C55830 /* EmojiScanner.swift */,
 				AF4EC3AB1DF5C3B200C55830 /* Info.plist */,
 				AF4EC3D61DF5C49900C55830 /* EmojiAdvertiser-Bridging-Header.h */,
 				AF4EC3A31DF5C3B200C55830 /* Main.storyboard */,
@@ -349,7 +349,7 @@
 				AF4EC3A01DF5C3B200C55830 /* AppDelegate.swift in Sources */,
 				B5220FA41DF9895A002BE998 /* ESTStyle.m in Sources */,
 				B52233E71DF82C9F007BD203 /* Constants.swift in Sources */,
-				AF4EC3D21DF5C3C600C55830 /* Scanner.swift in Sources */,
+				AF4EC3D21DF5C3C600C55830 /* EmojiScanner.swift in Sources */,
 				B5220F991DF96F10002BE998 /* ESTButton.m in Sources */,
 				AF4EC3D11DF5C3C600C55830 /* Packet.swift in Sources */,
 			);

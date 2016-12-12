@@ -47,7 +47,7 @@ class ChangeEmojiVC: UIViewController {
     }
     
     func finishUpdate() {
-        self.navigationController?.popViewController(animated: true)
+        _ = self.navigationController?.popViewController(animated: true)
     }
     
     // MARK: - Lifecycle
@@ -88,13 +88,19 @@ class ChangeEmojiVC: UIViewController {
         switch self.currentState {
         
         case .noEmojiSelected:
+            self.view.isUserInteractionEnabled = true
+            self.navigationItem.hidesBackButton = false
+            
             self.descriptionLabel.text = "Select an Emoji"
             self.savingSpinner.isHidden = true
             
             // Save Emoji button
             self.saveEmojiButton.isHidden = true
-        
+            
         case .saveEmoji:
+            self.view.isUserInteractionEnabled = true
+            self.navigationItem.hidesBackButton = false
+            
             self.descriptionLabel.text = "Select an Emoji"
             self.savingSpinner.isHidden = true
             
@@ -103,6 +109,9 @@ class ChangeEmojiVC: UIViewController {
             self.saveEmojiButton.isHidden = false
         
         case .savingInProgress:
+            self.view.isUserInteractionEnabled = false
+            self.navigationItem.hidesBackButton = true
+            
             self.descriptionLabel.text = "Saving Emoji..."
             self.savingSpinner.isHidden = false
             
