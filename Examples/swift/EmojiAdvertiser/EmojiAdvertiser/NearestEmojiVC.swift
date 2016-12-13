@@ -12,7 +12,11 @@ class NearestEmojiVC: UIViewController {
 
     // MARK: - Properties
     
-    var scanner: EmojiScanner!
+    lazy var scanner: EmojiScanner = {
+        let scanner = EmojiScanner()
+        scanner.delegate = self
+        return scanner
+    }()
     var currentState: NearestEmojiVC.ScreenState = .noBeaconsFound {
         didSet {
             self.updateUIForCurrentState()
@@ -34,9 +38,6 @@ class NearestEmojiVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.scanner = EmojiScanner()
-        self.scanner.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -75,8 +76,6 @@ class NearestEmojiVC: UIViewController {
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        self.scanner.delegate = nil
-        
         if segue.identifier == Segue.nearestEmoji👉🏻changeEmoji {
             let changeEmojiVC = segue.destination as! ChangeEmojiVC
             changeEmojiVC.initialEmoji = self.emojiLabel.text

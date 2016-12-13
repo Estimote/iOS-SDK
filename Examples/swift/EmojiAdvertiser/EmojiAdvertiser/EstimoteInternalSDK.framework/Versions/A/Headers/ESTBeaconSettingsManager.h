@@ -158,7 +158,7 @@ typedef NS_ENUM(NSInteger, ESTDeviceSettingsManagerError)
 /**
  *  Group of settings related to Generic Attribute Profile.
  */
-@property (nonatomic, readonly) ESTSettingsEddystoneConfigurationService *eddystoneConfigurationService;
+@property (nonatomic, strong, readonly) ESTSettingsEddystoneConfigurationService *eddystoneConfigurationService;
 
 
 #pragma mark - Advanced Settings API

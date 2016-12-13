@@ -74,6 +74,11 @@ typedef NS_ENUM(NSInteger, ESTDeviceSettingsAdvertiserSettingsPower)
  */
 - (void)updateWithAdvertiserSettings:(ESTDeviceSettingsAdvertiser *)advertiserSettings;
 
+/**
+ *  Method for returning dictionary represantation of advertiser settings.
+ */
+- (NSDictionary *)cloudDictionary;
+
 @end
 
 NS_ASSUME_NONNULL_END
