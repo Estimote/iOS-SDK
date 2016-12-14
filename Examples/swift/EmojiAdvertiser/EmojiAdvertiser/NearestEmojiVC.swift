@@ -27,6 +27,7 @@ class NearestEmojiVC: UIViewController {
 
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var emojiLabel: UILabel!
+    @IBOutlet weak var changeEmojiButton: ESTButton!
     
     // MARK: - Actions
     
@@ -64,12 +65,15 @@ class NearestEmojiVC: UIViewController {
         case .noBeaconsFound:
             self.emojiLabel.text = "🕵️"
             self.descriptionLabel.text = "Looking for meshed beacons"
+            self.changeEmojiButton.isHidden = true
         case .noEmoji:
             self.emojiLabel.text = "❓"
             self.descriptionLabel.text = "Nearest beacon has no Emoji yet"
+            self.changeEmojiButton.isHidden = false
         case .nearestEmoji:
             self.emojiLabel.text = self.scanner.nearestEmoji
             self.descriptionLabel.text = "Nearest Emoji"
+            self.changeEmojiButton.isHidden = false
         }
     }
     
