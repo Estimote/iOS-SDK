@@ -1,8 +1,3 @@
-//
-//  NearestEmojiVC.swift
-//  EmojiAdvertiser
-//
-//  Created by @ferologics on 12/5/16.
 //  Copyright © 2016 Estimote. All rights reserved.
 //
 
@@ -109,8 +104,7 @@ extension NearestEmojiVC: EmojiScannerDelegate {
     
     func emojiScanner(_ scanner: EmojiScanner, didFailWithError error: Error?) {
         self.scanner.stop()
-        let alertController = UIAlertController(title: "Emoji Scanning Failed", message: "Turn on bluetooth", preferredStyle: .alert) // TODO: Use error description instead
-        alertController.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action) in
+        let alertController = UIAlertController(title: "Emoji Scanning Failed", message: error?.localizedDescription, preferredStyle: .alert);        alertController.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action) in
                 self.scanner.start()
         }))
         self.present(alertController, animated: true, completion: nil)
