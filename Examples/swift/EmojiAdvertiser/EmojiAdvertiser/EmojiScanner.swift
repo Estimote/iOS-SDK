@@ -1,8 +1,4 @@
 //
-//  EmojiScanner.swift
-//  EmojiAdvertiser
-//
-//  Created by @ferologics on 11/24/16.
 //  Copyright © 2016 Estimote. All rights reserved.
 //
 
@@ -67,8 +63,9 @@ extension EmojiScanner: CBCentralManagerDelegate {
         case .poweredOff:
             print("🔌");
             self.centralManager.stopScan()
-            self.delegate?.emojiScanner(self, didFailWithError: nil) // TODO: Pass error here (Bluetooth off)
-            
+            let error = NSError(domain: EmojiScannerError.domain, code: EmojiScannerError.bluetoothOff.code, userInfo: [NSLocalizedDescriptionKey: EmojiScannerError.bluetoothOff.description])
+            self.delegate?.emojiScanner(self, didFailWithError: error)
+
         case .poweredOn:
             print("🔋");
             self.centralManager.scanForPeripherals(withServices: self.services, options: nil)
@@ -79,17 +76,19 @@ extension EmojiScanner: CBCentralManagerDelegate {
         case .unauthorized:
             print("👮🏼‍♀️");
             self.centralManager.stopScan()
-            self.delegate?.emojiScanner(self, didFailWithError: nil) // TODO: Pass error here
+            let error = NSError(domain: EmojiScannerError.domain, code: EmojiScannerError.unauthorized.code, userInfo: [NSLocalizedDescriptionKey: EmojiScannerError.unauthorized.description])
+            self.delegate?.emojiScanner(self, didFailWithError: error)
             
         case .unknown:
             print("❓");
             self.centralManager.stopScan()
-            self.delegate?.emojiScanner(self, didFailWithError: nil) // TODO: Pass error here
+            let error = NSError(domain: EmojiScannerError.domain, code: EmojiScannerError.unknown.code, userInfo: [NSLocalizedDescriptionKey: EmojiScannerError.unknown.description])
+            self.delegate?.emojiScanner(self, didFailWithError: error)
             
         case .unsupported:
             print("🙈");
-            self.delegate?.emojiScanner(self, didFailWithError: nil) // TODO: Pass error here
-        }
+            let error = NSError(domain: EmojiScannerError.domain, code: EmojiScannerError.unsupported.code, userInfo: [NSLocalizedDescriptionKey: EmojiScannerError.unsupported.description])
+            self.delegate?.emojiScanner(self, didFailWithError: error)        }
     }
     
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
@@ -135,4 +134,36 @@ extension EmojiScanner: CBCentralManagerDelegate {
     func deviceManagerDidFailDiscovery(_ manager: ESTDeviceManager) {
         print("Failed discovery 🤔")
     }
+}
+
+extension EmojiScanner {
+    
+    enum EmojiScannerError: Int, Error, CustomStringConvertible {
+        
+        case bluetoothOff, unauthorized, unknown, unsupported
+        
+        var description: String {
+            
+            switch self {
+            case .bluetoothOff:
+                return "Turn Bluetooth on 💙"
+                
+            case .unauthorized:
+                return "The application is not authorized to use the Bluetooth Low Energy role ⛔️"
+                
+            case .unknown:
+                return "State unknown, update imminent ❓"
+                
+            case .unsupported:
+                return "The platform doesn't support the Bluetooth Low Energy Central/Client role 📵"
+            }
+        }
+        
+        var code: Int {
+            return self.rawValue
+        }
+        
+        static let domain = "EmojiScannerErrorDomain"
+    }
+    
 }

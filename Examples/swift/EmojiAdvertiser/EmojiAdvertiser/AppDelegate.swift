@@ -1,8 +1,4 @@
 //
-//  AppDelegate.swift
-//  EmojiAdvertiser
-//
-//  Created by master on 12/5/16.
 //  Copyright © 2016 Estimote. All rights reserved.
 //
 

@@ -1,8 +1,4 @@
 //
-//  NearestEmojiVC.swift
-//  EmojiAdvertiser
-//
-//  Created by @ferologics on 12/5/16.
 //  Copyright © 2016 Estimote. All rights reserved.
 //
 
@@ -27,6 +23,7 @@ class NearestEmojiVC: UIViewController {
 
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var emojiLabel: UILabel!
+    @IBOutlet weak var changeEmojiButton: ESTButton!
     
     // MARK: - Actions
     
@@ -64,12 +61,15 @@ class NearestEmojiVC: UIViewController {
         case .noBeaconsFound:
             self.emojiLabel.text = "🕵️"
             self.descriptionLabel.text = "Looking for meshed beacons"
+            self.changeEmojiButton.isHidden = true
         case .noEmoji:
             self.emojiLabel.text = "❓"
             self.descriptionLabel.text = "Nearest beacon has no Emoji yet"
+            self.changeEmojiButton.isHidden = false
         case .nearestEmoji:
             self.emojiLabel.text = self.scanner.nearestEmoji
             self.descriptionLabel.text = "Nearest Emoji"
+            self.changeEmojiButton.isHidden = false
         }
     }
     
@@ -105,8 +105,7 @@ extension NearestEmojiVC: EmojiScannerDelegate {
     
     func emojiScanner(_ scanner: EmojiScanner, didFailWithError error: Error?) {
         self.scanner.stop()
-        let alertController = UIAlertController(title: "Emoji Scanning Failed", message: "Turn on bluetooth", preferredStyle: .alert) // TODO: Use error description instead
-        alertController.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action) in
+        let alertController = UIAlertController(title: "Emoji Scanning Failed", message: error?.localizedDescription, preferredStyle: .alert);        alertController.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (action) in
                 self.scanner.start()
         }))
         self.present(alertController, animated: true, completion: nil)
