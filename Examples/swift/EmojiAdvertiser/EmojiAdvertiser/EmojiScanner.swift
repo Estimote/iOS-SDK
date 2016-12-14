@@ -1,3 +1,4 @@
+//
 //  Copyright © 2016 Estimote. All rights reserved.
 //
 
@@ -135,9 +136,10 @@ extension EmojiScanner: CBCentralManagerDelegate {
     }
 }
 
-extension EmojiScanner: Error {
+extension EmojiScanner {
     
-    enum EmojiScannerError: Int {
+    enum EmojiScannerError: Int, Error, CustomStringConvertible {
+        
         case bluetoothOff, unauthorized, unknown, unsupported
         
         var description: String {

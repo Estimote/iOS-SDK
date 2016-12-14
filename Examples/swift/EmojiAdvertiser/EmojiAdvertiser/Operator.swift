@@ -1,8 +1,4 @@
 //
-//  Operator.swift
-//  EmojiAdvertiser
-//
-//  Created by @ferologics on 11/24/16.
 //  Copyright © 2016 Estimote. All rights reserved.
 //
 
