@@ -1,0 +1,3 @@
+[submodule "Examples/swift/EmojiAdvertiser/EmojiAdvertiser/iOS-Estimote-Components"]
+	path = Examples/swift/EmojiAdvertiser/EmojiAdvertiser/iOS-Estimote-Components
+	url = git@github.com:Estimote/iOS-Estimote-Components.git

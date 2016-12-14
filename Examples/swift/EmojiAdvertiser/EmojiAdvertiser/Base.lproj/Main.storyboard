@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Mb3-AF-d8r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Emoji Exploler-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="NearestEmojiVC" customModule="EmojiAdvertiser" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +22,235 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dA4-xW-eOi" customClass="ESTButton">
+                                <rect key="frame" x="30" y="597" width="315" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="MoV-ec-Cb4"/>
+                                </constraints>
+                                <state key="normal" title="Change Emoji"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="filled" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="changeEmojiTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="afE-OS-Gxi"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Emoji status description]" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45T-9U-yZU">
+                                <rect key="frame" x="16" y="104" width="343" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PW8-GA-I9a" userLabel="Spacer #1">
+                                <rect key="frame" x="0.0" y="436.5" width="375" height="160.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🤔" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="1" translatesAutoresizingMaskIntoConstraints="NO" id="cJY-w4-1L2">
+                                <rect key="frame" x="113" y="286.5" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="cJY-w4-1L2" secondAttribute="height" multiplier="1:1" id="2v5-mN-Eow"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="200"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K5f-wZ-HAQ" userLabel="Spacer #1">
+                                <rect key="frame" x="0.0" y="126" width="375" height="160.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PW8-GA-I9a" firstAttribute="height" secondItem="K5f-wZ-HAQ" secondAttribute="height" id="6FC-id-9SS"/>
+                            <constraint firstItem="cJY-w4-1L2" firstAttribute="top" secondItem="K5f-wZ-HAQ" secondAttribute="bottom" id="Ke1-9U-Zzi"/>
+                            <constraint firstItem="K5f-wZ-HAQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="M3X-AH-h3B"/>
+                            <constraint firstItem="PW8-GA-I9a" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="NrR-20-yWO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="45T-9U-yZU" secondAttribute="trailing" id="Sg2-4h-b0C"/>
+                            <constraint firstItem="45T-9U-yZU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="WNl-eR-aig"/>
+                            <constraint firstItem="K5f-wZ-HAQ" firstAttribute="top" secondItem="45T-9U-yZU" secondAttribute="bottom" id="a7i-90-YtQ"/>
+                            <constraint firstItem="K5f-wZ-HAQ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="cPJ-gR-brL"/>
+                            <constraint firstItem="PW8-GA-I9a" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dC6-fO-Hur"/>
+                            <constraint firstItem="PW8-GA-I9a" firstAttribute="top" secondItem="cJY-w4-1L2" secondAttribute="bottom" id="dvI-kV-dek"/>
+                            <constraint firstItem="dA4-xW-eOi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="30" id="eS3-Tm-cBd"/>
+                            <constraint firstItem="45T-9U-yZU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="n3b-XY-vVG"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dA4-xW-eOi" secondAttribute="bottom" constant="30" id="qBI-xr-sC0"/>
+                            <constraint firstItem="cJY-w4-1L2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qxW-p0-jr0"/>
+                            <constraint firstItem="cJY-w4-1L2" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.4" id="rlt-ny-gn2"/>
+                            <constraint firstAttribute="trailing" secondItem="dA4-xW-eOi" secondAttribute="trailing" constant="30" id="s5l-xs-iBi"/>
+                            <constraint firstItem="dA4-xW-eOi" firstAttribute="top" secondItem="PW8-GA-I9a" secondAttribute="bottom" id="sLA-yO-0ND"/>
+                            <constraint firstItem="45T-9U-yZU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="tzo-8t-tql"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Emoji Exploler" id="bLu-Bn-J2W">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="cti-hV-kap"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="changeEmojiButton" destination="dA4-xW-eOi" id="SNi-5g-ucY"/>
+                        <outlet property="descriptionLabel" destination="45T-9U-yZU" id="ooD-jm-fGT"/>
+                        <outlet property="emojiLabel" destination="cJY-w4-1L2" id="usw-Hz-c60"/>
+                        <segue destination="9kN-eF-AAC" kind="show" identifier="nearestEmoji👉🏻changeEmoji" id="UmL-BU-XuW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="906" y="778"/>
+        </scene>
+        <!--Change Emoji-->
+        <scene sceneID="BKW-nk-0SL">
+            <objects>
+                <viewController id="9kN-eF-AAC" customClass="ChangeEmojiVC" customModule="EmojiAdvertiser" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mKq-BR-jxJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="2zx-BM-5oE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PaH-7t-Aqw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FWs-Wq-GGC">
+                                <rect key="frame" x="38" y="234" width="300" height="200"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w3W-F8-G7O">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
+                                        <subviews>
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👌" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="1" translatesAutoresizingMaskIntoConstraints="NO" id="lBM-8M-Yu1">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="lBM-8M-Yu1" secondAttribute="height" multiplier="1:1" id="CFJ-sg-dlg"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="200"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🙈" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="1" translatesAutoresizingMaskIntoConstraints="NO" id="OcA-bb-1Jl">
+                                                <rect key="frame" x="100" y="0.0" width="100" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="OcA-bb-1Jl" secondAttribute="height" multiplier="1:1" id="FSR-u6-W2o"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="200"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🤓" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="1" translatesAutoresizingMaskIntoConstraints="NO" id="JiS-45-CDe">
+                                                <rect key="frame" x="200" y="0.0" width="100" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="JiS-45-CDe" secondAttribute="height" multiplier="1:1" id="hv3-2o-r1G"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="200"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OAN-dv-yCP">
+                                        <rect key="frame" x="0.0" y="100" width="300" height="100"/>
+                                        <subviews>
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="📡" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="1" translatesAutoresizingMaskIntoConstraints="NO" id="IRM-Nf-5Zq">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="IRM-Nf-5Zq" secondAttribute="height" multiplier="1:1" id="qoS-tZ-unz"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="200"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👑" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="1" translatesAutoresizingMaskIntoConstraints="NO" id="fXb-4q-ZEI">
+                                                <rect key="frame" x="100" y="0.0" width="100" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="fXb-4q-ZEI" secondAttribute="height" multiplier="1:1" id="RbM-VZ-FFH"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="200"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🐷" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="1" translatesAutoresizingMaskIntoConstraints="NO" id="sfN-xa-3jr">
+                                                <rect key="frame" x="200" y="0.0" width="100" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="sfN-xa-3jr" secondAttribute="height" multiplier="1:1" id="ZkY-oL-pY4"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="200"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Action description]" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92f-Zx-slt">
+                                <rect key="frame" x="16" y="104" width="343" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wab-Vc-9jd" customClass="ESTButton">
+                                <rect key="frame" x="30" y="597" width="315" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="mSF-k3-aMP"/>
+                                </constraints>
+                                <state key="normal" title="Save Emoji"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="filled" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="changeEmojiTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A9c-WM-6JY"/>
+                                    <action selector="saveEmojiTapped:" destination="9kN-eF-AAC" eventType="touchUpInside" id="Xfz-LO-8TO"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="9un-JQ-UoP">
+                                <rect key="frame" x="169" y="599" width="37" height="37"/>
+                                <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2zx-BM-5oE" firstAttribute="top" secondItem="Wab-Vc-9jd" secondAttribute="bottom" constant="30" id="AbP-kc-TIg"/>
+                            <constraint firstItem="92f-Zx-slt" firstAttribute="top" secondItem="mKq-BR-jxJ" secondAttribute="bottom" constant="40" id="Itd-vT-zMh"/>
+                            <constraint firstItem="FWs-Wq-GGC" firstAttribute="width" secondItem="PaH-7t-Aqw" secondAttribute="width" multiplier="0.8" id="R6p-v7-PJT"/>
+                            <constraint firstItem="9un-JQ-UoP" firstAttribute="centerX" secondItem="Wab-Vc-9jd" secondAttribute="centerX" id="Ylo-mS-Rjl"/>
+                            <constraint firstItem="92f-Zx-slt" firstAttribute="leading" secondItem="PaH-7t-Aqw" secondAttribute="leadingMargin" id="aXF-gv-pZc"/>
+                            <constraint firstItem="FWs-Wq-GGC" firstAttribute="centerY" secondItem="PaH-7t-Aqw" secondAttribute="centerY" id="fiY-j9-4hR"/>
+                            <constraint firstAttribute="trailing" secondItem="Wab-Vc-9jd" secondAttribute="trailing" constant="30" id="g52-QA-4lf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="92f-Zx-slt" secondAttribute="trailing" id="nFP-AJ-Vxt"/>
+                            <constraint firstItem="9un-JQ-UoP" firstAttribute="centerY" secondItem="Wab-Vc-9jd" secondAttribute="centerY" id="pGK-7y-OtF"/>
+                            <constraint firstItem="FWs-Wq-GGC" firstAttribute="centerX" secondItem="PaH-7t-Aqw" secondAttribute="centerX" id="pL0-dd-uCq"/>
+                            <constraint firstItem="Wab-Vc-9jd" firstAttribute="leading" secondItem="PaH-7t-Aqw" secondAttribute="leading" constant="30" id="twM-2T-Th3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Change Emoji" id="jVb-wP-Cgz"/>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="92f-Zx-slt" id="Ewo-FV-Z2k"/>
+                        <outlet property="saveEmojiButton" destination="Wab-Vc-9jd" id="NQP-25-khT"/>
+                        <outlet property="savingSpinner" destination="9un-JQ-UoP" id="udu-V2-iab"/>
+                        <outletCollection property="selectableEmojiLabels" destination="lBM-8M-Yu1" collectionClass="NSMutableArray" id="mUW-1H-JRA"/>
+                        <outletCollection property="selectableEmojiLabels" destination="OcA-bb-1Jl" collectionClass="NSMutableArray" id="Is6-se-pge"/>
+                        <outletCollection property="selectableEmojiLabels" destination="JiS-45-CDe" collectionClass="NSMutableArray" id="cWG-TO-6J0"/>
+                        <outletCollection property="selectableEmojiLabels" destination="IRM-Nf-5Zq" collectionClass="NSMutableArray" id="OEo-KY-mjY"/>
+                        <outletCollection property="selectableEmojiLabels" destination="fXb-4q-ZEI" collectionClass="NSMutableArray" id="KJ1-xn-vxg"/>
+                        <outletCollection property="selectableEmojiLabels" destination="sfN-xa-3jr" collectionClass="NSMutableArray" id="b3Q-va-DAP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oPN-mg-yxM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1629.5999999999999" y="777.66116941529242"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="o7C-Ug-UJ6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Mb3-AF-d8r" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NcC-qV-ZPr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="EtS-x0-Qp1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iXc-qY-VMF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="128.80000000000001" y="777.66116941529242"/>
         </scene>
     </scenes>
 </document>

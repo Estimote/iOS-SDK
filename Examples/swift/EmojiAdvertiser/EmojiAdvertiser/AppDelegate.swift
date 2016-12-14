@@ -1,8 +1,4 @@
 //
-//  AppDelegate.swift
-//  EmojiAdvertiser
-//
-//  Created by master on 12/5/16.
 //  Copyright © 2016 Estimote. All rights reserved.
 //
 
@@ -15,7 +11,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    // Override point for customization after application launch.
+    
+    /**
+     Put your App ID and App Token here.
+     You can get them by adding your app at https://cloud.estimote.com/#/apps
+    */
+    ESTConfig.setupAppID("<#App ID#>", andAppToken: "<#App Token#>")
+    
+    ESTStyle.sharedInstance().apply()
+    
     return true
   }
 
@@ -40,7 +44,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func applicationWillTerminate(_ application: UIApplication) {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
   }
-
-
+    
 }
 

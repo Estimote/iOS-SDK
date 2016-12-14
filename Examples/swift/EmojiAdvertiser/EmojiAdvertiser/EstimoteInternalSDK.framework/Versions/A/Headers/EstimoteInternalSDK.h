@@ -7,7 +7,7 @@
 //  |______|___/\__|_|_| |_| |_|\___/ \__\___| |_____/|_____/|_|\_\
 //
 //
-//  Version: 4.11.1
+//  Version: 4.12.0
 //  Copyright (c) 2016 Estimote. All rights reserved.
 
 /**
@@ -74,6 +74,8 @@
 #import "ESTSettingNearToConnectEnable.h"
 #import "ESTBeaconOperationNearToConnectEnable.h"
 
+#import "ESTDeviceSettingsAdvertiserConnectivity.h"
+
 /**
  *  Estimote Location ranging
  */
@@ -96,17 +98,3 @@
 #import "ESTSettingOperationStorageBlockType.h"
 #import "ESTSettingStorageBlockType.h"
 
-/**
- *  Settings Generic Packet
- */
-#import "ESTGenericIBeacon.h"
-#import "ESTGenericAdvertiser.h"
-#import "ESTSettingGenericAdvertiserData.h"
-#import "ESTSettingGenericAdvertiserEnable.h"
-#import "ESTSettingGenericAdvertiserInterval.h"
-#import "ESTSettingGenericAdvertiserPower.h"
-// operations
-#import "ESTBeaconOperationGenericAdvertiserData.h"
-#import "ESTBeaconOperationGenericAdvertiserEnable.h"
-#import "ESTBeaconOperationGenericAdvertiserInterval.h"
-#import "ESTBeaconOperationGenericAdvertiserPower.h"

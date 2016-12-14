@@ -91,6 +91,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (ESTDeviceSettings *)settingsUpdatedWithDeviceSettings:(ESTDeviceSettings *)deviceSettings;
 
+/**
+ *  Method for returning dictionary represantation of device's settings.
+ */
+- (NSDictionary *)cloudDictionary;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AF4EC3A01DF5C3B200C55830 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4EC39F1DF5C3B200C55830 /* AppDelegate.swift */; };
-		AF4EC3A21DF5C3B200C55830 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4EC3A11DF5C3B200C55830 /* ViewController.swift */; };
+		AF4EC3A21DF5C3B200C55830 /* NearestEmojiVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4EC3A11DF5C3B200C55830 /* NearestEmojiVC.swift */; };
 		AF4EC3A51DF5C3B200C55830 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF4EC3A31DF5C3B200C55830 /* Main.storyboard */; };
 		AF4EC3A71DF5C3B200C55830 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF4EC3A61DF5C3B200C55830 /* Assets.xcassets */; };
 		AF4EC3AA1DF5C3B200C55830 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF4EC3A81DF5C3B200C55830 /* LaunchScreen.storyboard */; };
@@ -16,8 +16,13 @@
 		AF4EC3C01DF5C3B200C55830 /* EmojiAdvertiserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4EC3BF1DF5C3B200C55830 /* EmojiAdvertiserUITests.swift */; };
 		AF4EC3D01DF5C3C600C55830 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4EC3CD1DF5C3C600C55830 /* Operator.swift */; };
 		AF4EC3D11DF5C3C600C55830 /* Packet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4EC3CE1DF5C3C600C55830 /* Packet.swift */; };
-		AF4EC3D21DF5C3C600C55830 /* Scanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4EC3CF1DF5C3C600C55830 /* Scanner.swift */; };
-		AF4EC3D51DF5C43100C55830 /* EstimoteInternalSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF4EC3D41DF5C43100C55830 /* EstimoteInternalSDK.framework */; };
+		AF4EC3D21DF5C3C600C55830 /* EmojiScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4EC3CF1DF5C3C600C55830 /* EmojiScanner.swift */; };
+		B5220F991DF96F10002BE998 /* ESTButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B5220F961DF96F10002BE998 /* ESTButton.m */; };
+		B5220F9A1DF96F10002BE998 /* ESTStyleSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = B5220F981DF96F10002BE998 /* ESTStyleSheet.m */; };
+		B5220FA41DF9895A002BE998 /* ESTStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = B5220FA31DF9895A002BE998 /* ESTStyle.m */; };
+		B5220FA61DF9A5EE002BE998 /* ChangeEmojiVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5220FA51DF9A5EE002BE998 /* ChangeEmojiVC.swift */; };
+		B52233E71DF82C9F007BD203 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52233E61DF82C9F007BD203 /* Constants.swift */; };
+		B5F116AA1E001162003A9B72 /* EstimoteInternalSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F116A91E001162003A9B72 /* EstimoteInternalSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +45,7 @@
 /* Begin PBXFileReference section */
 		AF4EC39C1DF5C3B200C55830 /* EmojiAdvertiser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmojiAdvertiser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF4EC39F1DF5C3B200C55830 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AF4EC3A11DF5C3B200C55830 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AF4EC3A11DF5C3B200C55830 /* NearestEmojiVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = NearestEmojiVC.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		AF4EC3A41DF5C3B200C55830 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AF4EC3A61DF5C3B200C55830 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF4EC3A91DF5C3B200C55830 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,9 +58,18 @@
 		AF4EC3C11DF5C3B200C55830 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF4EC3CD1DF5C3C600C55830 /* Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
 		AF4EC3CE1DF5C3C600C55830 /* Packet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Packet.swift; sourceTree = "<group>"; };
-		AF4EC3CF1DF5C3C600C55830 /* Scanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scanner.swift; sourceTree = "<group>"; };
-		AF4EC3D41DF5C43100C55830 /* EstimoteInternalSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EstimoteInternalSDK.framework; sourceTree = "<group>"; };
+		AF4EC3CF1DF5C3C600C55830 /* EmojiScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiScanner.swift; sourceTree = "<group>"; };
 		AF4EC3D61DF5C49900C55830 /* EmojiAdvertiser-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EmojiAdvertiser-Bridging-Header.h"; sourceTree = "<group>"; };
+		B5220F951DF96F10002BE998 /* ESTButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTButton.h; sourceTree = "<group>"; };
+		B5220F961DF96F10002BE998 /* ESTButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESTButton.m; sourceTree = "<group>"; };
+		B5220F971DF96F10002BE998 /* ESTStyleSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTStyleSheet.h; sourceTree = "<group>"; };
+		B5220F981DF96F10002BE998 /* ESTStyleSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESTStyleSheet.m; sourceTree = "<group>"; };
+		B5220F9B1DF96F4D002BE998 /* ESTUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESTUIKit.h; sourceTree = "<group>"; };
+		B5220FA21DF9895A002BE998 /* ESTStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTStyle.h; sourceTree = "<group>"; };
+		B5220FA31DF9895A002BE998 /* ESTStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESTStyle.m; sourceTree = "<group>"; };
+		B5220FA51DF9A5EE002BE998 /* ChangeEmojiVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ChangeEmojiVC.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		B52233E61DF82C9F007BD203 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B5F116A91E001162003A9B72 /* EstimoteInternalSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EstimoteInternalSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF4EC3D51DF5C43100C55830 /* EstimoteInternalSDK.framework in Frameworks */,
+				B5F116AA1E001162003A9B72 /* EstimoteInternalSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,15 +122,18 @@
 			isa = PBXGroup;
 			children = (
 				AF4EC39F1DF5C3B200C55830 /* AppDelegate.swift */,
-				AF4EC3A11DF5C3B200C55830 /* ViewController.swift */,
+				AF4EC3A11DF5C3B200C55830 /* NearestEmojiVC.swift */,
+				B5220FA51DF9A5EE002BE998 /* ChangeEmojiVC.swift */,
+				B52233E61DF82C9F007BD203 /* Constants.swift */,
 				AF4EC3CD1DF5C3C600C55830 /* Operator.swift */,
 				AF4EC3CE1DF5C3C600C55830 /* Packet.swift */,
-				AF4EC3CF1DF5C3C600C55830 /* Scanner.swift */,
+				AF4EC3CF1DF5C3C600C55830 /* EmojiScanner.swift */,
 				AF4EC3AB1DF5C3B200C55830 /* Info.plist */,
 				AF4EC3D61DF5C49900C55830 /* EmojiAdvertiser-Bridging-Header.h */,
 				AF4EC3A31DF5C3B200C55830 /* Main.storyboard */,
 				AF4EC3A81DF5C3B200C55830 /* LaunchScreen.storyboard */,
 				AF4EC3A61DF5C3B200C55830 /* Assets.xcassets */,
+				B5427BCB1DF861A80002CBC6 /* iOS-Estimote-Components */,
 				AF4EC3D31DF5C41B00C55830 /* Frameworks */,
 			);
 			path = EmojiAdvertiser;
@@ -143,9 +160,48 @@
 		AF4EC3D31DF5C41B00C55830 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AF4EC3D41DF5C43100C55830 /* EstimoteInternalSDK.framework */,
+				B5F116A91E001162003A9B72 /* EstimoteInternalSDK.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B5220F931DF96F10002BE998 /* ESTUIKit */ = {
+			isa = PBXGroup;
+			children = (
+				B5220F9B1DF96F4D002BE998 /* ESTUIKit.h */,
+				B5220F9C1DF96F6C002BE998 /* Style */,
+				B5220F941DF96F10002BE998 /* UI Components */,
+			);
+			path = ESTUIKit;
+			sourceTree = "<group>";
+		};
+		B5220F941DF96F10002BE998 /* UI Components */ = {
+			isa = PBXGroup;
+			children = (
+				B5220F951DF96F10002BE998 /* ESTButton.h */,
+				B5220F961DF96F10002BE998 /* ESTButton.m */,
+			);
+			name = "UI Components";
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		B5220F9C1DF96F6C002BE998 /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				B5220FA21DF9895A002BE998 /* ESTStyle.h */,
+				B5220FA31DF9895A002BE998 /* ESTStyle.m */,
+				B5220F971DF96F10002BE998 /* ESTStyleSheet.h */,
+				B5220F981DF96F10002BE998 /* ESTStyleSheet.m */,
+			);
+			path = Style;
+			sourceTree = "<group>";
+		};
+		B5427BCB1DF861A80002CBC6 /* iOS-Estimote-Components */ = {
+			isa = PBXGroup;
+			children = (
+				B5220F931DF96F10002BE998 /* ESTUIKit */,
+			);
+			path = "iOS-Estimote-Components";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,10 +342,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF4EC3A21DF5C3B200C55830 /* ViewController.swift in Sources */,
+				B5220F9A1DF96F10002BE998 /* ESTStyleSheet.m in Sources */,
+				AF4EC3A21DF5C3B200C55830 /* NearestEmojiVC.swift in Sources */,
 				AF4EC3D01DF5C3C600C55830 /* Operator.swift in Sources */,
+				B5220FA61DF9A5EE002BE998 /* ChangeEmojiVC.swift in Sources */,
 				AF4EC3A01DF5C3B200C55830 /* AppDelegate.swift in Sources */,
-				AF4EC3D21DF5C3C600C55830 /* Scanner.swift in Sources */,
+				B5220FA41DF9895A002BE998 /* ESTStyle.m in Sources */,
+				B52233E71DF82C9F007BD203 /* Constants.swift in Sources */,
+				AF4EC3D21DF5C3C600C55830 /* EmojiScanner.swift in Sources */,
+				B5220F991DF96F10002BE998 /* ESTButton.m in Sources */,
 				AF4EC3D11DF5C3C600C55830 /* Packet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -449,6 +510,7 @@
 					"$(PROJECT_DIR)/EmojiAdvertiser",
 				);
 				INFOPLIST_FILE = EmojiAdvertiser/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.estimote.EmojiAdvertiser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -469,6 +531,7 @@
 					"$(PROJECT_DIR)/EmojiAdvertiser",
 				);
 				INFOPLIST_FILE = EmojiAdvertiser/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.estimote.EmojiAdvertiser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -554,6 +617,7 @@
 				AF4EC3C61DF5C3B200C55830 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AF4EC3C71DF5C3B200C55830 /* Build configuration list for PBXNativeTarget "EmojiAdvertiserTests" */ = {
 			isa = XCConfigurationList;
@@ -562,6 +626,7 @@
 				AF4EC3C91DF5C3B200C55830 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AF4EC3CA1DF5C3B200C55830 /* Build configuration list for PBXNativeTarget "EmojiAdvertiserUITests" */ = {
 			isa = XCConfigurationList;
@@ -570,6 +635,7 @@
 				AF4EC3CC1DF5C3B200C55830 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

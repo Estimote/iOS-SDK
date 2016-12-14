@@ -45,6 +45,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (instancetype)initWithCloudDictionary:(NSDictionary *)dictionary;
 
+/**
+ *  Method for returning dictionary represantation of advertising time schedule settings.
+ */
+- (NSDictionary *)cloudDictionary;
+
 @end
 
 NS_ASSUME_NONNULL_END
