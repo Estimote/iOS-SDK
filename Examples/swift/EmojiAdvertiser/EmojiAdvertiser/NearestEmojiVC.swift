@@ -63,7 +63,7 @@ class NearestEmojiVC: UIViewController {
         switch self.currentState {
         case .noBeaconsFound:
             self.emojiLabel.text = "🕵️"
-            self.descriptionLabel.text = "Can't see meshed beacons around"
+            self.descriptionLabel.text = "Looking for meshed beacons"
         case .noEmoji:
             self.emojiLabel.text = "❓"
             self.descriptionLabel.text = "Nearest beacon has no Emoji yet"
@@ -97,6 +97,9 @@ extension NearestEmojiVC: EmojiScannerDelegate {
     func emojiScanner(_ scanner: EmojiScanner, didUpdateNearestEmoji emoji: String?) {
         if emoji != nil {
             self.currentState = .nearestEmoji
+        }
+        else {
+            self.currentState = .noBeaconsFound
         }
     }
     

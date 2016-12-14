@@ -14,7 +14,7 @@ struct Operator {
         self.packet = packet
     }
     
-    func configurePacketFor(_ device: ESTDeviceLocationBeacon, onComplete: @escaping (ESTDeviceLocationBeacon) -> ()) {
+    func configurePacketFor(_ device: ESTDeviceLocationBeacon, onComplete: @escaping (ESTDeviceLocationBeacon, Error?) -> ()) {
         
         let toOperate: [ESTBeaconOperationProtocol.Type] = [
             ESTBeaconOperationGenericAdvertiserEnable.self,
@@ -29,14 +29,15 @@ struct Operator {
         
         device.settings?.performOperations(from: toPerform) { error in
             DispatchQueue.main.async {
-                guard error == nil else { print("Could not operate 😔, reason:\n",error ?? "error"); NSException(name: NSExceptionName("GG"), reason: "nore", userInfo: nil).raise(); return }
-                
-                print("All operations complete! - advertising sexy emojis 💋❤️")
+                guard error == nil else {
+                    onComplete(device, error)
+                    return
+                }
                 
                 let meshHelper = ESTMeshNetworkHelper()
                 meshHelper.incrementMeshSettingVersion(forDevice: device) { error in
-                    // TODO: Handle errors
-                    onComplete(device)
+                    onComplete(device, error)
+                    print("All operations complete! - advertising emojis 🔊")
                 }
             }
         }

@@ -15,9 +15,16 @@ protocol EmojiScannerDelegate {
 
 class EmojiScanner: NSObject {
     
+    struct Parameter {
+        static let measurementsCount:Int = 5
+        static let minimumRSSI:Int = -70
+        static let outOfRangeTimeout: TimeInterval = 10
+    }
+    
     fileprivate var centralManager: CBCentralManager!
     fileprivate var emojiMeasurements: [(emoji: String, rssi: Int)] = []
     fileprivate let services: [CBUUID] = [CBUUID(string: "0xABBA")] // 🎤
+    fileprivate var outOfRangeTimer: Timer? = nil
     
     var delegate: EmojiScannerDelegate?
     var nearestEmoji: String? = nil {
@@ -39,16 +46,21 @@ class EmojiScanner: NSObject {
     func stop() {
         self.centralManager.delegate = nil
     }
+    
+    fileprivate func restartOfOfRangeTimer() {
+        self.outOfRangeTimer?.invalidate()
+        self.outOfRangeTimer = Timer.scheduledTimer(timeInterval: Parameter.outOfRangeTimeout, target: self, selector: #selector(EmojiScanner.wentOutOfRange), userInfo: nil, repeats: false)
+    }
+    
+    @objc fileprivate func wentOutOfRange() {
+        print("Went out of range 🙉 of beacons")
+        self.nearestEmoji = nil
+    }
 }
 
 extension EmojiScanner: ESTDeviceConnectableDelegate { }
 
 extension EmojiScanner: CBCentralManagerDelegate {
-    
-    struct Parameter {
-        static let measurementsCount:Int = 5
-        static let minimumRSSI:Int = -70
-    }
     
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         switch central.state {
@@ -82,6 +94,8 @@ extension EmojiScanner: CBCentralManagerDelegate {
     
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         print("Peripheral discovered 🕵🏽‍♀️")
+        
+        self.restartOfOfRangeTimer()
         
         let rssiValue = RSSI.intValue
         if rssiValue != 127 && rssiValue > Parameter.minimumRSSI {

@@ -187,12 +187,10 @@ extension ChangeEmojiVC {
 extension ChangeEmojiVC: ESTDeviceManagerDelegate {
     
     struct Parameter {
-        static let maxDiscoveriesAttemptsCount = 3
+        static let maxDiscoveriesAttemptsCount: Int = 3
     }
     
     func deviceManager(_ manager: ESTDeviceManager, didDiscover devices: [ESTDevice]) {
-        guard !devices.isEmpty else { return }
-        
         self.discoveryAttemptCounter += 1
         if self.discoveryAttemptCounter >= Parameter.maxDiscoveriesAttemptsCount {
             self.deviceManager.stopDeviceDiscovery()
@@ -222,7 +220,7 @@ extension ChangeEmojiVC: ESTDeviceManagerDelegate {
     }
     
     func estDevice(_ device: ESTDeviceConnectable, didFailConnectionWithError error: Error) {
-        let alertController = UIAlertController(title: "Failed to Connect", message: "Your beacons may be too far away or in a mesh.", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Failed to Connect", message: "Your beacons may be too far away or not in a mesh.", preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Retry", style: .cancel, handler: { action in
             self.deviceManager.startDeviceDiscovery(with: ESTDeviceFilterLocationBeacon())
         }))
