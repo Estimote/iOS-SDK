@@ -2,7 +2,7 @@
 //  Copyright © 2016 Estimote. All rights reserved.
 //
 
-fileprivate let CBUUIDBytes: [UInt8] = [0xBA, 0xAB]
+fileprivate let CBUUIDBytes: [UInt8] = [0x49, 0x82]
 
 class Packet {
     private var MAC: Data {

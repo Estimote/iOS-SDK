@@ -19,7 +19,7 @@ class EmojiScanner: NSObject {
     
     fileprivate var centralManager: CBCentralManager!
     fileprivate var emojiMeasurements: [(emoji: String, rssi: Int)] = []
-    fileprivate let services: [CBUUID] = [CBUUID(string: "0xABBA")] // 🎤
+    fileprivate let services: [CBUUID] = [CBUUID(string: "0x8249")]
     fileprivate var outOfRangeTimer: Timer? = nil
     
     var delegate: EmojiScannerDelegate?
@@ -153,7 +153,7 @@ extension EmojiScanner {
             }
         }
         
-        var code: Int { self.rawValue }
+        var code: Int { return self.rawValue }
         
         static let domain = "EmojiScannerErrorDomain"
     }
