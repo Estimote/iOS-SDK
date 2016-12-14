@@ -10,7 +10,7 @@ struct Operator {
         self.packet = packet
     }
     
-    func configurePacketFor(_ device: ESTDeviceLocationBeacon, onComplete: @escaping (ESTDeviceLocationBeacon, Error?) -> ()) {
+    func configurePacketFor(_ device: ESTDeviceLocationBeacon, completion: @escaping (ESTDeviceLocationBeacon, Error?) -> ()) {
         
         let toOperate: [ESTBeaconOperationProtocol.Type] = [
             ESTBeaconOperationGenericAdvertiserEnable.self,
@@ -19,65 +19,68 @@ struct Operator {
             ESTBeaconOperationGenericAdvertiserData.self
         ]
         
-        guard let toPerform = self.performPacketOperations(operations: toOperate, packet: packet) else { return }
+        let packetOperations = self.performPacketOperations(operations: toOperate, packet: self.packet, completion: { (error) in
+            if error != nil {
+                completion(device, error)
+            }
+        })
         
-        print("Operations to perform 😷:\n", toPerform)
+        print("Operations to perform 😷:\n", packetOperations)
         
-        device.settings?.performOperations(from: toPerform) { error in
+        device.settings?.performOperations(from: packetOperations) { error in
             DispatchQueue.main.async {
                 guard error == nil else {
-                    onComplete(device, error)
+                    completion(device, error)
                     return
                 }
                 
                 let meshHelper = ESTMeshNetworkHelper()
                 meshHelper.incrementMeshSettingVersion(forDevice: device) { error in
-                    onComplete(device, error)
+                    completion(device, error)
                     print("All operations complete! - advertising emojis 🔊")
                 }
             }
         }
     }
     
-    func performPacketOperations(operations: [ESTBeaconOperationProtocol.Type], packet: Packet) -> [ESTBeaconOperationProtocol]? {
-        var ranOperations = [ESTBeaconOperationProtocol]()
+    func performPacketOperations(operations: [ESTBeaconOperationProtocol.Type], packet: Packet, completion: ((Error?) -> Void)?) -> [ESTBeaconOperationProtocol] {
+        var ongoingOperations = [ESTBeaconOperationProtocol]()
         
         operations.forEach { operation in
             switch operation {
                 
             // enable
             case is ESTBeaconOperationGenericAdvertiserEnable.Type:
-                ranOperations.append(
+                ongoingOperations.append(
                     ESTBeaconOperationGenericAdvertiserEnable.writeOperation(forAdvertiser: .ID0, setting: ESTSettingGenericAdvertiserEnable(value: true)) { operation, error in
-                        guard error == nil else { print("\nEMERGENCY 🚑!\n\n", error ?? "error", "\n"); return }
-                        
-                        print("1️⃣ ", operation?.description ?? "OperationGenericAdvertiserEnable", " init complete")
+                        print("1️⃣ ", operation?.description ?? "OperationGenericAdvertiserEnable", " finished with error: \(error)")
+                        completion?(error)
                 })
                 
             // interval
             case is ESTBeaconOperationGenericAdvertiserInterval.Type:
-                ranOperations.append(
+                ongoingOperations.append(
                     ESTBeaconOperationGenericAdvertiserInterval.writeOperation(forAdvertiser: .ID0, setting: ESTSettingGenericAdvertiserInterval(value: packet.interval)) { operation, error in
-                        guard error == nil else { print("\nEMERGENCY 🚑!\n\n", error ?? "error", "\n"); return }
-                        print("2️⃣ ", operation?.description ?? "OperationGenericAdvertiserInterval", " init complete")
+                        print("2️⃣ ", operation?.description ?? "OperationGenericAdvertiserInterval", " finished with error: \(error)")
+                        completion?(error)
                 })
                 
             // power
             case is ESTBeaconOperationGenericAdvertiserPower.Type:
-                ranOperations.append(
+                ongoingOperations.append(
                     ESTBeaconOperationGenericAdvertiserPower.writeOperation(forAdvertiser: .ID0, setting: ESTSettingGenericAdvertiserPower(value: .level6)) { operation, error in
-                        guard error == nil else { print("\nEMERGENCY 🚑!\n\n", error ?? "error", "\n"); return }
-                        
-                        print("3️⃣ ", operation?.description ?? "OperationGenericAdvertiserPower", " init complete")
+                        print("3️⃣ ", operation?.description ?? "OperationGenericAdvertiserPower", " finished with error: \(error)")
+                        completion?(error)
+
                 })
                 
             // payload
             case is ESTBeaconOperationGenericAdvertiserData.Type:
-                ranOperations.append(
+                ongoingOperations.append(
                     ESTBeaconOperationGenericAdvertiserData.writeOperation(forAdvertiser: .ID0, setting: ESTSettingGenericAdvertiserData(value: packet.📦)) { operation, error in
-                        guard error == nil else { print("\nEMERGENCY 🚑!\n\n", error ?? "error", "\n"); return }
-                        
-                        print("4️⃣ ", operation?.description ?? "OperationGenericAdvertiserData", " init complete")
+                        print("4️⃣ ", operation?.description ?? "OperationGenericAdvertiserData", " finished with error: \(error)")
+                        completion?(error)
+
                 })
                 
             default:
@@ -85,6 +88,6 @@ struct Operator {
             }
         }
         
-        return ranOperations
+        return ongoingOperations
     }
 }

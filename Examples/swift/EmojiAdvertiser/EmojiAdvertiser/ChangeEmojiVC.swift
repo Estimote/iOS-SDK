@@ -52,15 +52,24 @@ class ChangeEmojiVC: UIViewController {
             let packet = Packet(data: data)
             self.emojiOperator = Operator(packet: packet)
             
-            self.emojiOperator!.configurePacketFor(self.nearestDevice!, onComplete: { (device) in
+            self.emojiOperator!.configurePacketFor(self.nearestDevice!, completion: { (device, error) in
                 self.nearestDevice!.disconnect()
-                self.finishUpdate()
+                self.finishUpdate(error: error)
             })
         }
     }
     
-    func finishUpdate() {
-        _ = self.navigationController?.popViewController(animated: true)
+    func finishUpdate(error: Error?) {
+        if error == nil {
+            _ = self.navigationController?.popViewController(animated: true)
+        }
+        else {
+            let alertController = UIAlertController(title: "Failed to Update Emoji", message: "Try to change emoji again.", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { action in
+                _ = self.navigationController?.popViewController(animated: true)
+            }))
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
     
     // MARK: - Lifecycle
@@ -227,7 +236,7 @@ extension ChangeEmojiVC: ESTDeviceManagerDelegate {
     
     func estDevice(_ device: ESTDeviceConnectable, didDisconnectWithError error: Error?) {
         if error != nil {
-            print("Disconnected with error 🤔 \n\(error)")
+            print("Disconnected with error 🤔\n\(error)")
         } else {
             print("Disconnected 🛰")
         }
