@@ -12,8 +12,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     
-    ESTConfig.setupAppID("any-app-1na", andAppToken: "b03ae652b86bec56a2add710388ddfc2") // TODO: Prepare as template parameters
-    ESTRequestConst.setCloudDomainURL(STAGING_CLOUD_DOMAIN_URL)
+    /**
+     Put your App ID and App Token here.
+     You can get them by adding your app at https://cloud.estimote.com/#/apps
+    */
+    ESTConfig.setupAppID("<#App ID#>", andAppToken: "<#App Token#>")
     
     ESTStyle.sharedInstance().apply()
     

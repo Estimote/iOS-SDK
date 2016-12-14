@@ -43,7 +43,7 @@ class EmojiScanner: NSObject {
         self.centralManager.delegate = nil
     }
     
-    fileprivate func restartOfOfRangeTimer() {
+    fileprivate func restartOutOfRangeTimer() {
         self.outOfRangeTimer?.invalidate()
         self.outOfRangeTimer = Timer.scheduledTimer(timeInterval: Parameter.outOfRangeTimeout, target: self, selector: #selector(EmojiScanner.wentOutOfRange), userInfo: nil, repeats: false)
     }
@@ -94,18 +94,22 @@ extension EmojiScanner: CBCentralManagerDelegate {
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         print("Peripheral discovered 🕵🏽‍♀️")
         
-        self.restartOfOfRangeTimer()
+        self.restartOutOfRangeTimer()
         
         let rssiValue = RSSI.intValue
         if rssiValue != 127 && rssiValue > Parameter.minimumRSSI {
             
             // Extract an emoji
             let advData = (advertisementData[CBAdvertisementDataServiceDataKey] as! Dictionary<CBUUID, Any>)[services.first!] as! Data
-            if let emoji = String(data: advData, encoding: .utf8) // TODO: What do we do otherwise?
+            if let emoji = String(data: advData, encoding: .utf8)
             {
                 // Insert the measurement at right position in the sorted array
                 let measurement = (emoji: emoji, rssi: rssiValue)
                 self.emojiMeasurements.append(measurement)
+            }
+            else {
+                print("Couldn't read Emoji 😞")
+                return
             }
         }
         
@@ -119,8 +123,6 @@ extension EmojiScanner: CBCentralManagerDelegate {
             measurement2.rssi > measurement1.rssi
         })
         self.nearestEmoji = nearest?.emoji
-        
-        // TODO: Set nil and clear the measurements array if haven't found anything in e.g. 5 seconds
         
         // Remove out-of-range devices
         print("Emoji measurements: \(self.emojiMeasurements)")
@@ -143,25 +145,15 @@ extension EmojiScanner {
         case bluetoothOff, unauthorized, unknown, unsupported
         
         var description: String {
-            
             switch self {
-            case .bluetoothOff:
-                return "Turn Bluetooth on 💙"
-                
-            case .unauthorized:
-                return "The application is not authorized to use the Bluetooth Low Energy role ⛔️"
-                
-            case .unknown:
-                return "State unknown, update imminent ❓"
-                
-            case .unsupported:
-                return "The platform doesn't support the Bluetooth Low Energy Central/Client role 📵"
+            case .bluetoothOff: return "Turn Bluetooth on 💙"
+            case .unauthorized: return "The application is not authorized to use the Bluetooth Low Energy role ⛔️"
+            case .unknown: return "State unknown, update imminent ❓"
+            case .unsupported: return "The platform doesn't support the Bluetooth Low Energy Central/Client role 📵"
             }
         }
         
-        var code: Int {
-            return self.rawValue
-        }
+        var code: Int { self.rawValue }
         
         static let domain = "EmojiScannerErrorDomain"
     }
