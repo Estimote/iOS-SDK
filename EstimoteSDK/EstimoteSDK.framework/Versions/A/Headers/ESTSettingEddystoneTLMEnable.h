@@ -50,8 +50,6 @@ typedef void(^ESTSettingEddystoneTLMEnableCompletionBlock)(ESTSettingEddystoneTL
  *  Method allows to read value of initialized Eddystone Telemetry Enable setting object.
  *
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)readValueWithCompletion:(ESTSettingEddystoneTLMEnableCompletionBlock)completion;
 

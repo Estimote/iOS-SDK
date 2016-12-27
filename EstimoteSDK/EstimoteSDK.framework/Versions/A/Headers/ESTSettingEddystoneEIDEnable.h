@@ -50,8 +50,6 @@ typedef void(^ESTSettingEddystoneEIDEnableCompletionBlock)(ESTSettingEddystoneEI
  *  Method allows to read value of initialized EddystoneEID Enable setting object.
  *
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)readValueWithCompletion:(ESTSettingEddystoneEIDEnableCompletionBlock)completion;
 

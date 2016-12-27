@@ -61,8 +61,6 @@ typedef void(^ESTSettingIBeaconNonStrictModeCompletionBlock)(ESTSettingIBeaconNo
  *
  *  @param nonStrictMode NonStrictMode value to be written to the device.
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)writeValue:(BOOL)nonStrictMode completion:(ESTSettingIBeaconNonStrictModeCompletionBlock)completion;
 

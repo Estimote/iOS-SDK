@@ -52,8 +52,6 @@ typedef void(^ESTSettingDeviceInfoTagsCompletionBlock)(ESTSettingDeviceInfoTags 
  *  Method allows to read value of initialized Cloud Tags setting object.
  *
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)readValueWithCompletion:(ESTSettingDeviceInfoTagsCompletionBlock)completion;
 
@@ -63,8 +61,6 @@ typedef void(^ESTSettingDeviceInfoTagsCompletionBlock)(ESTSettingDeviceInfoTags 
  *
  *  @param tags Set containing tags to be written to the device.
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)writeValue:(NSSet<NSString *> *)tags completion:(ESTSettingDeviceInfoTagsCompletionBlock)completion;
 
