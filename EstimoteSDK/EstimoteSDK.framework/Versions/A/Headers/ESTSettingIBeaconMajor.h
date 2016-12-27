@@ -64,8 +64,6 @@ typedef void(^ESTSettingIBeaconMajorCompletionBlock)(ESTSettingIBeaconMajor * _N
  *  Method allows to read value of initialized iBeacon Major setting object.
  *
  *  @param completion Block should be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)readValueWithCompletion:(ESTSettingIBeaconMajorCompletionBlock)completion;
 
@@ -74,8 +72,6 @@ typedef void(^ESTSettingIBeaconMajorCompletionBlock)(ESTSettingIBeaconMajor * _N
  *  Value provided during initialization will be used as a desired value.
  *
  *  @param completion Block should be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)writeValue:(unsigned short)value completion:(ESTSettingIBeaconMajorCompletionBlock)completion;
 

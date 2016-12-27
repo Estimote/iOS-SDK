@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Block used as a result of read/write setting MotionUUIDEnable operation for iBeacon packet.
  *
- *  @param enabled MotionUUIDEnable setting carrying value.
+ *  @param enabledSetting MotionUUIDEnable setting carrying value.
  *  @param error Operation error. No error means success.
  */
 typedef void(^ESTSettingIBeaconMotionUUIDEnableCompletionBlock)(ESTSettingIBeaconMotionUUIDEnable * _Nullable enabledSetting, NSError * _Nullable error);
@@ -53,8 +53,6 @@ typedef void(^ESTSettingIBeaconMotionUUIDEnableCompletionBlock)(ESTSettingIBeaco
  *  Method allows to read value of initialized iBeacon MotionUUIDEnable setting object.
  *
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)readValueWithCompletion:(ESTSettingIBeaconMotionUUIDEnableCompletionBlock)completion;
 
@@ -64,8 +62,6 @@ typedef void(^ESTSettingIBeaconMotionUUIDEnableCompletionBlock)(ESTSettingIBeaco
  *
  *  @param enabled MotionUUIDEnable value to be written to the device.
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)writeValue:(BOOL)enabled completion:(ESTSettingIBeaconMotionUUIDEnableCompletionBlock)completion;
 

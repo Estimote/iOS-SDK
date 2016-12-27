@@ -46,7 +46,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  Batch version of -addOrReplaceSetting method.
  *
- *  @param setting Setting should be set.
+ *  @param settings Setting should be set.
  */
 - (void)addOrReplaceSettings:(NSArray<ESTSettingBase *> *)settings;
 

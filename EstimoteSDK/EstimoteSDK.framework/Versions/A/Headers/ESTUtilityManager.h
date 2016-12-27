@@ -40,7 +40,7 @@ typedef NS_ENUM(NSInteger, ESTUtilityManagerState)
  * Tells the delegate that one or more beacons were discovered in the vicinity of the device.
  *
  * @param manager The utility manager object reporting the event.
- * @param beacons An array of `<ESTDeviceNearable>` objects representing the nearables discovered.
+ * @param nearables An array of `<ESTDeviceNearable>` objects representing the nearables discovered.
  */
 - (void)utilityManager:(ESTUtilityManager *)manager
     didDiscoverNearables:(NSArray<ESTDeviceNearable *> *)nearables;

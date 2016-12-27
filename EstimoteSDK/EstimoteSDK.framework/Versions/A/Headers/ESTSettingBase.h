@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Block used as a result of operation.
  *
- *  @param value Current value of setting.
+ *  @param setting Current value of setting.
  *  @param error Error of operation. No error means success.
  */
 typedef void(^ESTSettingCompletionBlock)(ESTSettingBase * _Nullable setting, NSError * _Nullable  error);

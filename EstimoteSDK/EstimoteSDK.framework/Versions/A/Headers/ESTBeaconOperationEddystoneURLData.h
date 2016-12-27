@@ -34,7 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Method allows to create write operation for Eddystone URL Data setting.
  *
- *  @param settings   Setting to be written to a device.
+ *  @param setting   Setting to be written to a device.
  *  @param completion Block invoked when the operation is complete.
  *
  *  @return Initialized object.

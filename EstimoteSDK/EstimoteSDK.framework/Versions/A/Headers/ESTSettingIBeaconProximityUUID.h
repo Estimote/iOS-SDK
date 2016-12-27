@@ -32,7 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Block used as a result of read/write setting ProximityUUID operation for iBeacon packet.
  *
- *  @param proximityUUID ProximityUUID setting carrying value.
+ *  @param proximityUUIDSetting ProximityUUID setting carrying value.
  *  @param error Operation error. No error means success.
  */
 typedef void(^ESTSettingIBeaconProximityUUIDCompletionBlock)(ESTSettingIBeaconProximityUUID * _Nullable proximityUUIDSetting, NSError * _Nullable error);
@@ -63,8 +63,6 @@ typedef void(^ESTSettingIBeaconProximityUUIDCompletionBlock)(ESTSettingIBeaconPr
  *  Method allows to read value of initialized iBeacon ProximityUUID setting object.
  *
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)readValueWithCompletion:(ESTSettingIBeaconProximityUUIDCompletionBlock)completion;
 
@@ -74,8 +72,6 @@ typedef void(^ESTSettingIBeaconProximityUUIDCompletionBlock)(ESTSettingIBeaconPr
  *
  *  @param proximityUUID ProximityUUID value to be written to the device.
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)writeValue:(NSUUID *)proximityUUID completion:(ESTSettingIBeaconProximityUUIDCompletionBlock)completion;
 

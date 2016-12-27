@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Block used as a result of read/write setting Tags operation for Cloud packet.
  *
- *  @param tags Tags setting carrying value.
+ *  @param tagsSetting Tags setting carrying value.
  *  @param error Operation error. No error means success.
  */
 typedef void(^ESTSettingDeviceInfoTagsCompletionBlock)(ESTSettingDeviceInfoTags * _Nullable tagsSetting, NSError * _Nullable error);

@@ -38,7 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Block used as a result of read/write setting Interval operation for Eddystone URL packet.
  *
- *  @param advertisingInterval Interval setting carrying value.
+ *  @param advertisingIntervalSetting Interval setting carrying value.
  *  @param error Operation error. No error means success.
  */
 typedef void(^ESTSettingEddystoneURLIntervalCompletionBlock)(ESTSettingEddystoneURLInterval * _Nullable advertisingIntervalSetting, NSError * _Nullable error);
@@ -71,8 +71,6 @@ typedef void(^ESTSettingEddystoneURLIntervalCompletionBlock)(ESTSettingEddystone
  *  Method allows to read value of initialized Eddystone URL Advertising Interval setting object.
  *
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)readValueWithCompletion:(ESTSettingEddystoneURLIntervalCompletionBlock)completion;
 
@@ -82,8 +80,6 @@ typedef void(^ESTSettingEddystoneURLIntervalCompletionBlock)(ESTSettingEddystone
  *
  *  @param advertisingInterval Interval value to be written to the device.
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)writeValue:(unsigned short)advertisingInterval completion:(ESTSettingEddystoneURLIntervalCompletionBlock)completion;
 

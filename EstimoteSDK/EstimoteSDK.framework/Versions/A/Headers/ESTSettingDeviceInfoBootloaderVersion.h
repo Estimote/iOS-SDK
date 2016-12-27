@@ -36,7 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Block used as a result of read setting BootloaderVersion operation for Device packet.
  *
- *  @param version BootloaderVersion setting carrying value.
+ *  @param versionSetting BootloaderVersion setting carrying value.
  *  @param error Operation error. No error means success.
  */
 typedef void(^ESTSettingDeviceInfoBootloaderVersionCompletionBlock)(ESTSettingDeviceInfoBootloaderVersion * _Nullable versionSetting, NSError * _Nullable error);
@@ -58,8 +58,6 @@ typedef void(^ESTSettingDeviceInfoBootloaderVersionCompletionBlock)(ESTSettingDe
  *  Method allows to read value of initialized Device BootloaderVersion setting object.
  *
  *  @param completion Block to be invoked when the operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)readValueWithCompletion:(ESTSettingDeviceInfoBootloaderVersionCompletionBlock)completion;
 

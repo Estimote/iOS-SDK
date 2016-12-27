@@ -47,7 +47,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  Allows to validate if particular settings is available for firmware
  *  in version running on the device.
  *
- *  @param firmware Version of firmware running on the device
+ *  @param firmwareVersion Version of firmware running on the device
  *
  *  @return BOOL value indicating availability
  */

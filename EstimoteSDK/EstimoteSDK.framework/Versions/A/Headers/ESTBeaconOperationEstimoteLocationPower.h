@@ -34,7 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Method allows to create write operation for Estimote Location BroadcastingPower setting.
  *
- *  @param settings   Settings to be written to a device.
+ *  @param setting   Settings to be written to a device.
  *  @param completion Block invoked when the operation is complete.
  *
  *  @return Initialized object.

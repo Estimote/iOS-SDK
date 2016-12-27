@@ -39,7 +39,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Block used as a result of read/write setting Instance ID operation for Eddystone UID packet.
  *
- *  @param instanceID Instance ID setting carrying value.
+ *  @param instanceIDSetting Instance ID setting carrying value.
  *  @param error Operation error. No error means success.
  */
 typedef void(^ESTSettingEddystoneUIDInstanceCompletionBlock)(ESTSettingEddystoneUIDInstance * _Nullable instanceIDSetting, NSError * _Nullable error);
@@ -72,8 +72,6 @@ typedef void(^ESTSettingEddystoneUIDInstanceCompletionBlock)(ESTSettingEddystone
  *  Method allows to read value of initialized Eddystone UID Instance ID setting object.
  *
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)readValueWithCompletion:(ESTSettingEddystoneUIDInstanceCompletionBlock)completion;
 
@@ -83,8 +81,6 @@ typedef void(^ESTSettingEddystoneUIDInstanceCompletionBlock)(ESTSettingEddystone
  *
  *  @param instanceID Instance ID hex string to be written to the device.
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)writeValue:(NSString *)instanceID completion:(ESTSettingEddystoneUIDInstanceCompletionBlock)completion;
 

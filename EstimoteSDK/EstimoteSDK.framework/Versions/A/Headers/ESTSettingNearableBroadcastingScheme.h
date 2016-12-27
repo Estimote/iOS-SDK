@@ -38,7 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Block used as a result of read/write setting BroadcastingScheme operation for Settings packet.
  *
- *  @param broadcastingScheme BroadcastingScheme setting carrying value.
+ *  @param broadcastingSchemeSetting BroadcastingScheme setting carrying value.
  *  @param error Operation error. No error means success.
  */
 typedef void(^ESTSettingNearableBroadcastingSchemeCompletionBlock)(ESTSettingNearableBroadcastingScheme * _Nullable broadcastingSchemeSetting, NSError * _Nullable error);
@@ -71,8 +71,6 @@ typedef void(^ESTSettingNearableBroadcastingSchemeCompletionBlock)(ESTSettingNea
  *  Method allows to read value of initialized Nearable Broadcasting Scheme setting object.
  *
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)readValueWithCompletion:(ESTSettingNearableBroadcastingSchemeCompletionBlock)completion;
 
@@ -82,8 +80,6 @@ typedef void(^ESTSettingNearableBroadcastingSchemeCompletionBlock)(ESTSettingNea
  *
  *  @param broadcastingScheme Broadcasting scheme value to be written to the device.
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)writeValue:(ESTNearableBroadcastingScheme)broadcastingScheme completion:(ESTSettingNearableBroadcastingSchemeCompletionBlock)completion;
 

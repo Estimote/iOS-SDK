@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Block used as a result of read/write setting NonStrictMode operation for iBeacon packet.
  *
- *  @param nonStrictMode NonStrictMode setting carrying value.
+ *  @param nonStrictModeSetting NonStrictMode setting carrying value.
  *  @param error Operation error. No error means success.
  */
 typedef void(^ESTSettingIBeaconNonStrictModeCompletionBlock)(ESTSettingIBeaconNonStrictMode * _Nullable nonStrictModeSetting, NSError * _Nullable error);
@@ -52,8 +52,6 @@ typedef void(^ESTSettingIBeaconNonStrictModeCompletionBlock)(ESTSettingIBeaconNo
  *  Method allows to read value of initialized iBeacon NonStrictMode setting object.
  *
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)readValueWithCompletion:(ESTSettingIBeaconNonStrictModeCompletionBlock)completion;
 

@@ -35,7 +35,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Block used as a result of read/write setting Advertising Interval operation for Estimote Location packet.
  *
- *  @param advertisingInterval Advertising Interval setting carrying value.
+ *  @param advertisingIntervalSetting Advertising Interval setting carrying value.
  *  @param error Operation error. No error means success.
  */
 typedef void(^ESTSettingEstimoteLocationIntervalCompletionBlock)(ESTSettingEstimoteLocationInterval * _Nullable advertisingIntervalSetting, NSError * _Nullable error);
@@ -68,8 +68,6 @@ typedef void(^ESTSettingEstimoteLocationIntervalCompletionBlock)(ESTSettingEstim
  *  Method allows to read value of initialized Estimote Location Advertising Interval setting object.
  *
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)readValueWithCompletion:(ESTSettingEstimoteLocationIntervalCompletionBlock)completion;
 
@@ -79,8 +77,6 @@ typedef void(^ESTSettingEstimoteLocationIntervalCompletionBlock)(ESTSettingEstim
  *
  *  @param advertisingInterval Advertising Interval value to be written to the device.
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)writeValue:(unsigned short)advertisingInterval completion:(ESTSettingEstimoteLocationIntervalCompletionBlock)completion;
 

@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Block used as a result of read/write setting ConfigPort0 operation for GPIO packet.
  *
- *  @param config ConfigPort0 setting carrying value.
+ *  @param configSetting ConfigPort0 setting carrying value.
  *  @param error Operation error. No error means success.
  */
 typedef void(^ESTSettingGPIOConfigPort0CompletionBlock)(ESTSettingGPIOConfigPort0 * _Nullable configSetting, NSError * _Nullable error);
@@ -53,8 +53,6 @@ typedef void(^ESTSettingGPIOConfigPort0CompletionBlock)(ESTSettingGPIOConfigPort
  *  Method allows to read value of initialized GPIO ConfigPort0 setting object.
  *
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)readValueWithCompletion:(ESTSettingGPIOConfigPort0CompletionBlock)completion;
 
@@ -64,8 +62,6 @@ typedef void(^ESTSettingGPIOConfigPort0CompletionBlock)(ESTSettingGPIOConfigPort
  *
  *  @param config ConfigPort0 value to be written to the device.
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)writeValue:(ESTGPIOConfig)config completion:(ESTSettingGPIOConfigPort0CompletionBlock)completion;
 

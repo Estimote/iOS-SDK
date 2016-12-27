@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Block used as a result of read setting IndoorLocationIdentifier operation for DeviceInfo packet.
  *
- *  @param indoorLocationIdentifier IndoorLocationIdentifier setting carrying value.
+ *  @param indoorLocationIdentifierSetting IndoorLocationIdentifier setting carrying value.
  *  @param error Operation error. No error means success.
  */
 typedef void(^ESTSettingDeviceInfoIndoorLocationIdentifierCompletionBlock)(ESTSettingDeviceInfoIndoorLocationIdentifier * _Nullable indoorLocationIdentifierSetting, NSError * _Nullable error);
@@ -50,8 +50,6 @@ typedef void(^ESTSettingDeviceInfoIndoorLocationIdentifierCompletionBlock)(ESTSe
  *  Method allows to read value of initialized DeviceInfo IndoorLocationIdentifier setting object.
  *
  *  @param completion Block to be invoked when the operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)readValueWithCompletion:(ESTSettingDeviceInfoIndoorLocationIdentifierCompletionBlock)completion;
 

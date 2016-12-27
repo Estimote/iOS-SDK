@@ -31,7 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Block used as a result of read/write setting URL Data operation for Eddystone URL packet.
  *
- *  @param eddystoneURL URL Data setting carrying value.
+ *  @param eddystoneURLSetting URL Data setting carrying value.
  *  @param error Operation error. No error means success.
  */
 typedef void(^ESTSettingEddystoneURLDataCompletionBlock)(ESTSettingEddystoneURLData * _Nullable eddystoneURLSetting, NSError * _Nullable error);
@@ -64,8 +64,6 @@ typedef void(^ESTSettingEddystoneURLDataCompletionBlock)(ESTSettingEddystoneURLD
  *  Method allows to read value of initialized Eddystone URL Data setting object.
  *
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)readValueWithCompletion:(ESTSettingEddystoneURLDataCompletionBlock)completion;
 
@@ -75,8 +73,6 @@ typedef void(^ESTSettingEddystoneURLDataCompletionBlock)(ESTSettingEddystoneURLD
  *
  *  @param eddystoneURL URL Data value to be written to the device.
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)writeValue:(NSString *)eddystoneURL completion:(ESTSettingEddystoneURLDataCompletionBlock)completion;
 

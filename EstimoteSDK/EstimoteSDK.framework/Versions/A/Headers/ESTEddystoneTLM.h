@@ -46,7 +46,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param batteryVoltage Voltage of device battery
  *  @param temperature    Ambient temperature of device
  *  @param packetCont     Count of packets sent from device
- *  @param uptimeInMillis Uptime of the device
+ *  @param uptimeMillis Uptime of the device
  *
  *  @return Initialized object.
  */

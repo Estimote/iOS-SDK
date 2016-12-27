@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Block used as a result of read/write setting `EddystoneConfigurationServiceEnable` operation for Eddystone Configuration packet.
  *
- *  @param eddystoneConfigurationServiceEnable EddystoneConfigurationServiceEnable setting carrying value.
+ *  @param eddystoneConfigurationServiceEnableSetting EddystoneConfigurationServiceEnable setting carrying value.
  *  @param error Operation error. No error means success.
  */
 typedef void(^ESTSettingEddystoneConfigurationServiceEnableCompletionBlock)(ESTSettingEddystoneConfigurationServiceEnable * _Nullable eddystoneConfigurationServiceEnableSetting, NSError * _Nullable error);
@@ -54,8 +54,6 @@ typedef void(^ESTSettingEddystoneConfigurationServiceEnableCompletionBlock)(ESTS
  *  Method allows to read value of initialized EddystoneConfigurationServiceEnable setting object.
  *
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)readValueWithCompletion:(ESTSettingEddystoneConfigurationServiceEnableCompletionBlock)completion;
 
@@ -65,8 +63,6 @@ typedef void(^ESTSettingEddystoneConfigurationServiceEnableCompletionBlock)(ESTS
  *
  *  @param eddystoneConfigurationServiceEnable EddystoneConfigurationServiceEnable value to be written to the device.
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)writeValue:(BOOL)eddystoneConfigurationServiceEnable completion:(ESTSettingEddystoneConfigurationServiceEnableCompletionBlock)completion;
 

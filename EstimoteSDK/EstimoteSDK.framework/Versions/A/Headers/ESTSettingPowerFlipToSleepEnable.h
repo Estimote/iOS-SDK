@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Block used as a result of read/write setting FlipToSleepEnable operation for Power group.
  *
- *  @param enabled FlipToSleepEnable setting carrying value.
+ *  @param enabledSetting FlipToSleepEnable setting carrying value.
  *  @param error Operation error. No error means success.
  */
 typedef void(^ESTSettingPowerFlipToSleepEnableCompletionBlock)(ESTSettingPowerFlipToSleepEnable * _Nullable enabledSetting, NSError * _Nullable error);
@@ -52,8 +52,6 @@ typedef void(^ESTSettingPowerFlipToSleepEnableCompletionBlock)(ESTSettingPowerFl
  *  Method allows to read value of initialized FlipToSleepEnable setting object.
  *
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)readValueWithCompletion:(ESTSettingPowerFlipToSleepEnableCompletionBlock)completion;
 
@@ -63,8 +61,6 @@ typedef void(^ESTSettingPowerFlipToSleepEnableCompletionBlock)(ESTSettingPowerFl
  *
  *  @param enabled FlipToSleepEnable value to be written to the device.
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)writeValue:(BOOL)enabled completion:(ESTSettingPowerFlipToSleepEnableCompletionBlock)completion;
 

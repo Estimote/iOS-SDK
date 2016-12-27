@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Block used as a result of read setting Uptime operation for DeviceInfo packet.
  *
- *  @param uptime Uptime setting carrying value.
+ *  @param uptimeSetting Uptime setting carrying value.
  *  @param error Operation error. No error means success.
  */
 typedef void(^ESTSettingDeviceInfoUptimeCompletionBlock)(ESTSettingDeviceInfoUptime * _Nullable uptimeSetting, NSError * _Nullable error);
@@ -50,8 +50,6 @@ typedef void(^ESTSettingDeviceInfoUptimeCompletionBlock)(ESTSettingDeviceInfoUpt
  *  Method allows to read value of initialized DeviceInfo Uptime setting object.
  *
  *  @param completion Block to be invoked when the operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)readValueWithCompletion:(ESTSettingDeviceInfoUptimeCompletionBlock)completion;
 

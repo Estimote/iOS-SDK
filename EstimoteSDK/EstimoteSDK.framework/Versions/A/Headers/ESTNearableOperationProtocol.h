@@ -74,7 +74,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Method allows to update setting.
  *
- *  @param data Data that should be used to update setting.
+ *  @param setting Data that should be used to update setting.
  */
 - (void)updateSetting:(ESTSettingBase *)setting;
 

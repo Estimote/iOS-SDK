@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Block used as a result of read/write setting SmartPowerModeEnable operation for Power packet.
  *
- *  @param smartPowerModeEnable SmartPowerModeEnable setting carrying value.
+ *  @param smartPowerModeEnableSetting SmartPowerModeEnable setting carrying value.
  *  @param error Operation error. No error means success.
  */
 typedef void(^ESTSettingPowerSmartPowerModeEnableCompletionBlock)(ESTSettingPowerSmartPowerModeEnable * _Nullable smartPowerModeEnableSetting, NSError * _Nullable error);
@@ -52,8 +52,6 @@ typedef void(^ESTSettingPowerSmartPowerModeEnableCompletionBlock)(ESTSettingPowe
  *  Method allows to read value of initialized Power SmartPowerModeEnable setting object.
  *
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)readValueWithCompletion:(ESTSettingPowerSmartPowerModeEnableCompletionBlock)completion;
 
@@ -63,8 +61,6 @@ typedef void(^ESTSettingPowerSmartPowerModeEnableCompletionBlock)(ESTSettingPowe
  *
  *  @param smartPowerModeEnable SmartPowerModeEnable value to be written to the device.
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)writeValue:(BOOL)smartPowerModeEnable completion:(ESTSettingPowerSmartPowerModeEnableCompletionBlock)completion;
 

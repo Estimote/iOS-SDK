@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Block used as a result of read/write setting SecureUUIDEnable operation for iBeacon packet.
  *
- *  @param enabled SecureUUIDEnable setting carrying value.
+ *  @param enabledSetting SecureUUIDEnable setting carrying value.
  *  @param error Operation error. No error means success.
  */
 typedef void(^ESTSettingIBeaconSecureUUIDEnableCompletionBlock)(ESTSettingIBeaconSecureUUIDEnable * _Nullable enabledSetting, NSError * _Nullable error);
@@ -50,8 +50,6 @@ typedef void(^ESTSettingIBeaconSecureUUIDEnableCompletionBlock)(ESTSettingIBeaco
  *  Method allows to read value of initialized iBeacon SecureUUIDEnable setting object.
  *
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)readValueWithCompletion:(ESTSettingIBeaconSecureUUIDEnableCompletionBlock)completion;
 
@@ -61,8 +59,6 @@ typedef void(^ESTSettingIBeaconSecureUUIDEnableCompletionBlock)(ESTSettingIBeaco
  *
  *  @param enabled SecureUUIDEnable value to be written to the device.
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)writeValue:(BOOL)enabled completion:(ESTSettingIBeaconSecureUUIDEnableCompletionBlock)completion;
 

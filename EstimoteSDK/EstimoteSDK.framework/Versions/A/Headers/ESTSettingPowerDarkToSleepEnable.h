@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Block used as a result of read/write setting DarkToSleepEnable operation for Power packet.
  *
- *  @param enabled DarkToSleepEnable setting carrying value.
+ *  @param enabledSetting DarkToSleepEnable setting carrying value.
  *  @param error Operation error. No error means success.
  */
 typedef void(^ESTSettingPowerDarkToSleepEnableCompletionBlock)(ESTSettingPowerDarkToSleepEnable * _Nullable enabledSetting, NSError * _Nullable error);
@@ -52,8 +52,6 @@ typedef void(^ESTSettingPowerDarkToSleepEnableCompletionBlock)(ESTSettingPowerDa
  *  Method allows to read value of initialized Power DarkToSleepEnable setting object.
  *
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)readValueWithCompletion:(ESTSettingPowerDarkToSleepEnableCompletionBlock)completion;
 
@@ -63,8 +61,6 @@ typedef void(^ESTSettingPowerDarkToSleepEnableCompletionBlock)(ESTSettingPowerDa
  *
  *  @param enabled DarkToSleepEnable value to be written to the device.
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)writeValue:(BOOL)enabled completion:(ESTSettingPowerDarkToSleepEnableCompletionBlock)completion;
 

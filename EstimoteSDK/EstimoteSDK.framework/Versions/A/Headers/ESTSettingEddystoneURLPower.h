@@ -31,7 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Block used as a result of read/write setting Power operation for Eddystone URL packet.
  *
- *  @param power Power setting carrying value.
+ *  @param powerSetting Power setting carrying value.
  *  @param error Operation error. No error means success.
  */
 typedef void(^ESTSettingEddystoneURLPowerCompletionBlock)(ESTSettingEddystoneURLPower * _Nullable powerSetting, NSError * _Nullable error);
@@ -82,8 +82,6 @@ typedef NS_ENUM(int8_t, ESTEddystoneURLPower)
  *  Method allows to read value of initialized Eddystone URL Power setting object.
  *
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)readValueWithCompletion:(ESTSettingEddystoneURLPowerCompletionBlock)completion;
 
@@ -93,8 +91,6 @@ typedef NS_ENUM(int8_t, ESTEddystoneURLPower)
  *
  *  @param power Power value to be written to the device.
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)writeValue:(ESTEddystoneURLPower)power completion:(ESTSettingEddystoneURLPowerCompletionBlock)completion;
 

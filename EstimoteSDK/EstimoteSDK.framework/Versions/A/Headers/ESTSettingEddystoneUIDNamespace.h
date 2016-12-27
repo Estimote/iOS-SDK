@@ -39,7 +39,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Block used as a result of read/write setting Namespace operation for Eddystone UID packet.
  *
- *  @param namespace Namespace setting carrying value.
+ *  @param namespaceSetting Namespace setting carrying value.
  *  @param error Operation error. No error means success.
  */
 typedef void(^ESTSettingEddystoneUIDNamespaceCompletionBlock)(ESTSettingEddystoneUIDNamespace * _Nullable namespaceSetting, NSError * _Nullable error);
@@ -72,8 +72,6 @@ typedef void(^ESTSettingEddystoneUIDNamespaceCompletionBlock)(ESTSettingEddyston
  *  Method allows to read value of initialized Eddystone UID Namespace setting object.
  *
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)readValueWithCompletion:(ESTSettingEddystoneUIDNamespaceCompletionBlock)completion;
 
@@ -83,8 +81,6 @@ typedef void(^ESTSettingEddystoneUIDNamespaceCompletionBlock)(ESTSettingEddyston
  *
  *  @param namespaceID Namespace hex string to be written to the device.
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)writeValue:(NSString *)namespaceID completion:(ESTSettingEddystoneUIDNamespaceCompletionBlock)completion;
 

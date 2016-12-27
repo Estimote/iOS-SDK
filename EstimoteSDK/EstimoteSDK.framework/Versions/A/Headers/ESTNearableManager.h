@@ -41,7 +41,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Tells the delegate that nearable with particular identifier is in range.
  *
  * @param manager The nearable manager object reporting the event.
- * @param nearables An `<ESTNearable>` object representing the nearables currently in range. You can use the information in these objects to determine the range of nearable and its identifying information.
+ * @param nearable An `<ESTNearable>` object representing the nearables currently in range. You can use the information in these objects to determine the range of nearable and its identifying information.
  */
 - (void)nearableManager:(ESTNearableManager *)manager didRangeNearable:(ESTNearable *)nearable;
 

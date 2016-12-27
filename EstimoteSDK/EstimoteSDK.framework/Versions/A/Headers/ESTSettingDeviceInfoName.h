@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Block used as a result of read/write setting Name operation for Device Info packet.
  *
- *  @param name Name setting carrying value.
+ *  @param nameSetting Name setting carrying value.
  *  @param error Operation error. No error means success.
  */
 typedef void(^ESTSettingDeviceInfoNameCompletionBlock)(ESTSettingDeviceInfoName * _Nullable nameSetting, NSError * _Nullable error);
@@ -52,8 +52,6 @@ typedef void(^ESTSettingDeviceInfoNameCompletionBlock)(ESTSettingDeviceInfoName 
  *  Method allows to read value of initialized Device Info Name setting object.
  *
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)readValueWithCompletion:(ESTSettingDeviceInfoNameCompletionBlock)completion;
 
@@ -63,8 +61,6 @@ typedef void(^ESTSettingDeviceInfoNameCompletionBlock)(ESTSettingDeviceInfoName 
  *
  *  @param name Name value to be written to the device.
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)writeValue:(NSString *)name completion:(ESTSettingDeviceInfoNameCompletionBlock)completion;
 

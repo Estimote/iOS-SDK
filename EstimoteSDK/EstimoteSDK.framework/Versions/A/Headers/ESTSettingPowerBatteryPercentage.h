@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Block used as a result of read setting BatteryPercentage operation for Power packet.
  *
- *  @param batteryPercentage BatteryPercentage setting carrying value.
+ *  @param batteryPercentageSetting BatteryPercentage setting carrying value.
  *  @param error Operation error. No error means success.
  */
 typedef void(^ESTSettingPowerBatteryPercentageCompletionBlock)(ESTSettingPowerBatteryPercentage * _Nullable batteryPercentageSetting, NSError * _Nullable error);
@@ -50,8 +50,6 @@ typedef void(^ESTSettingPowerBatteryPercentageCompletionBlock)(ESTSettingPowerBa
  *  Method allows to read value of initialized Power BatteryPercentage setting object.
  *
  *  @param completion Block to be invoked when the operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)readValueWithCompletion:(ESTSettingPowerBatteryPercentageCompletionBlock)completion;
 

@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Block used as a result of read setting FirmwareVersion operation for DeviceInfo packet.
  *
- *  @param version FirmwareVersion setting carrying value.
+ *  @param versionSetting FirmwareVersion setting carrying value.
  *  @param error Operation error. No error means success.
  */
 typedef void(^ESTSettingDeviceInfoFirmwareVersionCompletionBlock)(ESTSettingDeviceInfoFirmwareVersion * _Nullable versionSetting, NSError * _Nullable error);
@@ -50,8 +50,6 @@ typedef void(^ESTSettingDeviceInfoFirmwareVersionCompletionBlock)(ESTSettingDevi
  *  Method allows to read value of initialized FirmwareVersion setting object.
  *
  *  @param completion Block to be invoked when the operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)readValueWithCompletion:(ESTSettingDeviceInfoFirmwareVersionCompletionBlock)completion;
 

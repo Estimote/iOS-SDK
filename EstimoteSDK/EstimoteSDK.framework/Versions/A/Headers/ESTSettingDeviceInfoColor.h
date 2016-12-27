@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Block used as a result of read/write setting Color operation for DeviceInfo packet.
  *
- *  @param Color Color setting carrying value.
+ *  @param ColorSetting Color setting carrying value.
  *  @param error Operation error. No error means success.
  */
 typedef void(^ESTSettingDeviceInfoColorCompletionBlock)(ESTSettingDeviceInfoColor * _Nullable ColorSetting, NSError * _Nullable error);
@@ -36,7 +36,7 @@ typedef void(^ESTSettingDeviceInfoColorCompletionBlock)(ESTSettingDeviceInfoColo
  *
  *  @see +[ESTSettingDeviceInfoColor validationErrorForValue:]
  *
- *  @param Color DeviceInfo Color value.
+ *  @param color DeviceInfo Color value.
  *
  *  @return Initialized object. Nil if validation fails.
  */
@@ -53,8 +53,6 @@ typedef void(^ESTSettingDeviceInfoColorCompletionBlock)(ESTSettingDeviceInfoColo
  *  Method allows to read value of initialized DeviceInfo Color setting object.
  *
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)readValueWithCompletion:(ESTSettingDeviceInfoColorCompletionBlock)completion;
 

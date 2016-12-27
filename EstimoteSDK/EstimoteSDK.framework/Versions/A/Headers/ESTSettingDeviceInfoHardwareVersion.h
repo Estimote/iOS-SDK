@@ -36,7 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Block used as a result of read setting Hardware Version operation for Device packet.
  *
- *  @param version HardwareVersion setting carrying value.
+ *  @param versionSetting HardwareVersion setting carrying value.
  *  @param error Operation error. No error means success.
  */
 typedef void(^ESTSettingDeviceInfoHardwareVersionCompletionBlock)(ESTSettingDeviceInfoHardwareVersion * _Nullable versionSetting, NSError * _Nullable error);
@@ -58,8 +58,6 @@ typedef void(^ESTSettingDeviceInfoHardwareVersionCompletionBlock)(ESTSettingDevi
  *  Method allows to read value of initialized Device HardwareVersion setting object.
  *
  *  @param completion Block to be invoked when the operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)readValueWithCompletion:(ESTSettingDeviceInfoHardwareVersionCompletionBlock)completion;
 

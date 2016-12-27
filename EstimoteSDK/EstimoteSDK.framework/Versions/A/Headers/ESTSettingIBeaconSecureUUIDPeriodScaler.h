@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  Block used as a result of read/write setting SecureUUIDPeriodScaler operation for iBeacon packet.
  *  The Secure UUID rotation period is equal to 2^scaler seconds.
  *
- *  @param scaler SecureUUIDPeriodScaler setting carrying value.
+ *  @param scalerSetting SecureUUIDPeriodScaler setting carrying value.
  *  @param error Operation error. No error means success.
  */
 typedef void(^ESTSettingIBeaconSecureUUIDPeriodScalerCompletionBlock)(ESTSettingIBeaconSecureUUIDPeriodScaler * _Nullable scalerSetting, NSError * _Nullable error);
@@ -51,8 +51,6 @@ typedef void(^ESTSettingIBeaconSecureUUIDPeriodScalerCompletionBlock)(ESTSetting
  *  Method allows to read value of initialized iBeacon SecureUUIDPeriodScaler setting object.
  *
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)readValueWithCompletion:(ESTSettingIBeaconSecureUUIDPeriodScalerCompletionBlock)completion;
 
@@ -63,8 +61,6 @@ typedef void(^ESTSettingIBeaconSecureUUIDPeriodScalerCompletionBlock)(ESTSetting
  *
  *  @param scaler SecureUUIDPeriodScaler value to be written to the device.
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)writeValue:(uint8_t)scaler completion:(ESTSettingIBeaconSecureUUIDPeriodScalerCompletionBlock)completion;
 

@@ -35,7 +35,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Block used as a result of read/write setting Advertising Interval operation for Eddystone Telemetry packet.
  *
- *  @param advertisingInterval Advertising Interval setting carrying value.
+ *  @param advertisingIntervalSetting Advertising Interval setting carrying value.
  *  @param error Operation error. No error means success.
  */
 typedef void(^ESTSettingEddystoneTLMIntervalCompletionBlock)(ESTSettingEddystoneTLMInterval * _Nullable advertisingIntervalSetting, NSError * _Nullable error);
@@ -66,8 +66,6 @@ typedef void(^ESTSettingEddystoneTLMIntervalCompletionBlock)(ESTSettingEddystone
  *  Method allows to read value of initialized Eddystone Telemetry Advertising Interval setting object.
  *
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)readValueWithCompletion:(ESTSettingEddystoneTLMIntervalCompletionBlock)completion;
 
@@ -77,8 +75,6 @@ typedef void(^ESTSettingEddystoneTLMIntervalCompletionBlock)(ESTSettingEddystone
  *
  *  @param advertisingInterval Advertising Interval value to be written to the device.
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)writeValue:(unsigned short)advertisingInterval completion:(ESTSettingEddystoneTLMIntervalCompletionBlock)completion;
 

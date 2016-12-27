@@ -62,8 +62,6 @@ typedef void(^ESTSettingIBeaconMinorCompletionBlock)(ESTSettingIBeaconMinor * _N
  *  Method allows to read value of initialized iBeacon Minor setting object.
  *
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)readValueWithCompletion:(ESTSettingIBeaconMinorCompletionBlock)completion;
 
@@ -73,8 +71,6 @@ typedef void(^ESTSettingIBeaconMinorCompletionBlock)(ESTSettingIBeaconMinor * _N
  *
  *  @param minor Minor value to be written to the device.
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)writeValue:(unsigned short)minor completion:(ESTSettingIBeaconMinorCompletionBlock)completion;
 

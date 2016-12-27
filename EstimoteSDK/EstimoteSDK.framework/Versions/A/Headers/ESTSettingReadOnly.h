@@ -26,8 +26,6 @@ NS_ASSUME_NONNULL_BEGIN
  *  Method allows to read setting for already initialized setting object.
  *
  *  @param completion Block invoked when read operation is complete.
- *
- *  @return Object representing read operation.
  */
 - (void)readValueWithCompletion:(ESTSettingCompletionBlock)completion;
 

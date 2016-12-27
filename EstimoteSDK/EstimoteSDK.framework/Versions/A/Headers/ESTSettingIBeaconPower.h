@@ -32,7 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Block used as a result of read/write setting Power operation for iBeacon packet.
  *
- *  @param power Power setting carrying value.
+ *  @param powerSetting Power setting carrying value.
  *  @param error Operation error. No error means success.
  */
 typedef void(^ESTSettingIBeaconPowerCompletionBlock)(ESTSettingIBeaconPower * _Nullable powerSetting, NSError * _Nullable error);
@@ -83,8 +83,6 @@ typedef NS_ENUM(int8_t, ESTIBeaconPower)
  *  Method allows to read value of initialized iBeacon Power setting object.
  *
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)readValueWithCompletion:(ESTSettingIBeaconPowerCompletionBlock)completion;
 
@@ -94,8 +92,6 @@ typedef NS_ENUM(int8_t, ESTIBeaconPower)
  *
  *  @param power Power value to be written to the device.
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)writeValue:(ESTIBeaconPower)power completion:(ESTSettingIBeaconPowerCompletionBlock)completion;
 

@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Block used as a result of read/write setting Enable operation for Eddystone UID packet.
  *
- *  @param enabled Enable setting carrying value.
+ *  @param enabledSetting Enable setting carrying value.
  *  @param error Operation error. No error means success.
  */
 typedef void(^ESTSettingEddystoneUIDEnableCompletionBlock)(ESTSettingEddystoneUIDEnable * _Nullable enabledSetting, NSError * _Nullable error);
@@ -50,8 +50,6 @@ typedef void(^ESTSettingEddystoneUIDEnableCompletionBlock)(ESTSettingEddystoneUI
  *  Method allows to read value of initialized Eddystone UID Enable setting object.
  *
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)readValueWithCompletion:(ESTSettingEddystoneUIDEnableCompletionBlock)completion;
 
@@ -61,8 +59,6 @@ typedef void(^ESTSettingEddystoneUIDEnableCompletionBlock)(ESTSettingEddystoneUI
  *
  *  @param enabled Enable value to be written to the device.
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)writeValue:(BOOL)enabled completion:(ESTSettingEddystoneUIDEnableCompletionBlock)completion;
 

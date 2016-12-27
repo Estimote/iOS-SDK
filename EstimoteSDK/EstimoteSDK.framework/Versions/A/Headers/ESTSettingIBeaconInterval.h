@@ -37,7 +37,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Block used as a result of read/write setting Advertising Interval operation for iBeacon packet.
  *
- *  @param advertisingInterval Advertising Interval setting carrying value.
+ *  @param advertisingIntervalSetting Advertising Interval setting carrying value.
  *  @param error Operation error. No error means success.
  */
 typedef void(^ESTSettingIBeaconIntervalCompletionBlock)(ESTSettingIBeaconInterval * _Nullable advertisingIntervalSetting, NSError * _Nullable error);
@@ -70,8 +70,6 @@ typedef void(^ESTSettingIBeaconIntervalCompletionBlock)(ESTSettingIBeaconInterva
  *  Method allows to read value of initialized iBeacon Advertising Interval setting object.
  *
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)readValueWithCompletion:(ESTSettingIBeaconIntervalCompletionBlock)completion;
 
@@ -81,8 +79,6 @@ typedef void(^ESTSettingIBeaconIntervalCompletionBlock)(ESTSettingIBeaconInterva
  *
  *  @param advertisingInterval Advertising Interval value to be written to the device.
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)writeValue:(unsigned short)advertisingInterval completion:(ESTSettingIBeaconIntervalCompletionBlock)completion;
 

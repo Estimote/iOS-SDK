@@ -35,7 +35,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Block used as a result of read/write setting AdvertisingInterval operation for Eddystone UID packet.
  *
- *  @param advertisingInterval AdvertisingInterval setting carrying value.
+ *  @param advertisingIntervalSetting AdvertisingInterval setting carrying value.
  *  @param error Operation error. No error means success.
  */
 typedef void(^ESTSettingEddystoneUIDIntervalCompletionBlock)(ESTSettingEddystoneUIDInterval * _Nullable advertisingIntervalSetting, NSError * _Nullable error);
@@ -68,8 +68,6 @@ typedef void(^ESTSettingEddystoneUIDIntervalCompletionBlock)(ESTSettingEddystone
  *  Method allows to read value of initialized Eddystone UID AdvertisingInterval setting object.
  *
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)readValueWithCompletion:(ESTSettingEddystoneUIDIntervalCompletionBlock)completion;
 
@@ -79,8 +77,6 @@ typedef void(^ESTSettingEddystoneUIDIntervalCompletionBlock)(ESTSettingEddystone
  *
  *  @param advertisingInterval AdvertisingInterval value in ms to be written to the device. It should be between 100 and 2000.
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)writeValue:(unsigned short)advertisingInterval completion:(ESTSettingEddystoneUIDIntervalCompletionBlock)completion;
 

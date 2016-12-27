@@ -29,7 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Actual class of objects depend on filter used to start the manager.
  *
  * @param manager The utility manager object reporting the event.
- * @param beacons An array of ESTDevice subclass objects representing the discovered devices.
+ * @param devices An array of ESTDevice subclass objects representing the discovered devices.
  *
  * @see ESTDeviceFilterIBeacon, ESTDeviceFilterTypeUtility.
  */
@@ -96,7 +96,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  ESTTelemetryNotificationProtocol to receive updates
  *  about specific telemetry notifications.
  *
- *  @param infos Single object conforming to ESTTelemetryNotificationProtocol.
+ *  @param info Single object conforming to ESTTelemetryNotificationProtocol.
  */
 - (void)registerForTelemetryNotification:(id <ESTTelemetryNotificationProtocol>)info;
 
@@ -105,7 +105,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  ESTTelemetryNotificationProtocol from receiving updates
  *  about specific telemetry notifications.
  *
- *  @param infos Single object conforming to ESTTelemetryNotificationProtocol.
+ *  @param info Single object conforming to ESTTelemetryNotificationProtocol.
  */
 - (void)unregisterForTelemetryNotification:(id <ESTTelemetryNotificationProtocol>)info;
 

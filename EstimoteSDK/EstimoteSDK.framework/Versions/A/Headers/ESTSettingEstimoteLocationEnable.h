@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Block used as a result of read/write setting Enable operation for Estimote Location packet.
  *
- *  @param enabled Enable setting carrying value.
+ *  @param enabledSetting Enable setting carrying value.
  *  @param error Operation error. No error means success.
  */
 typedef void(^ESTSettingEstimoteLocationEnableCompletionBlock)(ESTSettingEstimoteLocationEnable * _Nullable enabledSetting, NSError * _Nullable error);
@@ -50,8 +50,6 @@ typedef void(^ESTSettingEstimoteLocationEnableCompletionBlock)(ESTSettingEstimot
  *  Method allows to read value of initialized Estimote Location Enable setting object.
  *
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)readValueWithCompletion:(ESTSettingEstimoteLocationEnableCompletionBlock)completion;
 
@@ -61,8 +59,6 @@ typedef void(^ESTSettingEstimoteLocationEnableCompletionBlock)(ESTSettingEstimot
  *
  *  @param enabled Enable value to be written to the device.
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)writeValue:(BOOL)enabled completion:(ESTSettingEstimoteLocationEnableCompletionBlock)completion;
 

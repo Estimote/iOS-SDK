@@ -40,7 +40,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Block used as a result of read/write setting Interval operation for Nearable packet.
  *
- *  @param interval Interval setting carrying value.
+ *  @param intervalSetting Interval setting carrying value.
  *  @param error Operation error. No error means success.
  */
 typedef void(^ESTSettingNearableIntervalCompletionBlock)(ESTSettingNearableInterval * _Nullable intervalSetting, NSError * _Nullable error);
@@ -73,8 +73,6 @@ typedef void(^ESTSettingNearableIntervalCompletionBlock)(ESTSettingNearableInter
  *  Method allows to read value of initialized Nearable Interval setting object.
  *
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)readValueWithCompletion:(ESTSettingNearableIntervalCompletionBlock)completion;
 
@@ -84,8 +82,6 @@ typedef void(^ESTSettingNearableIntervalCompletionBlock)(ESTSettingNearableInter
  *
  *  @param interval Interval value to be written to the device.
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)writeValue:(unsigned short)interval completion:(ESTSettingNearableIntervalCompletionBlock)completion;
 

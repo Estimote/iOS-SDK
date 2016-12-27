@@ -39,7 +39,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Designated initializer.
  *
- *  @param data Dictionary provided by the Estimote cloud.
+ *  @param dictionary Dictionary provided by the Estimote cloud.
  *
  *  @return Initialized object.
  */

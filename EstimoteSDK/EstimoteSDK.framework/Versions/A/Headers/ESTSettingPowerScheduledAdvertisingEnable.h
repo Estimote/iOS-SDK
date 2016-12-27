@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Block used as a result of read/write setting ScheduledAdvertisingEnable operation for Power packet.
  *
- *  @param enable ScheduledAdvertisingEnable setting carrying value.
+ *  @param enableSetting ScheduledAdvertisingEnable setting carrying value.
  *  @param error Operation error. No error means success.
  */
 typedef void(^ESTSettingPowerScheduledAdvertisingEnableCompletionBlock)(ESTSettingPowerScheduledAdvertisingEnable * _Nullable enableSetting, NSError * _Nullable error);
@@ -52,8 +52,6 @@ typedef void(^ESTSettingPowerScheduledAdvertisingEnableCompletionBlock)(ESTSetti
  *  Method allows to read value of initialized Power ScheduledAdvertisingEnable setting object.
  *
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)readValueWithCompletion:(ESTSettingPowerScheduledAdvertisingEnableCompletionBlock)completion;
 
@@ -63,8 +61,6 @@ typedef void(^ESTSettingPowerScheduledAdvertisingEnableCompletionBlock)(ESTSetti
  *
  *  @param enable ScheduledAdvertisingEnable value to be written to the device.
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)writeValue:(BOOL)enable completion:(ESTSettingPowerScheduledAdvertisingEnableCompletionBlock)completion;
 

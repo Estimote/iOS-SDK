@@ -36,7 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Block used as a result of read/write setting MotionOnlyBroadcastingDelay operation for Power packet.
  *
- *  @param motionOnlyBroadcastingDelay MotionOnlyBroadcastingDelay setting carrying value.
+ *  @param motionOnlyBroadcastingDelaySetting MotionOnlyBroadcastingDelay setting carrying value.
  *  @param error Operation error. No error means success.
  */
 typedef void(^ESTSettingPowerMotionOnlyBroadcastingDelayCompletionBlock)(ESTSettingPowerMotionOnlyBroadcastingDelay * _Nullable motionOnlyBroadcastingDelaySetting, NSError * _Nullable error);
@@ -69,8 +69,6 @@ typedef void(^ESTSettingPowerMotionOnlyBroadcastingDelayCompletionBlock)(ESTSett
  *  Method allows to read value of initialized Power MotionOnlyBroadcastingDelay setting object.
  *
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)readValueWithCompletion:(ESTSettingPowerMotionOnlyBroadcastingDelayCompletionBlock)completion;
 
@@ -80,8 +78,6 @@ typedef void(^ESTSettingPowerMotionOnlyBroadcastingDelayCompletionBlock)(ESTSett
  *
  *  @param motionOnlyBroadcastingDelay MotionOnlyBroadcastingDelay value in milliseconds to be written to the device.
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)writeValue:(unsigned int)motionOnlyBroadcastingDelay completion:(ESTSettingPowerMotionOnlyBroadcastingDelayCompletionBlock)completion;
 

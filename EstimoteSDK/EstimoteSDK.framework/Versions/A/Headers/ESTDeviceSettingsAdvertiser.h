@@ -70,7 +70,7 @@ typedef NS_ENUM(NSInteger, ESTDeviceSettingsAdvertiserSettingsPower)
  *  other object of the same class. When field exists settings is overwritten
  *  if nil nothing happens.
  *
- *  @param generalSettings Object should be used to update settings.
+ *  @param advertiserSettings Object should be used to update settings.
  */
 - (void)updateWithAdvertiserSettings:(ESTDeviceSettingsAdvertiser *)advertiserSettings;
 

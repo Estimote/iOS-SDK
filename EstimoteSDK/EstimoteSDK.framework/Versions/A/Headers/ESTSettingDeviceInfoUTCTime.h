@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Block used as a result of read/write setting UTCTime operation. Works with time interval since 1970, 1 second precision.
  *
- *  @param UTCTime UTCTime setting carrying value.
+ *  @param UTCTimeSetting UTCTime setting carrying value.
  *  @param error Operation error. No error means success.
  */
 typedef void(^ESTSettingDeviceInfoUTCTimeCompletionBlock)(ESTSettingDeviceInfoUTCTime * _Nullable UTCTimeSetting, NSError * _Nullable error);
@@ -50,8 +50,6 @@ typedef void(^ESTSettingDeviceInfoUTCTimeCompletionBlock)(ESTSettingDeviceInfoUT
  *  Method allows to read value of initialized Device UTCTime setting object.
  *
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)readValueWithCompletion:(ESTSettingDeviceInfoUTCTimeCompletionBlock)completion;
 
@@ -61,8 +59,6 @@ typedef void(^ESTSettingDeviceInfoUTCTimeCompletionBlock)(ESTSettingDeviceInfoUT
  *
  *  @param UTCTime UTCTime value to be written to the device.
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)writeValue:(NSTimeInterval)UTCTime completion:(ESTSettingDeviceInfoUTCTimeCompletionBlock)completion;
 

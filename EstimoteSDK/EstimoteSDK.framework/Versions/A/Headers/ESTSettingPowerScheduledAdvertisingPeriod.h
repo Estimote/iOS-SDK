@@ -38,7 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Block used as a result of read/write setting ScheduledAdvertisingPeriod operation for Power packet.
  *
- *  @param period ScheduledAdvertisingPeriod setting carrying value.
+ *  @param periodSetting ScheduledAdvertisingPeriod setting carrying value.
  *  @param error Operation error. No error means success.
  */
 typedef void(^ESTSettingPowerScheduledAdvertisingPeriodCompletionBlock)(ESTSettingPowerScheduledAdvertisingPeriod * _Nullable periodSetting, NSError * _Nullable error);
@@ -71,8 +71,6 @@ typedef void(^ESTSettingPowerScheduledAdvertisingPeriodCompletionBlock)(ESTSetti
  *  Method allows to read value of initialized Power ScheduledAdvertisingPeriod setting object.
  *
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)readValueWithCompletion:(ESTSettingPowerScheduledAdvertisingPeriodCompletionBlock)completion;
 
@@ -82,8 +80,6 @@ typedef void(^ESTSettingPowerScheduledAdvertisingPeriodCompletionBlock)(ESTSetti
  *
  *  @param period ScheduledAdvertisingPeriod value to be written to the device.
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)writeValue:(ESTTimePeriod *)period completion:(ESTSettingPowerScheduledAdvertisingPeriodCompletionBlock)completion;
 

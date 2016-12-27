@@ -31,7 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Block used as a result of read/write setting Broadcasting Power operation for Estimote Location packet.
  *
- *  @param power Broadcasting Power setting carrying value.
+ *  @param powerSetting Broadcasting Power setting carrying value.
  *  @param error Operation error. No error means success.
  */
 typedef void(^ESTSettingEstimoteLocationPowerCompletionBlock)(ESTSettingEstimoteLocationPower * _Nullable powerSetting, NSError * _Nullable error);
@@ -82,8 +82,6 @@ typedef NS_ENUM(int8_t, ESTEstimoteLocationPower)
  *  Method allows to read value of initialized Estimote Location Broadcasting Power setting object.
  *
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)readValueWithCompletion:(ESTSettingEstimoteLocationPowerCompletionBlock)completion;
 
@@ -93,8 +91,6 @@ typedef NS_ENUM(int8_t, ESTEstimoteLocationPower)
  *
  *  @param power Broadcasting Power value to be written to the device.
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)writeValue:(ESTEstimoteLocationPower)power completion:(ESTSettingEstimoteLocationPowerCompletionBlock)completion;
 

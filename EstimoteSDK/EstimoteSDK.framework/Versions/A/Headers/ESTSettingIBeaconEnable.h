@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Block used as a result of read/write setting Enable operation for iBeacon packet.
  *
- *  @param iBeaconEnable IBeaconEnable setting carrying value.
+ *  @param iBeaconEnableSetting IBeaconEnable setting carrying value.
  *  @param error Operation error. No error means success.
  */
 typedef void(^ESTSettingIBeaconEnableCompletionBlock)(ESTSettingIBeaconEnable * _Nullable iBeaconEnableSetting, NSError * _Nullable error);
@@ -50,8 +50,6 @@ typedef void(^ESTSettingIBeaconEnableCompletionBlock)(ESTSettingIBeaconEnable * 
  *  Method allows to read value of initialized iBeacon Enable setting object.
  *
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)readValueWithCompletion:(ESTSettingIBeaconEnableCompletionBlock)completion;
 
@@ -61,8 +59,6 @@ typedef void(^ESTSettingIBeaconEnableCompletionBlock)(ESTSettingIBeaconEnable * 
  *
  *  @param enabled      Enable value to be written to the device.
  *  @param completion   Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)writeValue:(BOOL)enabled completion:(ESTSettingIBeaconEnableCompletionBlock)completion;
 

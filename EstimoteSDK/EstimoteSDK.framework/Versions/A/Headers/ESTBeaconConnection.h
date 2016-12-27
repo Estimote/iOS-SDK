@@ -732,7 +732,7 @@ enum
  *  Sets Google beacon Instance ID. Value should be provided as a Hexadecimal string
  *  representing 6 bytes (12 character string - 2 chars for 1 byte).
  *
- *  @param gInstance Google beacon Instance ID
+ *  @param eddystoneNamespace Google beacon Instance ID
  *  @param completion A block that is called when the Instance ID has been changed or error occurred.
  */
 - (void)writeEddystoneHexNamespace:(NSString *)eddystoneNamespace completion:(ESTStringCompletionBlock)completion;
@@ -741,7 +741,7 @@ enum
  *  Sets Google beacon Instance ID. Value should be provided as a Hexadecimal string
  *  representing 6 bytes (12 character string - 2 chars for 1 byte).
  *
- *  @param gInstance Google beacon Instance ID
+ *  @param eddystoneInstance Google beacon Instance ID
  *  @param completion A block that is called when the Instance ID has been changed or error occurred.
  */
 - (void)writeEddystoneInstance:(NSString *)eddystoneInstance completion:(ESTStringCompletionBlock)completion;

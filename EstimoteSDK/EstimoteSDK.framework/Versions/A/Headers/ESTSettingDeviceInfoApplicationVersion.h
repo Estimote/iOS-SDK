@@ -36,7 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Block used as a result of read setting ApplicationVersion operation for Device Info packet.
  *
- *  @param applicationVersion ApplicationVersion setting carrying value.
+ *  @param applicationVersionSetting ApplicationVersion setting carrying value.
  *  @param error Operation error. No error means success.
  */
 typedef void(^ESTSettingDeviceInfoApplicationVersionCompletionBlock)(ESTSettingDeviceInfoApplicationVersion * _Nullable applicationVersionSetting, NSError * _Nullable error);
@@ -67,8 +67,6 @@ typedef void(^ESTSettingDeviceInfoApplicationVersionCompletionBlock)(ESTSettingD
  *  Method allows to read value of initialized Device Info ApplicationVersion setting object.
  *
  *  @param completion Block to be invoked when the operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)readValueWithCompletion:(ESTSettingDeviceInfoApplicationVersionCompletionBlock)completion;
 

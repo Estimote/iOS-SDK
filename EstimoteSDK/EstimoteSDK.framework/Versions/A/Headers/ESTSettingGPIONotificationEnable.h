@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Block used as a result of read/write setting NotificationEnable operation for GPIO packet.
  *
- *  @param enabled NotificationEnable setting carrying value.
+ *  @param enabledSetting NotificationEnable setting carrying value.
  *  @param error Operation error. No error means success.
  */
 typedef void(^ESTSettingGPIONotificationEnableCompletionBlock)(ESTSettingGPIONotificationEnable * _Nullable enabledSetting, NSError * _Nullable error);
@@ -52,8 +52,6 @@ typedef void(^ESTSettingGPIONotificationEnableCompletionBlock)(ESTSettingGPIONot
  *  Method allows to read value of initialized GPIO NotificationEnable setting object.
  *
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)readValueWithCompletion:(ESTSettingGPIONotificationEnableCompletionBlock)completion;
 
@@ -63,8 +61,6 @@ typedef void(^ESTSettingGPIONotificationEnableCompletionBlock)(ESTSettingGPIONot
  *
  *  @param enabled NotificationEnable value to be written to the device.
  *  @param completion Block to be invoked when operation is complete.
- *
- *  @return Initialized operation object.
  */
 - (void)writeValue:(BOOL)enabled completion:(ESTSettingGPIONotificationEnableCompletionBlock)completion;
 
