@@ -1,0 +1,213 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;\f2\fnil\fcharset0 Menlo-Bold;
+}
+{\colortbl;\red255\green255\blue255;\red47\green180\blue29;\red180\green36\blue25;\red0\green116\blue0;
+\red14\green14\blue255;\red46\green13\blue110;\red196\green26\blue22;\red170\green13\blue145;\red63\green110\blue116;
+\red92\green38\blue153;}
+\margl1440\margr1440\vieww25400\viewh14520\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\fs24 \cf0 llv22 remote location: https://github.com/llv22/iOS-SDK\
+Clone from remote: http://stackoverflow.com/questions/10312521/how-to-fetch-all-git-branches \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f1 \cf0 \CocoaLigature0 PVGM50822062A:03_objectivec i058959$ git clone https://github.com/llv22/iOS-SDK.git\
+Cloning into 'iOS-SDK'...\
+remote: Counting objects: 800, done.\
+remote: Compressing objects: 100% (383/383), done.\
+remote: Total 800 (delta 373), reused 800 (delta 373)\
+Receiving objects: 100% (800/800), 14.75 MiB | 74.00 KiB/s, done.\
+Resolving deltas: 100% (373/373), done.\
+Checking connectivity... done.\
+PVGM50822062A:03_objectivec i058959$  git remote update\
+fatal: Not a git repository (or any of the parent directories): .git\
+PVGM50822062A:03_objectivec i058959$ cd iOS-SDK/\
+PVGM50822062A:iOS-SDK i058959$  git remote update\
+Fetching origin\
+PVGM50822062A:iOS-SDK i058959$ git pull --all\
+Fetching origin\
+Already up-to-date.\
+PVGM50822062A:iOS-SDK i058959$ git fetch origin\
+PVGM50822062A:iOS-SDK i058959$ git branch\
+* \cf2 master\cf0 \
+PVGM50822062A:iOS-SDK i058959$ git checkout -b dev origin/dev\
+Branch dev set up to track remote branch dev from origin.\
+Switched to a new branch 'dev'\
+\
+nothing to commit, working directory clean\
+PVGM50822062A:iOS-SDK i058959$ git branch\
+* \cf2 dev\cf0 \
+  master\
+\
+operations for synchronisation of upstream:\
+1, check status of remote repository\
+Orlando:iOS-SDK llv22$ git remote -v\
+origin	git@github.com:llv22/iOS-SDK.git (fetch)\
+origin	git@github.com:llv22/iOS-SDK.git (push)\
+upstream	git@github.com:Estimote/iOS-SDK.git (fetch)\
+upstream	git@github.com:Estimote/iOS-SDK.git (push)\
+\
+origin is my github.com own account, upstream is estimote origin account\
+\
+2, now do synchronisation between my github.com and estimote account\
+PVGM50822062A:iOS-SDK i058959$  git remote update upstream\
+see status after upstream \
+Orlando:iOS-SDK llv22$ git branch -a\
+  2.0beta\
+* \cf2 dev\cf0 \
+  master\
+  \cf3 remotes/origin/2.0beta\cf0 \
+  \cf3 remotes/origin/HEAD\cf0  -> origin/master\
+  \cf3 remotes/origin/dev\cf0 \
+  \cf3 remotes/origin/gh-pages\cf0 \
+  \cf3 remotes/origin/master\cf0 \
+  \cf3 remotes/upstream/2.0beta\cf0 \
+  \cf3 remotes/upstream/gh-pages\cf0 \
+  \cf3 remotes/upstream/master
+\f0 \cf0 \CocoaLigature1 \
+
+\f1 \CocoaLigature0 \
+3, git merge with local branch for upstream\
+git checkout 2.0beta\
+git merge upstream/2.0beta\
+git fetch \'97-tags\
+git tag\
+\
+then for master of upstream\
+finally do for dev branch\
+\
+4, push back to origin in my github.com\
+Orlando:iOS-SDK llv22$ git push origin dev\
+Orlando:iOS-SDK llv22$ git push origin 2.0beta\
+\
+
+\f0 \CocoaLigature1 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf0 Features list:\
+1) update beacons station list in application\
+	sorted array for beacons return station list - http://stackoverflow.com/questions/805547/how-to-sort-an-nsmutablearray-with-custom-objects-in-it\
+    More: if beacons station list is changed? so some contexts are removed in application\
+\
+Technical references:	\
+1, embedded navigation control in storyboard\
+refer to http://stackoverflow.com/questions/11083521/no-top-navigation-bar-in-a-tab-bar-controller-application\
+\
+2, modify the target navigation item for navigation controller for "trigger segue for navigation controller"\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf0 {{\NeXTGraphic Pasted Graphic.pdf \width13840 \height8380
+}¬}\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf0 \
+\
+3, return multi-value in objective-c function\
+see 
+\f1\fs22 \cf4 \CocoaLigature0 refer to return multi-value {\field{\*\fldinst{HYPERLINK "http://stackoverflow.com/questions/1692005/returning-multiple-values-from-a-method-in-objective-c"}}{\fldrslt \cf5 http://stackoverflow.com/questions/1692005/returning-multiple-values-from-a-method-in-objective-c}}\cf5 \
+\
+
+\f0\fs24 \cf0 \CocoaLigature1 4, context tab to add "category/location" bindings [TODO]\
+	1) extract iBeacon location manager to global reference \
+	2) UI preparation for tencent-like group style [TODO]\
+	references : http://iosptl.com/book/ and http://www.ituring.com.cn/book/1053?q=ios6 \
+	references source code : https://github.com/llv22/ios6ptl and https://github.com/llv22/ios7ptl \
+	sample group for table : 
+\f1 \CocoaLigature0 /Users/llv22/Documents/02_apple_programming/booksrcs/ios6ptl/ch11/MKAccordion/MKAccordion.xcodeproj\
+\
+	UIView default size setting, see\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0 \cf0 \CocoaLigature1 {{\NeXTGraphic Pasted Graphic.tiff \width20660 \height3320
+}¬}\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f1 \cf0 \
+\
+5,\
+ issue - can't change navigation back button title in storyboard, from "Context" the source title to customized value
+\f0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f1\fs22 \cf5 \CocoaLigature0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\fs24 \cf0 \CocoaLigature1 6,  Adjust scrollview and pageview controll dynamically\
+	1) set height of scrollview >= 325, basic value\
+	2) set vertical height between scrollview and pageview, set basic value\
+don't need the following hard code, such hardcoding should be written in animiation\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f1\fs22 \cf0 \CocoaLigature0     \cf4 //TODO : adjust scrollview height and width\cf0 \
+\pard\tx529\pardeftab529\pardirnatural
+\cf0     \cf6 NSLog\cf0 (\cf7 @"actuall height of scrollview - %f"\cf0 , \cf8 self\cf0 .\cf9 scrollView\cf0 .\cf10 frame\cf0 .\cf10 size\cf0 .\cf10 height\cf0 );\
+    \cf6 NSLog\cf0 (\cf7 @"desired height of scrollview - %f"\cf0 , \cf8 self\cf0 .\cf9 pageControl\cf0 .\cf10 frame\cf0 .\cf10 origin\cf0 .\cf10 y\cf0  - \cf8 self\cf0 .\cf9 scrollView\cf0 .\cf10 frame\cf0 .\cf10 origin\cf0 .\cf10 y\cf0 );
+\f0\fs24 \CocoaLigature1 \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+\cf0 {{\NeXTGraphic 1__#$!@%!#__Pasted Graphic.tiff \width28040 \height14920
+}¬}\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+\cf0 \
+\
+tintcolor and navigationbarItem title change:\
+\pard\tx529\pardeftab529\pardirnatural
+
+\f1\fs22 \cf0 \CocoaLigature0 \
+1, tintColor\
+\pard\tx529\pardeftab529\pardirnatural
+\cf4 //            self.navigationController.navigationBar.tintColor = [UIColor redColor];\cf0 \
+\cf4 //            [[UIBarButtonItem appearance] setTintColor:[UIColor redColor]];\cf0 \
+\cf4 //            self.navigationController.navigationItem.backBarButtonItem.tintColor = [UIColor redColor];//invalid\cf0 \
+\cf4 //            self.navigationItem.backBarButtonItem.tintColor = [UIColor redColor]; //invalid\
+\pard\tx529\pardeftab529\pardirnatural
+\cf0 \
+2, navigationItem for overwrite\cf4 \
+\cf0         \cf8 BOOL\cf0  isCurrentCity = [[\cf10 NSNumber\cf0  \cf6 numberWithInt\cf0 :(indexPathOfSelectedCell.\cf10 section\cf0  == \cf8 self\cf0 .\cf9 currentCityColorIndex\cf0 )] \cf6 boolValue\cf0 ];\
+        \cf4 // see set backbarButtonItem {\field{\*\fldinst{HYPERLINK "http://blog.163.com/happysky_study/blog/static/17767615020118131433368/"}}{\fldrslt \cf5 http://blog.163.com/happysky_study/blog/static/17767615020118131433368/}}\cf0 \
+        \cf4 // see change tintColor - {\field{\*\fldinst{HYPERLINK "http://stackoverflow.com/questions/6808176/unable-to-change-text-and-text-color-of-navigationitems-back-button"}}{\fldrslt \cf5 http://stackoverflow.com/questions/6808176/unable-to-change-text-and-text-color-of-navigationitems-back-button}}\cf0 \
+        \cf4 // see {\field{\*\fldinst{HYPERLINK "http://blog.sina.com.cn/s/blog_8c87ba3b0101i4oh.html"}}{\fldrslt \cf5 http://blog.sina.com.cn/s/blog_8c87ba3b0101i4oh.html}} and {\field{\*\fldinst{HYPERLINK "http://www.ggkf.com/ios/changing-the-tint-color-of-uibarbuttonitem"}}{\fldrslt \cf5 http://www.ggkf.com/ios/changing-the-tint-color-of-uibarbuttonitem}}\cf0 \
+        \cf8 if\cf0  (isCurrentCity) \{\
+            \cf8 self\cf0 .\cf10 navigationItem\cf0 .\cf10 backBarButtonItem\cf0  = [[\cf10 UIBarButtonItem\cf0  \cf6 alloc\cf0 ]\cf6 initWithTitle\cf0 :strHostedCity\
+                                                                                    \cf6 style\cf0 :\cf6 UIBarButtonItemStyleBordered\cf0 \
+                                                                                   \cf6 target\cf0 :\cf8 nil\cf0 \
+                                                                                   \cf6 action\cf0 :\cf8 nil\cf0 ];\
+\pard\tx529\pardeftab529\pardirnatural
+\cf4 //            self.navigationController.navigationBar.tintColor = [UIColor redColor];\cf0 \
+\cf4 //            [[UIBarButtonItem appearance] setTintColor:[UIColor redColor]];\cf0 \
+\cf4 //            self.navigationController.navigationItem.backBarButtonItem.tintColor = [UIColor redColor];//invalid\cf0 \
+\cf4 //            self.navigationItem.backBarButtonItem.tintColor = [UIColor redColor]; //invalid\cf0 \
+        \}\
+        \cf8 else\cf0 \{\
+            \cf8 self\cf0 .\cf10 navigationItem\cf0 .\cf10 backBarButtonItem\cf0  = [[\cf10 UIBarButtonItem\cf0  \cf6 alloc\cf0 ]\cf6 initWithTitle\cf0 :strHostedCity\
+                                                                                    \cf6 style\cf0 :\cf6 UIBarButtonItemStylePlain\cf0 \
+                                                                                   \cf6 target\cf0 :\cf8 nil\cf0 \
+                                                                                   \cf6 action\cf0 :\cf8 nil\cf0 ];\
+\cf4 //            self.navigationController.navigationBar.tintColor = [UIColor blueColor];\cf0 \
+\cf4 //            [[UIBarButtonItem appearance] setTintColor:[UIColor blueColor]];\cf0 \
+\cf4 //            self.navigationItem.backBarButtonItem.tintColor = [UIColor blueColor]; //invalid\cf0 \
+        \}\
+\
+3, left-rorate to break constraints\
+	1) disable rotate capacity in UIView - http://iphonedevsdk.com/forum/iphone-sdk-development/108239-rotation-methods-not-being-called.html \
+	2) for constraints error in runtime - \
+\
+\pard\tx529\pardeftab529\pardirnatural
+
+\f2\b \cf0 2014-06-22 10:04:51.453 iEasyReminder[661:60b] Unable to simultaneously satisfy constraints.\
+	Probably at least one of the constraints in the following list is one you don't want. Try this: (1) look at each constraint and try to figure out which you don't expect; (2) find the code that added the unwanted constraint or constraints and fix it. (Note: If you're seeing NSAutoresizingMaskLayoutConstraints that you don't understand, refer to the documentation for the UIView property translatesAutoresizingMaskIntoConstraints) \
+(\
+    "<NSLayoutConstraint:0x10a676fa0 V:[UIPageControl:0x10a677ba0(26)]>",\
+    "<NSLayoutConstraint:0x10a67ad60 V:[UIScrollView:0x10a67a820(>=335)]>",\
+    "<NSLayoutConstraint:0x10a67d1b0 V:|-(65)-[UIScrollView:0x10a67a820]   (Names: '|':UIView:0x10a67bed0 )>",\
+    "<NSLayoutConstraint:0x10a67d250 V:[UIPageControl:0x10a677ba0]-(50)-|   (Names: '|':UIView:0x10a67bed0 )>",\
+    "<NSLayoutConstraint:0x10a67d2f0 V:[UIScrollView:0x10a67a820]-(0)-[UIPageControl:0x10a677ba0]>",\
+    "<NSAutoresizingMaskLayoutConstraint:0x10a68a810 h=--& v=--& V:[UIView:0x10a67bed0(320)]>"\
+)\
+\
+Will attempt to recover by breaking constraint \
+<NSLayoutConstraint:0x10a67ad60 V:[UIScrollView:0x10a67a820(>=335)]>\
+\
+Break on objc_exception_throw to catch this in the debugger.\
+The methods in the UIConstraintBasedLayoutDebugging category on UIView listed in <UIKit/UIView.h> may also be helpful.\
+\pard\tx529\pardeftab529\pardirnatural
+
+\f1\b0 \cf4 \
+\pard\tx529\pardeftab529\pardirnatural
+
+\f0\fs24 \cf0 \CocoaLigature1 	\
+}

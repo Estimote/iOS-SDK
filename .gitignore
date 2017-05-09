@@ -15,3 +15,13 @@ profile
 *.moved-aside
 DerivedData
 .idea/
+
+#local workspace
+Examples/Examples.xcodeproj/project.xcworkspace/xcshareddata/
+PageControl/PageControl.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+PageControl/PageControl.xcodeproj/project.xcworkspace/xcshareddata/
+
+#local homekitService source code - avoid repeated .git
+homekitService/.metadata/
+homekitService/appidoa14be2awx/.git/
+homekitService/appidoa14be2awx/ROOT.war
