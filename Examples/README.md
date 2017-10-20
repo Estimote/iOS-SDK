@@ -44,4 +44,3 @@ Wirelessly access external devices connected to the beacons' GPIO ports. _(See t
 Cashier-customer app that allows cashiers to see customers at checkout in their iPad app and grant them their bonus points for their shopping. Completely new way of earning points without carrying loyalty cards or scanning barcodes.
 
 _(See the README.md file in this project's directory for more info.)_
-
