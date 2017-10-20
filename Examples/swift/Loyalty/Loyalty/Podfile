@@ -1,0 +1,19 @@
+platform :ios, '9.3'
+
+target 'Loyalty' do
+  # Comment this line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Loyalty
+  
+  # Firebase
+  pod 'Firebase/Database'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Storage'
+  
+  pod 'EstimoteSDK'
+
+  pod 'ImagePicker', :git => 'https://github.com/autumnssun/ImagePicker.git', :branch => 'swift4'
+
+  pod "PromiseKit", "~> 4.0"
+end
