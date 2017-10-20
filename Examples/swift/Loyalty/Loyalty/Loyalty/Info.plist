@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.1</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>Bluetooh access is required for detecting iBeacons.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Camera access description. (You can change this message in the Info.plist file.)</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Apps can&apos;t detect beacons without access to Location Services. We suggest selecting &apos;Always&apos; to allow foreground and background iBeacon packets monitoring. (You can change this message in the Info.plist file.)</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Apps can&apos;t detect beacons without access to Location Services. We suggest selecting &apos;Always&apos; to allow foreground and background iBeacon packets monitoring. (You can change this message in the Info.plist file.)</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Apps can&apos;t detect beacons without access to Location Services. We suggest selecting &apos;Always&apos; to allow foreground and background iBeacon packets monitoring. (You can change this message in the Info.plist file.)</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Photo library access description. (You can change this message in the Info.plist file.)</string>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIMainStoryboardFile</key>
+	<string>Main</string>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>armv7</string>
+	</array>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+</dict>
+</plist>
