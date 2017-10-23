@@ -8,16 +8,23 @@ import UIKit
 This class controls the flow when developer uses one of GPIO ports as input.
 */
 
-class ViewControllerInput: UIViewController, ESTDeviceManagerDelegate, ESTDeviceConnectableDelegate {
+class InputViewController: UIViewController {
+    
+    // MARK: IBOutlets
     
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var lightbulbOnImage: UIImageView!
     @IBOutlet weak var lightbulbOffImage: UIImageView!
     
+    // MARK: Class properties
+    
+    /** TODO: Replace with identifier of your beacon.
+     You can find identifiers of your beacons at https://cloud.estimote.com/#/beacons
+     */
+    let deviceUsedForInputIdentifier: String = "B34C0N-1-CL0UD-1D3NT1F13R"
+    
     var checkPortZeroStateTimer: Timer?
     var portZeroStateCheckInterval: TimeInterval = 0.02
-    // TODO: put input beacon's identifier here
-    let deviceUsedForInputIdentifier: String = <#Identifier of your input beacon#>
     var deviceUsedForInput: ESTDeviceLocationBeacon?
     lazy var deviceManagerForInput: ESTDeviceManager = {
         let manager = ESTDeviceManager()
@@ -38,6 +45,8 @@ class ViewControllerInput: UIViewController, ESTDeviceManagerDelegate, ESTDevice
             }
         }
     }
+    
+    // MARK: ViewController's lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,13 +56,7 @@ class ViewControllerInput: UIViewController, ESTDeviceManagerDelegate, ESTDevice
         self.currentLightbulbState = .off
     }
     
-    func deviceManager(_ manager: ESTDeviceManager, didDiscover devices: [ESTDevice]) {
-        guard let device = devices.first as? ESTDeviceLocationBeacon else { return }
-        self.deviceManagerForInput.stopDeviceDiscovery()
-        self.deviceUsedForInput = device
-        self.deviceUsedForInput?.delegate = self
-        self.deviceUsedForInput?.connect()
-    }
+    // MARK: Core logic
     
     func turnLightbulbOnOff () {
         self.deviceUsedForInput?.settings?.gpio.portsData.readValue(completion: { (gpioData, error) in
@@ -63,6 +66,19 @@ class ViewControllerInput: UIViewController, ESTDeviceManagerDelegate, ESTDevice
             self.currentLightbulbState = .on
             }
         })
+    }
+}
+
+// MARK: ESTDeviceManagerDelegate and ESTDeviceConnectableDelegate methods
+
+extension  InputViewController: ESTDeviceManagerDelegate, ESTDeviceConnectableDelegate {
+    
+    func deviceManager(_ manager: ESTDeviceManager, didDiscover devices: [ESTDevice]) {
+        guard let device = devices.first as? ESTDeviceLocationBeacon else { return }
+        self.deviceManagerForInput.stopDeviceDiscovery()
+        self.deviceUsedForInput = device
+        self.deviceUsedForInput?.delegate = self
+        self.deviceUsedForInput?.connect()
     }
     
     func estDeviceConnectionDidSucceed(_ device: ESTDeviceConnectable) {
@@ -78,5 +94,5 @@ class ViewControllerInput: UIViewController, ESTDeviceManagerDelegate, ESTDevice
     func estDevice(_ device: ESTDeviceConnectable, didDisconnectWithError error: Error?) {
         print("Connection Input Status: Disconected")
     }
-
+    
 }
