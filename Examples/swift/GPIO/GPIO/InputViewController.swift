@@ -69,7 +69,7 @@ class InputViewController: UIViewController {
     }
 }
 
-    // MARK: ESTDeviceManagerDelegate and ESTDeviceConnectableDelegate methods
+// MARK: ESTDeviceManagerDelegate and ESTDeviceConnectableDelegate methods
 
 extension  InputViewController: ESTDeviceManagerDelegate, ESTDeviceConnectableDelegate {
     
