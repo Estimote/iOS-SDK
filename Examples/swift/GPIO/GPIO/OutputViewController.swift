@@ -8,16 +8,24 @@ import UIKit
 This class controls the flow when developer uses one of GPIO ports as output.
 */
 
-class ViewControllerOutput: UIViewController, ESTDeviceManagerDelegate, ESTDeviceConnectableDelegate {
+class OutputViewController: UIViewController {
+    
+    // MARK: IBOutlets
     
     @IBOutlet weak var lightbulbOnImage: UIImageView!
     @IBOutlet weak var lightbulbOffImage: UIImageView!
     @IBOutlet weak var lightbulbStatusLabel: UILabel!
     @IBOutlet weak var lightbulbSwitch: UIButton!
     
+    // MARK: Class properties
+    
+    /** TODO: Replace with identifier of your beacon.
+     You can find identifiers of your beacons at https://cloud.estimote.com/#/beacons
+     */
+    let deviceUsedForOutputIdentifier: String = "B34C0N-1-CL0UD-1D3NT1F13R"
+    
     var deviceUsedForOutput: ESTDeviceLocationBeacon?
-    // TODO: put output beacon's identifier here
-    let deviceUsedForOutputIdentifier: String = <#Identifier of your output beacon#>
+    
     lazy var deviceManagerForOutput: ESTDeviceManager = {
         let manager = ESTDeviceManager()
         manager.delegate = self
@@ -42,6 +50,8 @@ class ViewControllerOutput: UIViewController, ESTDeviceManagerDelegate, ESTDevic
         }
     }
     
+    // MARK: ViewController's lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,25 +60,7 @@ class ViewControllerOutput: UIViewController, ESTDeviceManagerDelegate, ESTDevic
         self.currentLightbulbState = .off
     }
     
-    func deviceManager(_ manager: ESTDeviceManager, didDiscover devices: [ESTDevice]) {
-        guard let device = devices.first as? ESTDeviceLocationBeacon else { return }
-        self.deviceManagerForOutput.stopDeviceDiscovery()
-        self.deviceUsedForOutput = device
-        self.deviceUsedForOutput?.delegate = self
-        self.deviceUsedForOutput?.connect()
-    }
- 
-    func estDeviceConnectionDidSucceed(_ device: ESTDeviceConnectable) {
-        print("Connection Output Status: Connected")
-    }
-    
-    func estDevice(_ device: ESTDeviceConnectable, didFailConnectionWithError error: Error) {
-        print("Connection Output Status: \(error.localizedDescription)")
-    }
-    
-    func estDevice(_ device: ESTDeviceConnectable, didDisconnectWithError error: Error?) {
-        print("Connection Output Status: Disconnected")
-    }
+    // MARK: Core logic
     
     func changeBeaconPortOneState(_ beacon: ESTDeviceLocationBeacon, portOneSetStateTo: ESTGPIOPortValue) {
         let portsData = ESTGPIOPortsData(port0Value: ESTGPIOPortValue.high, port1Value: portOneSetStateTo)
@@ -106,4 +98,29 @@ class ViewControllerOutput: UIViewController, ESTDeviceManagerDelegate, ESTDevic
         self.setPortOneStateBasedOnBeaconStatus(self.deviceUsedForOutput!)
     }
 
+}
+
+// MARK: ESTDeviceManagerDelegate and ESTDeviceConnectableDelegate methods
+
+extension OutputViewController: ESTDeviceManagerDelegate, ESTDeviceConnectableDelegate {
+    
+    func deviceManager(_ manager: ESTDeviceManager, didDiscover devices: [ESTDevice]) {
+        guard let device = devices.first as? ESTDeviceLocationBeacon else { return }
+        self.deviceManagerForOutput.stopDeviceDiscovery()
+        self.deviceUsedForOutput = device
+        self.deviceUsedForOutput?.delegate = self
+        self.deviceUsedForOutput?.connect()
+    }
+    
+    func estDeviceConnectionDidSucceed(_ device: ESTDeviceConnectable) {
+        print("Connection Output Status: Connected")
+    }
+    
+    func estDevice(_ device: ESTDeviceConnectable, didFailConnectionWithError error: Error) {
+        print("Connection Output Status: \(error.localizedDescription)")
+    }
+    
+    func estDevice(_ device: ESTDeviceConnectable, didDisconnectWithError error: Error?) {
+        print("Connection Output Status: Disconnected")
+    }
 }

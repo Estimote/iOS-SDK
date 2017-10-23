@@ -12,9 +12,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ESTBeaconManagerDelegate 
     let beaconManager = ESTBeaconManager()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // TODO: put your App ID and App Token here
-        // You can get them by adding your app on https://cloud.estimote.com/#/apps
-        ESTConfig.setupAppID(<#AppID#>, andAppToken: <#AppToken#>)
+        
+        /** TODO: Replace with your App ID and App Token.
+         You can get them by adding a new app at https://cloud.estimote.com/#/apps
+         */
+        ESTConfig.setupAppID("<#App ID#>", andAppToken: "<#App Token#>")
         
         self.beaconManager.delegate = self
         self.beaconManager.requestAlwaysAuthorization()

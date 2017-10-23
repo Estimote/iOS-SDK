@@ -12,8 +12,8 @@
 		716690B11EDEB2350068A029 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 716690B01EDEB2350068A029 /* Assets.xcassets */; };
 		716690B41EDEB2350068A029 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 716690B21EDEB2350068A029 /* LaunchScreen.storyboard */; };
 		716690C31EDEB4E90068A029 /* EstimoteSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 716690C21EDEB4E90068A029 /* EstimoteSDK.framework */; };
-		716690C91EDEC02B0068A029 /* ViewControllerOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716690C81EDEC02B0068A029 /* ViewControllerOutput.swift */; };
-		716690CB1EDEC03B0068A029 /* ViewControllerInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716690CA1EDEC03B0068A029 /* ViewControllerInput.swift */; };
+		716690C91EDEC02B0068A029 /* OutputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716690C81EDEC02B0068A029 /* OutputViewController.swift */; };
+		716690CB1EDEC03B0068A029 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716690CA1EDEC03B0068A029 /* InputViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,8 +25,8 @@
 		716690B51EDEB2350068A029 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		716690C21EDEB4E90068A029 /* EstimoteSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EstimoteSDK.framework; path = ../../../../EstimoteSDK/EstimoteSDK.framework; sourceTree = "<group>"; };
 		716690C41EDEB5060068A029 /* ObjCBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCBridge.h; sourceTree = "<group>"; };
-		716690C81EDEC02B0068A029 /* ViewControllerOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerOutput.swift; sourceTree = "<group>"; };
-		716690CA1EDEC03B0068A029 /* ViewControllerInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerInput.swift; sourceTree = "<group>"; };
+		716690C81EDEC02B0068A029 /* OutputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutputViewController.swift; sourceTree = "<group>"; };
+		716690CA1EDEC03B0068A029 /* InputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +41,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		711AFD8D1F9DE2A600B7C7FF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				716690AD1EDEB2350068A029 /* Main.storyboard */,
+				716690B21EDEB2350068A029 /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		711AFD8E1F9DE2C600B7C7FF /* Bridging-Headers */ = {
+			isa = PBXGroup;
+			children = (
+				716690C41EDEB5060068A029 /* ObjCBridge.h */,
+			);
+			name = "Bridging-Headers";
+			sourceTree = "<group>";
+		};
 		7166909D1EDEB2350068A029 = {
 			isa = PBXGroup;
 			children = (
@@ -62,11 +79,10 @@
 			children = (
 				716690A91EDEB2350068A029 /* AppDelegate.swift */,
 				716690BC1EDEB37A0068A029 /* ViewControllers */,
-				716690AD1EDEB2350068A029 /* Main.storyboard */,
+				711AFD8D1F9DE2A600B7C7FF /* View */,
 				716690B01EDEB2350068A029 /* Assets.xcassets */,
-				716690B21EDEB2350068A029 /* LaunchScreen.storyboard */,
 				716690B51EDEB2350068A029 /* Info.plist */,
-				716690C41EDEB5060068A029 /* ObjCBridge.h */,
+				711AFD8E1F9DE2C600B7C7FF /* Bridging-Headers */,
 				BEDA810C1F065D5E0076F73A /* Estimote */,
 			);
 			path = GPIO;
@@ -75,8 +91,8 @@
 		716690BC1EDEB37A0068A029 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				716690C81EDEC02B0068A029 /* ViewControllerOutput.swift */,
-				716690CA1EDEC03B0068A029 /* ViewControllerInput.swift */,
+				716690C81EDEC02B0068A029 /* OutputViewController.swift */,
+				716690CA1EDEC03B0068A029 /* InputViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -180,8 +196,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				716690AA1EDEB2350068A029 /* AppDelegate.swift in Sources */,
-				716690C91EDEC02B0068A029 /* ViewControllerOutput.swift in Sources */,
-				716690CB1EDEC03B0068A029 /* ViewControllerInput.swift in Sources */,
+				716690C91EDEC02B0068A029 /* OutputViewController.swift in Sources */,
+				716690CB1EDEC03B0068A029 /* InputViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,7 +331,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.GPIO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_NAME}/ObjCBridge.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_NAME}/Bridging-Headers/ObjCBridge.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -333,7 +349,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.GPIO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_NAME}/ObjCBridge.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_NAME}/Bridging-Headers/ObjCBridge.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
